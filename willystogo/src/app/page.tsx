@@ -11,22 +11,17 @@ export default async function Home() {
   const session = await getServerSession(authOptions)
 
   return (
-    <main
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "70vh",
-      }}
-    >
-      <div>
+    <main className="flex flex-col items-center justify-center min-h-screen py-2">
+      <div className="flex flex-row items-center justify-center space-x-4">
         <LoginButton />
         <LogoutButton />
         <AdminButton />
-        <h1>Server Session</h1>
-        <pre>{JSON.stringify(session)}</pre>
+      </div>
+      <div className="flex flex-col items-center justify-center py-2">
+          <h1>Server Session</h1>
+          <pre>{JSON.stringify(session)}</pre>
 
-        <User />
+          <User />
       </div>
     </main>
   )

@@ -5,14 +5,18 @@ import Link from "next/link"
 
 export const LoginButton = () => {
   return (
-    <button style={{ marginRight: 10 }} onClick={() => signIn()}>
+    <button 
+      className="rounded-md bg-blue-500 text-white px-4 py-2"
+      onClick={() => signIn()}>
       Sign in
     </button>
   )
 }
 export const LogoutButton = () => {
   return (
-    <button style={{ marginRight: 10 }} onClick={() => signOut()}>
+    <button 
+      className="rounded-md bg-blue-500 text-white px-4 py-2"
+      onClick={() => signOut()}>
       Sign Out
     </button>
   )
@@ -21,7 +25,8 @@ export const LogoutButton = () => {
 export const AdminButton = () => {
   return (
     <Link href="/admin">
-      <button style={{ marginRight: 10 }}>Admin</button>
+      <button className="rounded-md bg-blue-500 text-white px-4 py-2"
+      >Admin</button>
     </Link>
   )
 }
