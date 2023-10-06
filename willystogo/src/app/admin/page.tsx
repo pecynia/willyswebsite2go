@@ -2,6 +2,8 @@
 
 import { redirect } from "next/navigation"
 import { useSession } from "next-auth/react"
+import Tiptap from "@/app/components/tipTap"
+import { LoadingScreen } from "@/app/components/loading"
 
 export default function Profile() {
   const { status } = useSession({
@@ -12,14 +14,13 @@ export default function Profile() {
   })
 
   if (status === "loading") {
-    return <p>Loading....</p>
+    return <LoadingScreen />
   }
 
-
   return (
-    <div className="flex flex-col items-center justify-center py-2">
-        <h1>Admin</h1>
-        <p>Only accessible to authenticated users</p>
+    <div className="flex flex-col items-center justify-center py-36">
+        <h1 className="text-4xl font-bold pb-4">Admin</h1>
+        <p>Welkom bij de admin pagina</p>
     </div>
   )
 }

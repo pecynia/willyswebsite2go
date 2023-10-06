@@ -1,5 +1,5 @@
 import { MongoClient, ObjectId, ServerApiVersion } from 'mongodb'
-
+import { WriteResult } from '../../../typings'
 // -------------------- DATABASE --------------------
 
 // MongoDB Atlas connection URI
@@ -32,4 +32,26 @@ async function connectToDatabase() {
     const db = client.db(dbName)
     cachedDb = db
     return db
+}
+
+// ------------------- WRITING --------------------
+
+// collection: dashboard, make it dashboard: { timestamp: string, user: string, edit: string }
+export async function writeLatestEdit({ timestamp, user, edit }: WriteResult) {
+    const db = await connectToDatabase()
+    const collection = db.collection('dashboard')
+    const result = await collection.updateOne(
+        { $set: { timestamp, user, edit } },
+        { upsert: true }
+    )
+    return result
+}
+
+// ------------------- READING --------------------
+
+export async function getLatestEdit() {
+    const db = await connectToDatabase()
+    const collection = db.collection('dashboard')
+    const result = await collection.findOne({})
+    return result
 }
