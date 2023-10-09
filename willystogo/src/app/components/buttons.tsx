@@ -21,12 +21,3 @@ export const LogoutButton = () => {
     </button>
   )
 }
-
-export const AdminButton = () => {
-  return (
-    <Link href="/admin">
-      <button className="rounded-md bg-blue-500 text-white px-4 py-2"
-      >Admin</button>
-    </Link>
-  )
-}

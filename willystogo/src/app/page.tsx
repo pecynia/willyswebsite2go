@@ -1,7 +1,6 @@
 import {
   LoginButton,
   LogoutButton,
-  AdminButton
 } from "@/app/components/buttons"
 import { getServerSession } from "next-auth"
 import { authOptions } from "@/lib/auth"
@@ -24,9 +23,7 @@ export default async function Home() {
       </div>
 
       <div className="flex flex-row items-center justify-center space-x-4">
-        <LoginButton />
         <LogoutButton />
-        <AdminButton />
       </div>
       <div className="flex flex-col items-center justify-center py-2">
           <User />
