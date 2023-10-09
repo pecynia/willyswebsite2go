@@ -1,18 +1,48 @@
+"use client"
+
 import Link from 'next/link'
+import Image from 'next/image'
+import { useSession } from 'next-auth/react'
+import { useState, useEffect } from 'react'
+import { AdminModeWithLogout } from "@/app/components/buttons"
 
 const Header = () => {
+  
+  const { data: session } = useSession()
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+
+  useEffect(() => {
+    if (session) {
+      setIsLoggedIn(true)
+    } else {
+      setIsLoggedIn(false)
+    }
+  }, [session])
+
   return (
-    <header className='flex h-24 flex-col justify-center bg-stone-100'>
-      <nav className='container'>
-        <ul className='flex items-center justify-between gap-8 font-medium tracking-wider text-stone-500'>
-          <li className='text-sm'>
-            <Link href='/'>Home</Link>
+    <header className='flex h-24 flex-col justify-center bg-primary-light'>
+      <nav className='container px-4 md:px-8 lg:px-16'>
+        <ul className='flex items-center justify-between gap-8 font-medium tracking-wider text-stone-500 w-full'>
+          <li>
+            <Link href='/'>
+                <Image 
+                    src='/logo.png' 
+                    alt='Logo'
+                    width={200}
+                    height={200}
+                />
+            </Link>
           </li>
-          <li className='text-sm'>
-            <Link href='/admin/server'>Protected (server)</Link>
-          </li>
-          <li className='text-sm'>
-            <Link href='/admin/client'>Protected (client)</Link>
+
+          {/* Display "Admin mode" when logged in */}
+          {isLoggedIn && (
+            <AdminModeWithLogout />
+          )}
+
+          <li className='flex gap-8'>
+            <Link href='/admin'>
+              <p className='text-sm'>Protected (server)</p>
+            </Link>
           </li>
         </ul>
       </nav>
@@ -20,4 +50,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default Header;

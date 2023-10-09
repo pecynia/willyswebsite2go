@@ -23,4 +23,13 @@ export const authOptions: NextAuthOptions = {
   pages: {
     signIn: '/api/auth/signin',
   },
+  callbacks: {
+    async jwt({ token, trigger, session }) {
+      if (trigger === 'update' && session?.name) {
+        token.name = session.name
+      }
+
+      return token
+    }
+  },
 }
