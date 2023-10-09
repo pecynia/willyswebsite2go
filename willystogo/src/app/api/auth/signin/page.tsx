@@ -24,13 +24,16 @@ const SignInPage: NextPage = () => {
   })
 
   const handleFormSubmit = async (data: { password: string }) => {
-      const result = await signIn("credentials", {
-          redirect: true,
+      const result = await signIn('credentials', {
+          redirect: false,
           password: data.password
       })
 
-      if (result?.error) {
-          setError('password', { message: "Incorrect wachtwoord.", type: "error" })
+      if (result!.error) {
+          setError('password', {
+              type: 'manual',
+              message: 'Wachtwoord is onjuist'
+          })
       } else {
           router.push('/admin')
       }
@@ -44,7 +47,7 @@ const SignInPage: NextPage = () => {
                       Log in bij het admin dashboard
                   </h1>
               </div>
-              <div className='sm:rounded-5xl -mx-4 mt-10 flex-auto bg-white px-4 py- shadow-2xl shadow-gray-900/10 sm:mx-0 sm:flex-none sm:p-24'>
+              <div className='sm:rounded-5xl -mx-4 flex-auto bg-white px-4 py- shadow-2xl shadow-gray-900/10 sm:mx-0 sm:flex-none sm:p-24'>
                   <form onSubmit={handleSubmit(handleFormSubmit)}>
                       <div className='space-y-2'>
                           <label htmlFor='password' className='block text-sm font-medium text-gray-700'>
