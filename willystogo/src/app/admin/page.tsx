@@ -1,28 +1,27 @@
-"use client"
+import { getServerSession } from "next-auth"
+import { authOptions } from "@/lib/auth"
+import { redirect } from "next/navigation"
 
-import { useSession } from 'next-auth/react'
+const Profile = async () => {
 
-const Profile = () => {
-    const { status, data: session } = useSession()
+    const session = await getServerSession(authOptions)
+
+    // if (!session) {
+    //     redirect("/api/auth/signin?callbackUrl=/admin")
+    // }
 
     return (
-        <section className='flex justify-center py-5  min-h-screen bg-gray-100'>
-            <div className='bg-white p-12 rounded-lg shadow-lg w-2/3'>
-                <h1 className='text-4xl font-bold '>
-                    Welcome
+        <section className='py-24'>
+            <div className='container'>
+                <h1 className='text-2xl font-bold'>
+                    This is a <span className='text-emerald-500'>server-side</span>{' '}
+                    protected page
                 </h1>
-                <hr className='my-6 border-t border-gray-300'/>
-                <div>
-                    <h2 className='text-2xl font-medium'>
-                        You are logged in as:
-                    </h2>
-                    <p className='mt-4 text-gray-700 text-xl'>
-                        {session?.user?.name}
-                    </p>
-                </div>
+                <h2 className='mt-4 font-medium'>You are logged in as:</h2>
+                <p className='mt-4'>{session?.user?.name}</p>
             </div>
         </section>
-    )
-}
-
-export default Profile;
+        )
+    }
+    
+export default Profile
