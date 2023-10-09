@@ -25,7 +25,7 @@ const SignInPage: NextPage = () => {
 
   const handleFormSubmit = async (data: { password: string }) => {
       const result = await signIn("credentials", {
-          redirect: false,
+          redirect: true,
           password: data.password
       })
 
