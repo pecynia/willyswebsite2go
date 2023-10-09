@@ -32,7 +32,7 @@ const SignInPage: NextPage = () => {
       if (result?.error) {
           setError('password', { message: "Incorrect wachtwoord.", type: "error" })
       } else {
-          router.push('/')
+          router.push('/admin')
       }
   }
 

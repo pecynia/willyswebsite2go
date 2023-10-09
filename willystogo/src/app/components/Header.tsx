@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useSession } from 'next-auth/react'
 import { useState, useEffect } from 'react'
-import { AdminModeWithLogout } from "@/app/components/buttons"
+import { AdminModeWithLogout } from "@/app/components/admin/headerButton"
 
 const Header = () => {
   
@@ -38,12 +38,6 @@ const Header = () => {
           {isLoggedIn && (
             <AdminModeWithLogout />
           )}
-
-          <li className='flex gap-8'>
-            <Link href='/admin'>
-              <p className='text-sm'>Protected (server)</p>
-            </Link>
-          </li>
         </ul>
       </nav>
     </header>

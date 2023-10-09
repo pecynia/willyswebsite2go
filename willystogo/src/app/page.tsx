@@ -1,6 +1,5 @@
 import { getServerSession } from "next-auth"
 import { authOptions } from "@/lib/auth"
-import { User } from "@/app/components/user"
 import Image from 'next/image'
 
 export default async function Home() {
@@ -8,18 +7,24 @@ export default async function Home() {
 
   return (
     <main className="flex flex-col items-center justify-center p-2">
-      
-      <div>
+      <div className="flex flex-col w-full flex-1 px-20">
         <Image
           src="/logo.png"
-          alt="Willy's To Go"
+          alt="Logo"
           width={200}
           height={200}
         />
-      </div>
 
-      <div className="flex flex-col items-center justify-center py-2">
-          <User />
+        <h1 className="text-2xl font-bold">
+          Willy's To Go
+        </h1>
+
+        <p className="mt-3 text-xl">
+          Indonesische catering in Ede en omstreken
+        </p>
+
+
+
       </div>
     </main>
   )
