@@ -11,12 +11,13 @@ export default async function Home() {
         <Image
           src="/logo.png"
           alt="Logo"
-          width={200}
-          height={200}
+          width={100}
+          height={100}
+          priority
         />
 
         <h1 className="text-2xl font-bold">
-          Willy's To Go
+          Willys To Go
         </h1>
 
         <p className="mt-3 text-xl">

@@ -1,7 +1,7 @@
 import './globals.css'
 import type { Metadata } from 'next'
 
-import { NextAuthProvider } from "@/app/providers"
+import { NextAuthProvider } from "@/lib/providers"
 import { Inter } from 'next/font/google'
 
 import Header from "@/app/components/Header"
