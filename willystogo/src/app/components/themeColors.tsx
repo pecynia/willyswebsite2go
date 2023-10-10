@@ -55,7 +55,6 @@ function ThemeColorDialog({ colorName }: { colorName: keyof ThemeColors }) {
         const tryingColorHSL = hexToHsl(color)
         document.documentElement.style.setProperty('--trying', `${tryingColorHSL[0]} ${tryingColorHSL[1]}% ${tryingColorHSL[2]}%`)
     
-        // Trigger validation here too.
         trigger("colorCode")
     }
 
@@ -82,7 +81,7 @@ function ThemeColorDialog({ colorName }: { colorName: keyof ThemeColors }) {
                     </DialogDescription>
                 </DialogHeader>
                 <div className="py-4 flex items-start space-x-4">
-                    <HexColorPicker color={tryingColor} onChange={handlePickerChange} />
+                    <HexColorPicker className="hover:cursor-pointer" color={tryingColor} onChange={handlePickerChange} />
                     
                     <div className="flex flex-col space-y-2">
                         <div className="w-full h-6 rounded-full" style={{ backgroundColor: tryingColor }}>
