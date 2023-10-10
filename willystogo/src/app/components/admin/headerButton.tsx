@@ -1,24 +1,33 @@
 import { signOut } from "next-auth/react"
-import Image from 'next/image'
+import { Button } from "@/app/components/ui/button"
+import Link from 'next/link'
+import { LogOut, Settings, Loader2 } from 'lucide-react'
 
 export const AdminModeWithLogout = () => {
   return (
-    <div className="flex items-center bg-primary font-light rounded-lg pl-4">
-      <div className="text-white">Edit mode</div>
-      <button 
-        className="ml-4 bg-primary-dark rounded-l-none rounded-r-lg px-2 py-1 transform transition-transform duration-300 hover:scale-105"
+    <div className="flex items-center bg-background font-light rounded-lg pl-4">
+      <div className="text-primary">Edit mode</div>
+
+      <Link href="/admin">
+        <Button 
+          size="icon"
+          aria-label="Settings"
+          className="m-1 hover:bg-secondary-foreground hover:text-primary">
+            <span className="sr-only">Settings</span>
+            <Settings className="h-5 w-5 rotate-0 scale-100 transition-all duration-100 transform" />
+        </Button>
+      </Link>
+
+
+      <Button
+        size="icon"
+        aria-label="Logout"
+        className="mr-1 hover:bg-secondary-foreground hover:text-primary"
         onClick={() => signOut()}>
-        <Image 
-          src="/logout.svg" 
-          style={{ 
-            filter: "invert(1)", 
-            transform: "scale(0.9)"        
-          }}
-          alt="Logout" 
-          width={18} 
-          height={24} 
-        />
-      </button>
+          <span className="sr-only">Log Out</span>
+          <LogOut className="h-5 w-5 rotate-0 scale-100 transition-all duration-100 transform" />
+      </Button>
+      
     </div>
   )
 }

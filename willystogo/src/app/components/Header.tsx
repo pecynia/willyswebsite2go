@@ -20,7 +20,7 @@ const Header = () => {
   }, [session])
 
   return (
-    <header className='flex h-24 flex-col justify-center bg-primary-light'>
+    <header className='flex h-24 flex-col justify-center bg-secondary-foreground'>
       <nav className='container px-4 md:px-8 lg:px-16'>
         <ul className='flex items-center justify-between gap-8 font-medium tracking-wider text-stone-500 w-full'>
           <li>

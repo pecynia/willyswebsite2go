@@ -7,6 +7,8 @@ import { useRouter } from "next/navigation"
 import * as yup from 'yup'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
+import { Button } from "@/app/components/ui/button"
+import { LogIn } from "lucide-react"
 
 let validationSchema = yup.object().shape({
   password: yup.string()
@@ -66,12 +68,13 @@ const SignInPage: NextPage = () => {
                               <div className='text-sm text-red-500'>{errors['password'].message}</div>
                           ) : null}
                       </div>
-                      <button
+                      <Button
                           type='submit'
                           className='mt-3 w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded'
                       >
-                          Log In
-                      </button>
+                        <LogIn className="h-5 w-5 mr-2" />
+                        Log In
+                      </Button>
                   </form>
               </div>
           </div>
