@@ -26,19 +26,33 @@ let validationSchema = yup.object().shape({
 })
 
 function ThemeColorDialog({ colorName }: { colorName: keyof ThemeColors }) {
-    const [currentColor, setCurrentColor] = useState("#3498db")
-    const [tryingColor, setTryingColor] = useState("#3498db")
+    const [currentColor, setCurrentColor] = useState("#50ad30")
+    const [tryingColor, setTryingColor] = useState("#50ad30")
 
     const { setError, register, handleSubmit, formState: { errors } } = useForm({
         resolver: yupResolver(validationSchema)
     })
 
-    const handleColorChange = (color: string) => {
-        setTryingColor(color) // in hex
-        const tryingColorHSL = hexToHsl(tryingColor)
+    const { ref, onChange, ...rest } = register('colorCode');
 
-        document.documentElement.style.setProperty('--trying', `${tryingColorHSL[0]} ${tryingColorHSL[1]}% ${tryingColorHSL[2]}%`)
+
+    const handleColorChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const color = event.target.value;
+    
+        setTryingColor(color);
+        
+        if (/^#([0-9a-f]{3}){1,2}$/i.test(color)) {
+            const tryingColorHSL = hexToHsl(color);
+            document.documentElement.style.setProperty('--trying', `${tryingColorHSL[0]} ${tryingColorHSL[1]}% ${tryingColorHSL[2]}%`);
+        }
     }
+
+    const handlePickerChange = (color: string) => {
+        setTryingColor(color);
+        const tryingColorHSL = hexToHsl(color);
+        document.documentElement.style.setProperty('--trying', `${tryingColorHSL[0]} ${tryingColorHSL[1]}% ${tryingColorHSL[2]}%`);
+    };
+    
 
     const handleSave = () => {
         // Convert hex color to HSL
@@ -64,15 +78,22 @@ function ThemeColorDialog({ colorName }: { colorName: keyof ThemeColors }) {
                     </DialogDescription>
                 </DialogHeader>
                 <div className="py-4 flex items-start space-x-4">
-                    <HexColorPicker color={tryingColor} onChange={handleColorChange} />
+                    <HexColorPicker color={tryingColor} onChange={handlePickerChange} />
                     
                     <div className="flex flex-col space-y-2">
-                        <div className="w-full h-6 rounded-full" style={{ backgroundColor: tryingColor }}></div>
+                        <div className="w-full h-6 rounded-full" style={{ backgroundColor: tryingColor }}>
+                            {}
+                        </div>
                         <div>
                             <Input 
                                 type="text" 
                                 value={tryingColor} 
-                                onChange={(e) => handleColorChange(e.target.value)}
+                                onChange={(e) => {
+                                    handleColorChange(e);
+                                    onChange(e);  // manually triggering the onChange from register
+                                }}
+                                ref={ref}
+                                {...rest}
                             />
                             <br />
                             <span className="text-gray-400 ml-1">{colorName}</span>
