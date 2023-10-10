@@ -28,7 +28,7 @@ const Profile = () => {
                     <h2 className='text-xl font-medium'>
                         Customize Theme:
                     </h2>
-                    <ThemeColorDialog />
+                    <ThemeColorDialog colorName="primary" />
                 </div>
             </div>
         </section>
