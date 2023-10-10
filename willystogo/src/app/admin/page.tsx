@@ -20,7 +20,7 @@ const Profile = () => {
                         You are logged in as:
                     </h2>
                     <p className='mt-4 text-gray-700 text-xl'>
-                        {session?.user?.name}
+                        {status === 'loading' ? 'Loading...' : session?.user?.name}
                     </p>
                 </div>
                 <hr className='my-6 border-t border-gray-300'/>

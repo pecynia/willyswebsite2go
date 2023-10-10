@@ -26,36 +26,40 @@ let validationSchema = yup.object().shape({
 })
 
 function ThemeColorDialog({ colorName }: { colorName: keyof ThemeColors }) {
-    const [currentColor, setCurrentColor] = useState("#50ad30")
     const [tryingColor, setTryingColor] = useState("#50ad30")
 
-    const { setError, register, handleSubmit, formState: { errors } } = useForm({
+    const { register, setValue, formState: { errors }, trigger } = useForm({
         resolver: yupResolver(validationSchema)
     })
-
-    const { ref, onChange, ...rest } = register('colorCode');
-
+    
+    const { ref, onChange, ...rest } = register('colorCode')
 
     const handleColorChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const color = event.target.value;
-    
-        setTryingColor(color);
+        const color = event.target.value
+        setTryingColor(color)
+        setValue('colorCode', color)
         
         if (/^#([0-9a-f]{3}){1,2}$/i.test(color)) {
-            const tryingColorHSL = hexToHsl(color);
-            document.documentElement.style.setProperty('--trying', `${tryingColorHSL[0]} ${tryingColorHSL[1]}% ${tryingColorHSL[2]}%`);
+            const tryingColorHSL = hexToHsl(color)
+            document.documentElement.style.setProperty('--trying', `${tryingColorHSL[0]} ${tryingColorHSL[1]}% ${tryingColorHSL[2]}%`)
+        } else {
+            document.documentElement.style.setProperty('--trying', `0 0% 0%`)
         }
+
+        trigger("colorCode")
+    }
+   
+    const handlePickerChange = (color: string) => {
+        setTryingColor(color)
+        setValue('colorCode', color)
+        const tryingColorHSL = hexToHsl(color)
+        document.documentElement.style.setProperty('--trying', `${tryingColorHSL[0]} ${tryingColorHSL[1]}% ${tryingColorHSL[2]}%`)
+    
+        // Trigger validation here too.
+        trigger("colorCode")
     }
 
-    const handlePickerChange = (color: string) => {
-        setTryingColor(color);
-        const tryingColorHSL = hexToHsl(color);
-        document.documentElement.style.setProperty('--trying', `${tryingColorHSL[0]} ${tryingColorHSL[1]}% ${tryingColorHSL[2]}%`);
-    };
-    
-
     const handleSave = () => {
-        // Convert hex color to HSL
         const hsl = hexToHsl(tryingColor)
         if (hsl) {
             document.documentElement.style.setProperty(`--${colorName}`, `${hsl[0]} ${hsl[1]}% ${hsl[2]}%`)
@@ -88,22 +92,23 @@ function ThemeColorDialog({ colorName }: { colorName: keyof ThemeColors }) {
                             <Input 
                                 type="text" 
                                 value={tryingColor} 
+                                placeholder={tryingColor}
                                 onChange={(e) => {
-                                    handleColorChange(e);
-                                    onChange(e);  // manually triggering the onChange from register
+                                    handleColorChange(e)
+                                    onChange(e)  // manually triggering the onChange from register
                                 }}
                                 ref={ref}
                                 {...rest}
                             />
-                            <br />
-                            <span className="text-gray-400 ml-1">{colorName}</span>
+                            {errors.colorCode && <span className="text-destructive mt-1 ml-1 text-xs">{errors.colorCode.message}</span>}
+                            <p className="text-gray-400 ml-1 mt-2">{colorName}</p>
                         </div>
                     </div>
                 </div>
 
                 <DialogFooter>
                     <DialogClose asChild>
-                        <Button onClick={() => handleSave()}>
+                        <Button onClick={() => handleSave()} disabled={!!errors.colorCode}>
                             Opslaan
                         </Button>
                     </DialogClose>

@@ -48,11 +48,25 @@ export async function writeLatestEdit({ timestamp, user, edit }: WriteResult) {
 }
 
 // collection: dashboard
-export async function updateThemeColors({ primary, primaryLight, primaryDark, secondary, secondaryLight, secondaryDark, background }: ThemeColors) {
+export async function updateThemeColors({ background, foreground, card, cardForeground, popover, popoverForeground,
+    primary, primaryForeground, secondary, secondaryForeground, muted,
+    mutedForeground, accent, accentForeground,
+    destructive,
+    destructiveForeground,
+    border,
+    input,
+    ring, }: ThemeColors) {
     const db = await connectToDatabase()
     const collection = db.collection('dashboard')
     const result = await collection.updateOne(
-        { $set: { primary, primaryLight, primaryDark, secondary, secondaryLight, secondaryDark, background } },
+        { $set: { background, foreground, card, cardForeground, popover, popoverForeground,
+            primary, primaryForeground, secondary, secondaryForeground, muted,
+            mutedForeground, accent, accentForeground,
+            destructive,
+            destructiveForeground,
+            border,
+            input,
+            ring, } },
         { upsert: true }
     )
     return result
