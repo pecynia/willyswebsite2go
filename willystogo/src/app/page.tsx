@@ -11,8 +11,8 @@ export default async function Home() {
         <Image
           src="/logo.png"
           alt="Logo"
-          width={100}
-          height={100}
+          width={200}
+          height={50}
           priority
         />
 

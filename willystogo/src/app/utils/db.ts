@@ -1,5 +1,5 @@
 import { MongoClient, ObjectId, ServerApiVersion } from 'mongodb'
-import { WriteResult } from '../../../typings'
+import { WriteResult, ThemeColors } from '../../../typings'
 // -------------------- DATABASE --------------------
 
 // MongoDB Atlas connection URI
@@ -47,6 +47,17 @@ export async function writeLatestEdit({ timestamp, user, edit }: WriteResult) {
     return result
 }
 
+// collection: dashboard
+export async function updateThemeColors({ primary, primaryLight, primaryDark, secondary, secondaryLight, secondaryDark, background }: ThemeColors) {
+    const db = await connectToDatabase()
+    const collection = db.collection('dashboard')
+    const result = await collection.updateOne(
+        { $set: { primary, primaryLight, primaryDark, secondary, secondaryLight, secondaryDark, background } },
+        { upsert: true }
+    )
+    return result
+}
+
 // ------------------- READING --------------------
 
 export async function getLatestEdit() {
@@ -55,3 +66,4 @@ export async function getLatestEdit() {
     const result = await collection.findOne({})
     return result
 }
+
