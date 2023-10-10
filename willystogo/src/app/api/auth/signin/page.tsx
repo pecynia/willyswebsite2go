@@ -8,6 +8,7 @@ import * as yup from 'yup'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { Button } from "@/app/components/ui/button"
+import { Input } from "@/app/components/ui/input"
 import { LogIn } from "lucide-react"
 
 let validationSchema = yup.object().shape({
@@ -55,7 +56,7 @@ const SignInPage: NextPage = () => {
                           <label htmlFor='password' className='block text-sm font-medium text-gray-700'>
                               Wachtwoord
                           </label>
-                          <input
+                          <Input
                               id='password'
                               type='password'
                               required

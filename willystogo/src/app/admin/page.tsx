@@ -1,9 +1,18 @@
 "use client"
 
+import { useState } from 'react';
 import { useSession } from 'next-auth/react'
+import { Button } from '../components/ui/button';
 
 const Profile = () => {
-    const { status, data: session } = useSession()
+    const { status, data: session } = useSession();
+    const [primaryHSL, setPrimaryHSL] = useState('');
+    const [secondaryHSL, setSecondaryHSL] = useState('');
+
+    const handleApplyColors = () => {
+        document.documentElement.style.setProperty('--primary', `${primaryHSL}`);
+        document.documentElement.style.setProperty('--secondary', `${secondaryHSL}`);
+    }
 
     return (
         <section className='flex justify-center py-5  min-h-screen bg-gray-100'>
@@ -19,6 +28,33 @@ const Profile = () => {
                     <p className='mt-4 text-gray-700 text-xl'>
                         {session?.user?.name}
                     </p>
+                </div>
+                <hr className='my-6 border-t border-gray-300'/>
+                <div>
+                    <h2 className='text-xl font-medium'>
+                        Customize Theme:
+                    </h2>
+                    <div className="my-4">
+                        <label className='mr-2'>Primary Color (HSL):</label>
+                        <input 
+                            value={primaryHSL}
+                            onChange={(e) => setPrimaryHSL(e.target.value)}
+                            placeholder="e.g. 222.2 47.4% 11.2%"
+                        />
+                    </div>
+                    <div className="my-4">
+                        <label className='mr-2'>Secondary Color (HSL):</label>
+                        <input 
+                            value={secondaryHSL}
+                            onChange={(e) => setSecondaryHSL(e.target.value)}
+                            placeholder="e.g. 222.2 47.4% 11.2%"
+                        />
+                    </div>
+                    <Button 
+                        className="mt-4"
+                        onClick={handleApplyColors} >
+                        Apply Colors
+                    </Button>
                 </div>
             </div>
         </section>
