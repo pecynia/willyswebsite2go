@@ -1,14 +1,13 @@
-"use client"
-
 import Image from 'next/image'
-import { useSession } from 'next-auth/react'
+import { getServerSession } from "next-auth"
+import { authOptions } from "@/lib/auth"
 import EditorComponent from '@/app/components/editor/EditorComponent'
 
 
 
 export default async function Home() {
 
-  // const { status, data: session } = useSession()
+  const session = await getServerSession(authOptions)
 
 
   return (
@@ -31,7 +30,7 @@ export default async function Home() {
         </p>
 
         <div className="mt-5 bg-white p-12 rounded-lg shadow-lg w-2/3">
-          <EditorComponent />
+          <EditorComponent editable={session ? true : false} />
         </div>
       </div>
     </main>

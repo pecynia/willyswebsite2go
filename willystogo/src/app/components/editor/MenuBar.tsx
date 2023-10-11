@@ -1,11 +1,10 @@
 
-import { useCurrentEditor, Editor } from '@tiptap/react'
+import { Editor } from '@tiptap/react'
 import { Button } from '@/app/components/ui/button'
 import { 
     Bold,
     Italic,
     Strikethrough,
-    Code2,
     RemoveFormatting,
     Pilcrow,
     SeparatorHorizontal,
@@ -18,11 +17,9 @@ import {
     Undo,
     Redo,
     List,
-    SquareCode,
     Eraser,
     Link,
     Anchor,
-    
  } from 'lucide-react'
 import { Separator } from '@/app/components/ui/separator'
 
@@ -71,7 +68,7 @@ const MenuBar = ({ editor }: { editor: Editor | null }) => {
             >
                 <Strikethrough className='w-4 h-4' />
             </Button>
-            <Button variant='ghost' size='sm'
+            {/* <Button variant='ghost' size='sm'
                 onClick={() => editor.chain().focus().toggleCode().run()}
                 disabled={
                 !editor.can()
@@ -83,7 +80,7 @@ const MenuBar = ({ editor }: { editor: Editor | null }) => {
                 className={editor.isActive('code') ? 'bg-secondary' : ''}
             >
                 <Code2 className='w-4 h-4' />
-            </Button>
+            </Button> */}
         </div>
             <Separator orientation='vertical' />
         <div className='flex'>
@@ -97,7 +94,7 @@ const MenuBar = ({ editor }: { editor: Editor | null }) => {
             <Button variant='ghost' size="sm"
                 onClick={() => editor.chain().focus().setParagraph().run()}
                 className={editor.isActive('paragraph') ? 'bg-secondary' : ''}
-                >
+            >
                 <Pilcrow className='w-4 h-4' />
             </Button>
             <Button variant='ghost' size="sm"
@@ -124,18 +121,18 @@ const MenuBar = ({ editor }: { editor: Editor | null }) => {
                 >
                 <List className='w-5 h-5' />
             </Button>
-                <Button variant='ghost' size="sm"
+            <Button variant='ghost' size="sm"
                 onClick={() => editor.chain().focus().toggleOrderedList().run()}
                 className={editor.isActive('orderedList') ? 'bg-secondary' : ''}
             >
                 <ListOrdered className='w-5 h-5' />
             </Button>
-                <Button variant='ghost' size="sm"
+            {/* <Button variant='ghost' size="sm"
                 onClick={() => editor.chain().focus().toggleCodeBlock().run()}
                 className={editor.isActive('codeBlock') ? 'bg-secondary' : ''}
             >
                 <SquareCode className='w-5 h-5' />
-            </Button>
+            </Button> */}
             <Button variant='ghost' size="sm"
                 onClick={() => editor.chain().focus().toggleBlockquote().run()}
                 className={editor.isActive('blockquote') ? 'bg-secondary' : ''}
