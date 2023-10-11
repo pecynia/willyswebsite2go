@@ -1,4 +1,5 @@
-import { useCurrentEditor } from '@tiptap/react'
+
+import { useCurrentEditor, Editor } from '@tiptap/react'
 import { Button } from '@/app/components/ui/button'
 import { 
     Bold,
@@ -6,16 +7,27 @@ import {
     Strikethrough,
     Code2,
     RemoveFormatting,
+    Pilcrow,
+    SeparatorHorizontal,
+    Space,
+    Quote,
+    Heading1,
+    Heading2,
+    Heading3,
+    ListOrdered,
+    Undo,
+    Redo,
+    List,
+    SquareCode,
+    Eraser,
+    Link,
+    Anchor,
+    
  } from 'lucide-react'
 import { Separator } from '@/app/components/ui/separator'
 
-const MenuBar = () => {
-    const { editor } = useCurrentEditor()
-  
-    if (!editor) {
-      return null
-    }
-  
+const MenuBar = ({ editor }: { editor: Editor | null }) => {
+    if (!editor) return null
     return (
       <div className= 'flex h-5 items-center space-x-4 text-sm mb-4'>
         <div className='flex'>
@@ -79,82 +91,64 @@ const MenuBar = () => {
                 onClick={() => editor.chain().focus().unsetAllMarks().run()}>
                 <RemoveFormatting className='w-4 h-4' />
             </Button>
-            <Button variant='ghost'  onClick={() => editor.chain().focus().clearNodes().run()}>
-                clear nodes
+            <Button variant='ghost' size="sm" onClick={() => editor.chain().focus().clearNodes().run()}>
+                <Eraser className='w-4 h-4' />
             </Button>
-            <Button variant='ghost' 
+            <Button variant='ghost' size="sm"
                 onClick={() => editor.chain().focus().setParagraph().run()}
                 className={editor.isActive('paragraph') ? 'bg-secondary' : ''}
                 >
-                paragraph
+                <Pilcrow className='w-4 h-4' />
             </Button>
-            <Button variant='ghost' 
+            <Button variant='ghost' size="sm"
                 onClick={() => editor.chain().focus().toggleHeading({ level: 1 }).run()}
                 className={editor.isActive('heading', { level: 1 }) ? 'bg-secondary' : ''}
-                >
-                h1
+            >
+                <Heading1 className='w-4 h-4' />
             </Button>
-            <Button variant='ghost' 
+            <Button variant='ghost' size="sm"
                 onClick={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}
                 className={editor.isActive('heading', { level: 2 }) ? 'bg-secondary' : ''}
-                >
-                h2
+            >
+                <Heading2 className='w-4 h-4' />
             </Button>
-            <Button variant='ghost' 
+            <Button variant='ghost'  size="sm"
                 onClick={() => editor.chain().focus().toggleHeading({ level: 3 }).run()}
                 className={editor.isActive('heading', { level: 3 }) ? 'bg-secondary' : ''}
-                >
-                h3
+            >
+                <Heading3 className='w-4 h-4' />    
             </Button>
-            <Button variant='ghost' 
-                onClick={() => editor.chain().focus().toggleHeading({ level: 4 }).run()}
-                className={editor.isActive('heading', { level: 4 }) ? 'bg-secondary' : ''}
-                >
-                h4
-            </Button>
-            <Button variant='ghost' 
-                onClick={() => editor.chain().focus().toggleHeading({ level: 5 }).run()}
-                className={editor.isActive('heading', { level: 5 }) ? 'bg-secondary' : ''}
-                >
-                h5
-            </Button>
-            <Button variant='ghost' 
-                onClick={() => editor.chain().focus().toggleHeading({ level: 6 }).run()}
-                className={editor.isActive('heading', { level: 6 }) ? 'bg-secondary' : ''}
-                >
-                h6
-            </Button>
-            <Button variant='ghost' 
+            <Button variant='ghost' size="sm"
                 onClick={() => editor.chain().focus().toggleBulletList().run()}
                 className={editor.isActive('bulletList') ? 'bg-secondary' : ''}
                 >
-                bullet list
+                <List className='w-5 h-5' />
             </Button>
-                <Button variant='ghost' 
+                <Button variant='ghost' size="sm"
                 onClick={() => editor.chain().focus().toggleOrderedList().run()}
                 className={editor.isActive('orderedList') ? 'bg-secondary' : ''}
-                >
-                ordered list
+            >
+                <ListOrdered className='w-5 h-5' />
             </Button>
-                <Button variant='ghost' 
+                <Button variant='ghost' size="sm"
                 onClick={() => editor.chain().focus().toggleCodeBlock().run()}
                 className={editor.isActive('codeBlock') ? 'bg-secondary' : ''}
-                >
-                code block
+            >
+                <SquareCode className='w-5 h-5' />
             </Button>
-            <Button variant='ghost' 
+            <Button variant='ghost' size="sm"
                 onClick={() => editor.chain().focus().toggleBlockquote().run()}
                 className={editor.isActive('blockquote') ? 'bg-secondary' : ''}
-                >
-                blockquote
+            >
+                <Quote className='w-3 h-3' />
             </Button>
-            <Button variant='ghost'  onClick={() => editor.chain().focus().setHorizontalRule().run()}>
-                horizontal rule
+            <Button variant='ghost' size="sm" onClick={() => editor.chain().focus().setHorizontalRule().run()}>
+                <SeparatorHorizontal className='w-4 h-4' />
             </Button >
-            <Button variant='ghost'  onClick={() => editor.chain().focus().setHardBreak().run()}>
-                hard break
+            <Button variant='ghost' size="sm" onClick={() => editor.chain().focus().setHardBreak().run()}>
+                <Space className='w-4 h-4' />
             </Button>
-            <Button variant='ghost' 
+            <Button variant='ghost' size="sm"
                 onClick={() => editor.chain().focus().undo().run()}
                 disabled={
                     !editor.can()
@@ -163,10 +157,10 @@ const MenuBar = () => {
                     .undo()
                     .run()
                 }
-                >
-                undo
+            >
+                <Undo className='w-6 h-6' />
             </Button>
-            <Button variant='ghost' 
+            <Button variant='ghost' size="sm"
                 onClick={() => editor.chain().focus().redo().run()}
                 disabled={
                     !editor.can()
@@ -175,8 +169,8 @@ const MenuBar = () => {
                     .redo()
                     .run()
                 }
-                >
-                redo
+            >
+                <Redo className='w-6 h-6' />
             </Button>
         </div>
       </div>
