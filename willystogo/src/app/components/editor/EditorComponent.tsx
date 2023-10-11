@@ -1,17 +1,24 @@
-"use client"
-
 // EditorComponent.tsx
 import React from 'react'
-import { EditorProvider, useCurrentEditor } from '@tiptap/react'
+import { EditorProvider } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
   
 import { Color } from '@tiptap/extension-color'
 import ListItem from '@tiptap/extension-list-item'
+import Document from '@tiptap/extension-document'
+import Paragraph from '@tiptap/extension-paragraph'
+import Text from '@tiptap/extension-text'
 import TextStyle from '@tiptap/extension-text-style'
+
 import MenuBar from '@/app/components/editor/MenuBar'
 
 const extensions = [
-  StarterKit
+  Color.configure({ types: [TextStyle.name, ListItem.name] }),
+  TextStyle,
+  StarterKit,
+  Document,
+  Paragraph,
+  Text,
 ]
 
 const content = `
