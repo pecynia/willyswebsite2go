@@ -29,7 +29,7 @@ export default async function Home() {
           Indonesische catering in Ede en omstreken
         </p>
 
-        <div className="mt-5 bg-white p-12 rounded-lg shadow-lg w-2/3">
+        <div className="mt-5">
           <EditorComponent editable={session ? true : false} />
         </div>
       </div>
