@@ -1,14 +1,11 @@
 import Image from 'next/image'
 import { getServerSession } from "next-auth"
 import { authOptions } from "@/lib/auth"
-import EditorComponent from '@/app/components/editor/EditorComponent'
-
-
+import EditorWrapper from '@/app/components/editor/EditorWrapper'
 
 export default async function Home() {
 
   const session = await getServerSession(authOptions)
-
 
   return (
     <main className="flex flex-col items-center justify-center p-2">
@@ -30,7 +27,7 @@ export default async function Home() {
         </p>
 
         <div className="mt-5">
-          <EditorComponent editable={session ? true : false} />
+          <EditorWrapper />
         </div>
       </div>
     </main>

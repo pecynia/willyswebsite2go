@@ -24,6 +24,7 @@
     "@tiptap/extension-dropcursor": "^2.1.12",
     "@tiptap/extension-focus": "^2.1.12",
     "@tiptap/extension-placeholder": "^2.1.12",
+    "@tiptap/html": "^2.1.12",
     "@tiptap/pm": "^2.1.11",
     "@tiptap/react": "^2.1.11",
     "@tiptap/starter-kit": "^2.1.11",

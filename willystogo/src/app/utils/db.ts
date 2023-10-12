@@ -1,5 +1,6 @@
 import { MongoClient, ObjectId, ServerApiVersion } from 'mongodb'
 import { WriteResult, ThemeColors } from '../../../typings'
+import { JSONContent } from '@tiptap/react'
 // -------------------- DATABASE --------------------
 
 // MongoDB Atlas connection URI
@@ -71,6 +72,34 @@ export async function updateThemeColors({ background, foreground, card, cardFore
     )
     return result
 }
+
+// collection: content
+// Assuming documentId is of type string. Modify as per your needs.
+export async function saveParagraphJson(documentId: string, paragraphJson: JSONContent) {
+    const db = await connectToDatabase()
+    const collection = db.collection('content')
+
+    // Using documentId as the filter criteria to match the _id field of the desired document
+    const filter = { _id: documentId }
+
+    const result = await collection.updateOne(
+        filter,
+        { $set: { paragraphJson: paragraphJson } },
+        { upsert: true }
+    )
+
+    return result
+}
+
+// collection content
+// Get document given id
+export async function getParagraphJson(documentId: string) {
+    const db = await connectToDatabase()
+    const collection = db.collection('content')
+    const result = await collection.findOne({ _id: documentId })
+    return result
+}
+
 
 // ------------------- READING --------------------
 
