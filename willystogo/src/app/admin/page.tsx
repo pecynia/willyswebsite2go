@@ -4,9 +4,17 @@ import { useState } from 'react';
 import { useSession } from 'next-auth/react'
 import { Button } from '@/app/components/ui/button';
 import ThemeColorDialog from '@/app/components/themeColors';
+import { ReloadIcon } from "@radix-ui/react-icons"
 
 const Profile = () => {
     const { status, data: session } = useSession()
+
+
+    if (status === 'loading') {
+        return <div className="pt-40 flex items-center justify-center">
+            <ReloadIcon className="w-6 h-6 animate-spin" />
+        </div>
+    }
 
     return (
         <section className='flex justify-center py-5  min-h-screen bg-gray-100'>
@@ -20,7 +28,7 @@ const Profile = () => {
                         You are logged in as:
                     </h2>
                     <p className='mt-4 text-gray-700 text-xl'>
-                        {status === 'loading' ? 'Loading...' : session?.user?.name}
+                        {session?.user?.name}
                     </p>
                 </div>
                 <hr className='my-6 border-t border-gray-300'/>

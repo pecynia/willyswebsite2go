@@ -75,6 +75,7 @@
   }
 }
 
+/* Editable content */
 .tiptap {
   @apply p-4;
 
