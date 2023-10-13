@@ -94,7 +94,7 @@ function ThemeColorDialog({ colorName }: { colorName: keyof ThemeColors }) {
                                 placeholder={tryingColor}
                                 onChange={(e) => {
                                     handleColorChange(e)
-                                    onChange(e)  // manually triggering the onChange from register
+                                    onChange(e)
                                 }}
                                 ref={ref}
                                 {...rest}

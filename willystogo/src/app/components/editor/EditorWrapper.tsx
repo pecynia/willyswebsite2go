@@ -12,8 +12,8 @@ import TextStyle from '@tiptap/extension-text-style'
 
 
 const EditorWrapper = () => {
-    const { status, data: session } = useSession();
-    const [fetchedContent, setFetchedContent] = useState('');
+    const { status, data: session } = useSession()
+    const [fetchedContent, setFetchedContent] = useState('')
 
     useEffect(() => {
         const fetchData = async () => {
@@ -22,20 +22,20 @@ const EditorWrapper = () => {
                 headers: {
                   'Content-Type': 'application/json',
                 },
-            });
-            const json = await contentFromDb.json();
+            })
+            const json = await contentFromDb.json()
             if (json && json.paragraphJson) {
                 const contentAsHtml = generateHTML(json.paragraphJson, [
                     StarterKit,
                     TextStyle,
                     Color,
-                ]);
-                setFetchedContent(contentAsHtml);
+                ])
+                setFetchedContent(contentAsHtml)
             }
-        };
+        }
 
-        fetchData();
-    }, []);
+        fetchData()
+    }, [])
 
     // Wait until the session is loaded (not in "loading" status)
     if (status === "loading") {
@@ -48,8 +48,8 @@ const EditorWrapper = () => {
         <div className="">
             <EditorComponent editable={session ? true : false} initialContent={fetchedContent} />
         </div>
-    );
+    )
 }
 
-export default EditorWrapper;
+export default EditorWrapper
 
