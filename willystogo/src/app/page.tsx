@@ -26,7 +26,7 @@ export default async function Home() {
           Indonesische catering in Ede en omstreken
         </p>
 
-        <div className="mt-5">
+        <div className="mt-5 w-1/3">
           <EditorWrapper />
         </div>
       </div>
