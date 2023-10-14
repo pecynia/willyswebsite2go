@@ -22,13 +22,13 @@ const Header = () => {
       label: "Home",
     },
     {
-      href: "/test",
-      label: "Test",
+      href: "/satebar",
+      label: "Satebar",
     },
   ]
 
   return (
-    <header className='sm:flex sm:justify-between py-3 px-4 border-b'>
+    <header className='sm:flex sm:justify-between py-3 px-4 border-b bg-primary font-youngSerif'>
       <Container>
         <div className='relative px-4 sm:px-6 lg:px-8 flex h-16 items-center justify-between w-full'>
           <div className='flex items-center'>
@@ -52,7 +52,7 @@ const Header = () => {
                     <Link 
                       key={i}
                       href={route.href}
-                      className='block px-2 py-1 text-lg'
+                      className='block px-4 py-1 text-3xl font-youngSerif'
                     >
                       {route.label}
                     </Link>
@@ -60,27 +60,29 @@ const Header = () => {
                 </nav>
               </SheetContent>
             </Sheet>
-          <nav className='mx-6 items-center space-x-4 lg:space-x-6 hidden md:block'>
-            {routes.map((route, i) => (
-              <Button variant="ghost">
-                <Link 
-                  key={i}
-                  href={route.href}
-                  className='text-sm font-medium transition-colors'
-                >
-                  <span className='textWithAnimatedUnderline'>
-                    {route.label}
-                  </span>
-                </Link>
-              </Button>
-            ))}
-          </nav>
-          
+          <div className=''>
+            <nav className='mx-6 items-center space-x-4 lg:space-x-6 hidden md:block'>
+              {routes.map((route, i) => (
+                <Button key={i}>
+                  <Link 
+                    key={i}
+                    href={route.href}
+                    className='transition-colors text-base'
+                  >
+                    <span className='textWithAnimatedUnderline'>
+                      {route.label}
+                    </span>
+                  </Link>
+                </Button>
+              ))}
+            </nav>
+            
             {session && (
               <div className='flex items-center'>
                 <AdminModeWithLogout />
               </div>
             )}
+          </div>
         </div>
       </Container>
     </header>

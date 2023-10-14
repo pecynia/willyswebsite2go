@@ -17,7 +17,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 210 50% 35%; /* Slightly muted green */
 
-    --primary: 134, 38%, 49%; /* A deep green representing forests */
+    --primary: 22 100% 13%;
     --primary-foreground: 210 40% 98%; /* A contrast to the deep green */
 
     --secondary: 34, 32%, 82%; /* Beige color */
@@ -176,19 +176,4 @@ div[contenteditable="true"]:focus {
 /* Trigger animation on button hover */
 button:hover .textWithAnimatedUnderline::before {
   width: 100%;
-}
-
-.parallax {
-  background-image: url('/imgs/landing-cta.png');
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 50vh;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  offset: 200px;
-
 }

@@ -63,6 +63,7 @@ function ThemeColorDialog({ colorName }: { colorName: keyof ThemeColors }) {
         if (hsl) {
             document.documentElement.style.setProperty(`--${colorName}`, `${hsl[0]} ${hsl[1]}% ${hsl[2]}%`)
         }
+        console.log(hsl)
     }
 
     return (
