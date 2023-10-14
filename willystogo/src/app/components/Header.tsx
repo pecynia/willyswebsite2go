@@ -32,7 +32,7 @@ const Header = () => {
       <Container>
         <div className='relative px-4 sm:px-6 lg:px-8 flex h-16 items-center justify-between w-full'>
           <div className='flex items-center'>
-            <Link href='/'>
+            {/* <Link href='/'>
                 <Image 
                     src='/logo.png' 
                     alt='Logo'
@@ -40,7 +40,8 @@ const Header = () => {
                     height={200}
                     priority
                 />
-            </Link>
+            </Link> */}
+            <h1 className='text-3xl font-youngSerif text-white'>YanWilly</h1>
           </div>
           <Sheet>
               <SheetTrigger>
