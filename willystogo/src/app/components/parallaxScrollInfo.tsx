@@ -47,8 +47,8 @@ const ParallaxScrollInfo = () => {
   }, []);
 
   return (
-    <main className="h-[150vh] overflow-hidden bg-cover bg-center bg-[url('/imgs/batik_light_1.png')]">
-      <div ref={gallery} className="h-[175vh] overflow-hidden bg-cover bg-center  bg-gradient-to-r from-primary to-transparent">
+    <main className="h-[150vh] overflow-hidden bg-cover bg-center bg-primary">
+      <div ref={gallery} className="h-[175vh] overflow-hidden bg-cover bg-center">
         <div className="relative top-[-12.5vh] h-[200vh] flex gap-[2vw] p-[2vw]">
           <Column images={[images[0], images[1], images[2]]} y={y} positionClass="top-[-40%]" />
           <Column images={[images[3], images[4], images[5]]} y={y2} positionClass="top-[-90%]" />
