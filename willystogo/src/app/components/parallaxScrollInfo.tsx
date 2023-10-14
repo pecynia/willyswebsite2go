@@ -20,10 +20,13 @@ interface ColumnProps {
     positionClass: string;
 }
 
+
 const ParallaxScrollInfo = () => {
   
-  const gallery = useRef(null);
+  const gallery = useRef<HTMLDivElement | null>(null);
+  const textboxRef = useRef(null);
   const [dimension, setDimension] = useState({ width: 0, height: 0 });
+  const [textboxY, setTextboxY] = useState(0);  // New state to manage textbox position
 
   const { scrollYProgress } = useScroll({
     target: gallery,
@@ -33,6 +36,26 @@ const ParallaxScrollInfo = () => {
   const { height } = dimension;
   const y = useTransform(scrollYProgress, [0, 1], [0, height * 1.5]);
   const y2 = useTransform(scrollYProgress, [0, 1], [0, height * 3.5]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (gallery.current) {
+        const galleryTop = gallery.current.getBoundingClientRect().top;
+        const galleryHeight = gallery.current.getBoundingClientRect().height;
+        const textboxHeight = window.innerHeight;
+
+        if (galleryTop <= 0 && galleryTop > -galleryHeight + textboxHeight) {
+          setTextboxY(-galleryTop);
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   useEffect(() => {
     const resize = () => {
@@ -49,10 +72,17 @@ const ParallaxScrollInfo = () => {
 
   return (
     <main className="h-[90vh] sm:h-[125vh] lg:h-[170vh] overflow-hidden bg-cover bg-center bg-primary">
-      <div ref={gallery} className="h-[175vh] overflow-hidden bg-cover bg-center">
+      <div ref={gallery} className="h-[175vh] overflow-hidden bg-cover bg-center relative">
         <div className="relative -top-12 h-[200vh] flex space-x-4 px-4">
           <Column images={[images[0], images[1], images[2]]} y={y} positionClass="top-[-40%]" />
           <Column images={[images[3], images[4], images[5]]} y={y2} positionClass="top-[-90%] sm:block hidden" />
+        </div>
+        <div 
+          ref={textboxRef} 
+          className="absolute right-0 top-0 w-2/4 h-screen bg-white p-4"
+          style={{ transform: `translateY(${textboxY}px)` }}
+        >
+          This is the stationary textbox.
         </div>
       </div>
     </main>
