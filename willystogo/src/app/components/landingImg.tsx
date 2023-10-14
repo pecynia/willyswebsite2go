@@ -16,7 +16,7 @@ const LandingImg = () => {
   });
 
   const { height } = dimension;
-  const y = useTransform(scrollYProgress, [0, 1], [-height * 0.25, 1]);
+  const y = useTransform(scrollYProgress, [0, 1], [-height * 0.35, 1]);
 
   useEffect(() => {
     const resize = () => {
@@ -33,10 +33,10 @@ const LandingImg = () => {
 
   return (
     <div className="flex justify-end space-x-4 space-y-10 pb-10 relative overflow-hidden" ref={ref}>
-      <motion.div style={{ y }} className={`absolute z-[-1] left-0 w-full h-full top-[27%]`}>
+      <motion.div style={{ y }} className={`absolute z-[-1] left-0 w-full h-full top-[30%]`}>
         <Image 
           className="object-cover object-center -mt-2 transform scale-125"
-          src="/imgs/landing_cta.png"
+          src="/imgs/cocktails.jpg"
           alt="Willy's2Go Indonesische Catering"
           priority
           fill

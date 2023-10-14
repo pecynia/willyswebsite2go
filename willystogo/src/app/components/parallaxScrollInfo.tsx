@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useTransform, useScroll, motion } from 'framer-motion';
 import Image from 'next/image';
+import React from 'react';
 
 const images = [
   "sates.jpg",
@@ -72,5 +73,8 @@ const Column: React.FC<ColumnProps> = ({ images, y, positionClass }) => {
       </motion.div>
     );
 };
+
+
+
 
 export default ParallaxScrollInfo;
