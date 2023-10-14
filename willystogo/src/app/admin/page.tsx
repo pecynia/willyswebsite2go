@@ -5,15 +5,14 @@ import { useSession } from 'next-auth/react'
 import { Button } from '@/app/components/ui/button';
 import ThemeColorDialog from '@/app/components/themeColors';
 import { ReloadIcon } from "@radix-ui/react-icons"
+import Loading from './loading';
 
 const Profile = () => {
     const { status, data: session } = useSession()
 
 
     if (status === 'loading') {
-        return <div className="pt-40 flex items-center justify-center">
-            <ReloadIcon className="w-6 h-6 animate-spin" />
-        </div>
+        return <Loading />
     }
 
     return (

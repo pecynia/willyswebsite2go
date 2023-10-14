@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -75,6 +79,8 @@
   }
 }
 
+
+
 /* Editable content */
 .tiptap {
   @apply p-4;
@@ -147,4 +153,42 @@ div[contenteditable="true"] {
 
 div[contenteditable="true"]:focus {
   @apply ring-2 ring-gray-300 rounded-xl;
+}
+
+/* Buttons */
+.textWithAnimatedUnderline {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.textWithAnimatedUnderline::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: currentColor;
+  transition: width 0.3s ease;
+}
+
+/* Trigger animation on button hover */
+button:hover .textWithAnimatedUnderline::before {
+  width: 100%;
+}
+
+.parallax {
+  background-image: url('/imgs/landing-cta.png');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 50vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  offset: 200px;
+
 }

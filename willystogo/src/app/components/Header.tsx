@@ -25,10 +25,6 @@ const Header = () => {
       href: "/test",
       label: "Test",
     },
-    {
-      href: "/admin",
-      label: "Admin",
-    },
   ]
 
   return (
@@ -52,9 +48,9 @@ const Header = () => {
               </SheetTrigger>
               <SheetContent side="right" className='w-[300px] sm:w-[400px]'>
                 <nav className='flex flex-col gap-4'>
-                  {routes.map((route, index) => (
+                  {routes.map((route, i) => (
                     <Link 
-                      key={index}
+                      key={i}
                       href={route.href}
                       className='block px-2 py-1 text-lg'
                     >
@@ -65,14 +61,16 @@ const Header = () => {
               </SheetContent>
             </Sheet>
           <nav className='mx-6 items-center space-x-4 lg:space-x-6 hidden md:block'>
-            {routes.map((route, index) => (
-              <Button asChild variant="ghost">
+            {routes.map((route, i) => (
+              <Button variant="ghost">
                 <Link 
-                  key={index}
+                  key={i}
                   href={route.href}
                   className='text-sm font-medium transition-colors'
                 >
-                  {route.label}
+                  <span className='textWithAnimatedUnderline'>
+                    {route.label}
+                  </span>
                 </Link>
               </Button>
             ))}

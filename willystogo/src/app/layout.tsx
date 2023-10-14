@@ -7,7 +7,9 @@ import { Inter } from 'next/font/google'
 import Header from "@/app/components/Header"
 import Footer from "@/app/components/Footer"
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ 
+  subsets: ['latin']
+})
 
 export const metadata: Metadata = {
   title: "Willy's To Go",
@@ -24,7 +26,7 @@ export default function RootLayout({
       lang='nl'
       className={`${inter.className} h-full scroll-smooth antialiased`}
     >
-      <body className='flex min-h-full flex-col'>
+      <body className='flex min-h-full flex-col font-raleway'>
         <NextAuthProvider>
           <Header />
           <main className='flex-grow'>{children}</main>
