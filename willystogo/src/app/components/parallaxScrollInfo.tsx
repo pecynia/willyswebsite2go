@@ -1,7 +1,7 @@
-'use client';
+"use client"
+
 import { useEffect, useRef, useState } from 'react';
 import { useTransform, useScroll, motion } from 'framer-motion';
-import styles from './page.module.scss';
 import Image from 'next/image';
 
 const images = [
@@ -14,8 +14,9 @@ const images = [
 ]
 
 interface ColumnProps {
-    images: string[]
-    y: any
+    images: string[];
+    y: any;
+    positionClass: string;
 }
 
 const ParallaxScrollInfo = () => {
@@ -30,7 +31,7 @@ const ParallaxScrollInfo = () => {
 
   const { height } = dimension;
   const y = useTransform(scrollYProgress, [0, 1], [0, height * 1.5]);
-  const y2 = useTransform(scrollYProgress, [0, 1], [0, height * 2]);
+  const y2 = useTransform(scrollYProgress, [0, 1], [0, height * 3.5]);
 
   useEffect(() => {
     const resize = () => {
@@ -46,32 +47,32 @@ const ParallaxScrollInfo = () => {
   }, []);
 
   return (
-    <main className={styles.main}>
-      <div className={styles.spacer}></div>
-      <div ref={gallery} className={styles.gallery}>
-        <div className={styles.galleryWrapper}>
-          <Column images={[images[0], images[1], images[2]]} y={y} />
-          <Column images={[images[3], images[4], images[5]]} y={y2} />
+    <main className="h-[150vh] overflow-hidden bg-cover bg-center">
+      <div className="h-[3vh] bg-primary"></div>
+      <div ref={gallery} className="h-[175vh] overflow-hidden bg-cover bg-center">
+        <div className="relative top-[-12.5vh] h-[200vh] flex gap-[2vw] p-[2vw]">
+          <Column images={[images[0], images[1], images[2]]} y={y} positionClass="top-[-40%]" />
+          <Column images={[images[3], images[4], images[5]]} y={y2} positionClass="top-[-90%]" />
         </div>
       </div>
-      <div className={styles.spacer}></div>
+      <div className="h-[3vh] bg-primary"></div>
     </main>
   );
 };
 
-const Column: React.FC<ColumnProps> = ({ images, y }) => {
+const Column: React.FC<ColumnProps> = ({ images, y, positionClass }) => {
     return (
-    <motion.div 
-      className={styles.column}
-      style={{ y }}
-    >
-      {images.map((src, i) => (
-        <div key={i} className={styles.imageContainer}>
-          <Image src={`/imgs/${src}`} alt="image" fill />
-        </div>
-      ))}
-    </motion.div>
-  );
+      <motion.div 
+        className={`relative h-full w-1/4 min-w-[250px] flex flex-col gap-[2vw] whitespace-nowrap ${positionClass}`}
+        style={{ y }}
+      >
+        {images.map((src, i) => (
+          <div key={i} className=" h-[33%] w-full relative rounded-[1vw] overflow-hidden">
+            <Image src={`/imgs/${src}`} alt="image" fill />
+          </div>
+        ))}
+      </motion.div>
+    );
 };
 
 export default ParallaxScrollInfo;
