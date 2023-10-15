@@ -71,7 +71,7 @@ const ParallaxScrollInfo = () => {
   }, []);
 
   return (
-    <main className="h-[90vh] sm:h-[125vh] lg:h-[170vh] overflow-hidden bg-cover bg-center bg-primary">
+    <main className="h-[90vh] sm:h-[125vh] lg:h-[200vh] overflow-hidden bg-cover bg-center bg-primary">
       <div ref={gallery} className="h-[175vh] overflow-hidden bg-cover bg-center relative">
         <div className="relative -top-12 h-[200vh] flex space-x-4 px-4">
           <Column images={[images[0], images[1], images[2]]} y={y} positionClass="top-[-40%]" />
@@ -79,7 +79,7 @@ const ParallaxScrollInfo = () => {
         </div>
         <div 
           ref={textboxRef} 
-          className="absolute right-0 top-0 mr-12 rounded-3xl my-4 w-2/5 h-1/2 mb-12 bg-white p-4 hidden lg:block"
+          className="absolute right-0 top-0 mr-12 rounded-3xl my-4 w-2/5 h-1/2 bg-white p-4 hidden lg:block"
           style={{ transform: `translateY(${textboxY}px)` }}
         >
           <div className='p-8'>
