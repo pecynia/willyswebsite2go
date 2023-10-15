@@ -26,7 +26,7 @@ const ParallaxScrollInfo = () => {
   const gallery = useRef<HTMLDivElement | null>(null);
   const textboxRef = useRef(null);
   const [dimension, setDimension] = useState({ width: 0, height: 0 });
-  const [textboxY, setTextboxY] = useState(0);  // New state to manage textbox position
+  const [textboxY, setTextboxY] = useState(0); 
 
   const { scrollYProgress } = useScroll({
     target: gallery,
@@ -79,10 +79,17 @@ const ParallaxScrollInfo = () => {
         </div>
         <div 
           ref={textboxRef} 
-          className="absolute right-0 top-0 w-2/4 h-screen bg-white p-4"
+          className="absolute right-0 top-0 mr-12 rounded-3xl my-4 w-2/5 h-1/2 mb-12 bg-white p-4 hidden lg:block"
           style={{ transform: `translateY(${textboxY}px)` }}
         >
-          This is the stationary textbox.
+          <div className='p-8'>
+            <h1 className='text-3xl font-youngSerif text-black'>YanWilly</h1>
+            <p className='text-lg text-black'>Lorem ipsum
+            dolor sit amet consectetur adipisicing elit.
+            Quisquam, quia. Quisquam, quia. Quisquam, quia.
+            Quisquam, quia. Quisquam, quia. Quisquam, quia.
+            </p>
+          </div>
         </div>
       </div>
     </main>
