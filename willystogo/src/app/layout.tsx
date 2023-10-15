@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html
       lang='nl'
-      className={`${inter.className} h-full scroll-smooth antialiased`}
+      className={`${inter.className} h-full`}
     >
       <body className='flex min-h-full flex-col font-raleway'>
         <NextAuthProvider>

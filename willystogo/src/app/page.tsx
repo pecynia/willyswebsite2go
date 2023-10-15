@@ -7,7 +7,7 @@ import ParallaxScrollInfo from '@/app/components/parallaxScrollInfo'
 
 export default function Home() {
   return (
-    <div className=''>
+    <div className='scroll-smooth antialiased'>
       <LandingImg />
 
       <div className='h-screen bg-white flex justify-center items-center'>
