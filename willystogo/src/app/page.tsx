@@ -10,12 +10,12 @@ export default function Home() {
     <div className=''>
       <LandingImg />
 
-      <div className='h-screen bg-primary flex justify-center items-center'>
+      <div className='h-screen bg-white flex justify-center items-center'>
         hoi
       </div>
 
       <ParallaxScrollInfo />
-      <div className='h-screen bg-primary flex justify-center items-center'>
+      <div className='h-screen bg-white flex justify-center items-center'>
         hoi
       </div>
     </div>
