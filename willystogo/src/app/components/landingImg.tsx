@@ -19,7 +19,7 @@ const LandingImg = () => {
   });
 
   const { height } = dimension;
-  const y = useTransform(scrollYProgress, [0, 1], [height, 1]);
+  const y = useTransform(scrollYProgress, [0, 1], [height * 0.5, 1]);
 
   useEffect(() => {
     const resize = () => {
@@ -36,7 +36,7 @@ const LandingImg = () => {
 
   return (
     <div className="flex justify-start space-x-4 space-y-10 overflow-hidden" ref={ref}>
-      <motion.div style={{ y }} className={`absolute z-[-1] left-0 w-full h-full top-[-30%]`}>
+      <motion.div style={{ y }} className={`absolute z-[-1] left-0 w-full h-full top-[-10%]`}>
         <Image 
           className="object-cover object-center -mt-2"
           src="/imgs/cocktails.jpg"
