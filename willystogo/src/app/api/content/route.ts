@@ -1,5 +1,5 @@
 import { getParagraphJson } from '@/app/utils/db';
-import { MongoClient, Db } from 'mongodb';
+import { MongoClient, ServerApiVersion, Db } from 'mongodb'
 import { NextResponse } from 'next/server';
 
 const uri: string | undefined = process.env.MONGODB_URI;
@@ -7,7 +7,7 @@ if (!uri) throw new Error("The MONGODB_URI environment variable must be defined.
 
 const client = new MongoClient(uri, {
     serverApi: {
-        version: '1',
+        version: ServerApiVersion.v1,
         strict: true,
         deprecationErrors: true,
     },
