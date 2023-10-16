@@ -1,5 +1,6 @@
 import LandingImg from '@/app/components/landingImg';
 import ParallaxScrollInfo from '@/app/components/parallaxScrollInfo';
+import EditorWrapper from '@/app/components/editor/EditorWrapper';
 
 export default function Home() {
   return (
@@ -17,7 +18,7 @@ export default function Home() {
       </div>
 
       <div className='h-screen bg-secondary flex justify-center items-center'>
-        hoi
+        <EditorWrapper documentId="test"/>
       </div>
     </div>
   );

@@ -1,14 +1,19 @@
-
-import { NextResponse } from "next/server"
-import { getParagraphJson } from "@/app/utils/db"
+import { NextResponse } from "next/server";
+import { getParagraphJson } from "@/app/utils/db";
 
 // Get a paragraph 
 export async function GET(request: Request) {
-    const result = await getParagraphJson("someUniqueId")
+    const documentId = request.headers.get("Document-ID");
 
-    console.log("Get request:", result)
+    if (!documentId) {
+        return NextResponse.json({ error: "Document-ID header is missing." }, { status: 400 });
+    }
+
+    const result = await getParagraphJson(documentId);
+
+    console.log("Get request:", result);
 
     return new Response(JSON.stringify(result), {
         headers: { "Content-Type": "application/json" },
-    })
+    });
 }

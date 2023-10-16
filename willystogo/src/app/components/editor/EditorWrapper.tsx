@@ -11,7 +11,7 @@ import { Color } from '@tiptap/extension-color'
 import TextStyle from '@tiptap/extension-text-style'
 
 
-const EditorWrapper = () => {
+const EditorWrapper = ({documentId}: {documentId: string}) => {
     const { status, data: session } = useSession()
     const [fetchedContent, setFetchedContent] = useState('')
 
@@ -20,7 +20,8 @@ const EditorWrapper = () => {
             const contentFromDb = await fetch('api/content', {
                 method: 'GET',
                 headers: {
-                  'Content-Type': 'application/json',
+                    'Content-Type': 'application/json',
+                    'Document-ID': documentId,
                 },
             })
             const json = await contentFromDb.json()
@@ -46,7 +47,7 @@ const EditorWrapper = () => {
 
     return (
         <div className="">
-            <EditorComponent editable={session ? true : false} initialContent={fetchedContent} />
+            <EditorComponent documentId={documentId} editable={session ? true : false} initialContent={fetchedContent} />
         </div>
     )
 }

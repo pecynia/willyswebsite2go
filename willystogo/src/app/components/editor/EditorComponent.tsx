@@ -19,8 +19,17 @@ import { generateJSON } from '@tiptap/html'
 import MenuBar from '@/app/components/editor/MenuBar'
 import { Button } from '@/app/components/ui/button'
 
-const EditorComponent = ({ initialContent = '', editable = false }) => {
-    
+interface EditorComponentProps {
+    initialContent?: string,
+    editable?: boolean,
+    documentId: string 
+}
+
+const EditorComponent: React.FC<EditorComponentProps> = ({ 
+    initialContent = '', 
+    editable = false, 
+    documentId 
+}) => {    
     const [editorContent, setEditorContent] = useState({});
     const [isSaving, setIsSaving] = useState(false);
     const [hasChanges, setHasChanges] = useState(false);
@@ -60,13 +69,12 @@ const EditorComponent = ({ initialContent = '', editable = false }) => {
     const handleSave = async () => {
         setIsSaving(true);
         try {
-            const documentId = 'someUniqueId'; // replace this with the actual ID
             const res = await fetch('/api/save', {
                 method: 'POST',
                 body: JSON.stringify(editorContent),
                 headers: {
                     'Content-Type': 'application/json',
-                    'Document-ID': documentId  // passing ID in the headers
+                    'Document-ID': documentId  // using the documentId prop
                 },
             });
             // you might want to check for res.ok or other conditions here

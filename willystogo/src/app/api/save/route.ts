@@ -1,7 +1,7 @@
 import { getServerSession } from "next-auth"
 import { authOptions } from "@/lib/auth"
 import { NextResponse } from "next/server"
-import { saveParagraphJson, getParagraphJson } from "@/app/utils/db"
+import { saveParagraphJson } from "@/app/utils/db"
 
 // Save the paragraph JSON to the database
 export async function POST(request: Request) {
@@ -11,7 +11,7 @@ export async function POST(request: Request) {
     const paragraphJson = await request.json()
 
     // Retrieve the document ID from headers
-    const documentId = request.headers.get('document-id')
+    const documentId = request.headers.get('Document-ID')
 
     if (!documentId) {
         return new Response(JSON.stringify({ error: "Document-ID header is required" }), {

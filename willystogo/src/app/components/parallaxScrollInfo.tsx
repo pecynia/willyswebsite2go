@@ -32,7 +32,7 @@ const Textbox: React.FC<TextboxProps> = ({ y, isActive }) => (
     className={`absolute right-0 top-20 mr-12 rounded-3xl my-4 w-2/5 h-2/5 mb-12 bg-secondary p-4 hidden lg:block ${isActive ? 'fixed' : ''}`}
     style={{ y }}
   >
-      <EditorWrapper />
+      <EditorWrapper documentId="intro"/>
   </motion.div>
 )
 
