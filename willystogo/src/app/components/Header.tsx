@@ -11,6 +11,7 @@ import { AdminModeWithLogout } from "@/app/components/admin/headerButton";
 import { Sheet, SheetContent, SheetTrigger } from '@/app/components/ui/sheet';
 import { Menu } from 'lucide-react';
 
+
 const Header = () => {
   const { data: session } = useSession();
 
@@ -51,7 +52,7 @@ const Header = () => {
           </div>
           <Sheet>
             <SheetTrigger>
-              <Menu className="h-6 md:hidden" />
+              <Menu className="h-6 md:hidden invert" />
             </SheetTrigger>
             <SheetContent side="right" className='w-[300px] sm:w-[400px]'>
               <nav className='flex flex-col gap-4'>

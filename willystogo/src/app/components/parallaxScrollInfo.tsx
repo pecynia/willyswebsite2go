@@ -101,16 +101,18 @@ const ParallaxScrollInfo = () => {
   }, [])
 
   return (
-    <main className="h-[90vh] sm:h-[125vh] lg:h-[170vh] overflow-hidden bg-cover bg-center bg-primary">
-      <div ref={gallery} className="h-[175vh] overflow-hidden bg-cover bg-center relative">
-        <div className="relative -top-12 h-[200vh] flex space-x-4 px-4">
-          <Column images={[images[0], images[1], images[2]]} y={y} positionClass="top-[-40%]" />
-          <Column images={[images[3], images[4], images[5]]} y={y2} positionClass="top-[-90%] sm:block hidden" />
+    <div>
+      <div className="h-[90vh] sm:h-[125vh] lg:h-[170vh] overflow-hidden bg-cover bg-center bg-primary">
+        <div ref={gallery} className="h-[175vh] overflow-hidden bg-cover bg-center relative z-10">
+          <div className="relative -top-12 h-[200vh] flex space-x-4 px-4">
+            <Column images={[images[0], images[1], images[2]]} y={y} positionClass="top-[-40%]" />
+            <Column images={[images[3], images[4], images[5]]} y={y2} positionClass="top-[-90%] sm:block hidden" />
+          </div>
+          <Textbox y={textboxY} isActive={isTextboxInView} />
+          <div className={`hidden lg:block ${isTextboxInView ? 'block' : 'hidden'} w-2/5 h-1/2 mb-12`}></div>
         </div>
-        <Textbox y={textboxY} isActive={isTextboxInView} />
-        <div className={`hidden lg:block ${isTextboxInView ? 'block' : 'hidden'} w-2/5 h-1/2 mb-12`}></div>
       </div>
-    </main>
+    </div>
   )
 }
 

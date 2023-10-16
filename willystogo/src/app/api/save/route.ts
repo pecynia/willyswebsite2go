@@ -9,7 +9,18 @@ export async function POST(request: Request) {
     if (!session) return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
 
     const paragraphJson = await request.json()
-    const result = await saveParagraphJson("someUniqueId", paragraphJson)
+
+    // Retrieve the document ID from headers
+    const documentId = request.headers.get('document-id')
+
+    if (!documentId) {
+        return new Response(JSON.stringify({ error: "Document-ID header is required" }), {
+            headers: { "Content-Type": "application/json" },
+            status: 400
+        })
+    }
+
+    const result = await saveParagraphJson(documentId, paragraphJson)
 
     return new Response(JSON.stringify(result), {
         headers: { "Content-Type": "application/json" },

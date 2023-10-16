@@ -60,11 +60,13 @@ const EditorComponent = ({ initialContent = '', editable = false }) => {
     const handleSave = async () => {
         setIsSaving(true);
         try {
+            const documentId = 'someUniqueId'; // replace this with the actual ID
             const res = await fetch('/api/save', {
                 method: 'POST',
                 body: JSON.stringify(editorContent),
                 headers: {
                     'Content-Type': 'application/json',
+                    'Document-ID': documentId  // passing ID in the headers
                 },
             });
             // you might want to check for res.ok or other conditions here
@@ -75,6 +77,7 @@ const EditorComponent = ({ initialContent = '', editable = false }) => {
             setIsSaving(false);
         }
     };
+    
       
     return (
         <div className='flex flex-col'>
