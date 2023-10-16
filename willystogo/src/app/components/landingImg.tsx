@@ -8,8 +8,11 @@ import { useTransform, useScroll, motion } from 'framer-motion';
 
 const LandingImg = () => {
   const ref = useRef(null);
-  const [dimension, setDimension] = useState({ width: 0, height: 0 });
-
+  const [dimension, setDimension] = useState({
+    width: typeof window !== 'undefined' ? window.innerWidth : 0,
+    height: typeof window !== 'undefined' ? window.innerHeight : 0
+  });
+  
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start end', 'end start']

@@ -25,7 +25,7 @@ const Header = () => {
     },
   ];
 
-  const [position, setPosition] = useState(window.pageYOffset);
+  const [position, setPosition] = useState(typeof window !== 'undefined' ? window.scrollY : 0);
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
@@ -43,7 +43,7 @@ const Header = () => {
   const headerClass = visible ? 'top-0 transition-all duration-400 ease-out bg-primary z-50' : 'bg-primary -top-24 transition-all duration-400 ease-out z-50';
 
   return (
-    <header className={`fixed w-full p-8 bg-lime flex justify-center ${headerClass}`}>
+    <header className={`sticky w-full p-8 bg-lime flex justify-center ${headerClass}`}>
       <Container>
         <div className='relative px-4 sm:px-6 lg:px-8 flex h-6 items-center justify-between w-full'>
           <div className='flex items-center'>
