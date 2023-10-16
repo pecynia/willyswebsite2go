@@ -79,7 +79,11 @@ const ParallaxScrollInfo = () => {
   }, [])
 
   useEffect(() => {
-    const lenis = new Lenis()
+    const lenis = new Lenis({
+      smoothWheel: true,
+      smoothTouch: true,
+      normalizeWheel: true,
+      })
 
     const raf = (time: number) => {
       lenis.raf(time)
