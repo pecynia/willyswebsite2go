@@ -1,4 +1,5 @@
 import '../styles/globals.css'
+import { Analytics } from '@vercel/analytics/react';
 import type { Metadata } from 'next'
 
 import { NextAuthProvider } from "@/lib/providers"
@@ -32,6 +33,7 @@ export default function RootLayout({
           <main className='flex-grow'>{children}</main>
           <Footer />
         </NextAuthProvider>
+        <Analytics />
       </body>
     </html>
   )

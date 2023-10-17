@@ -44,22 +44,22 @@ const Header = () => {
   const headerClass = visible ? 'top-0 transition-all duration-400 ease-out z-50 bg-primary' : 'bg-primary -top-24 transition-all duration-400 ease-out z-50';
 
   return (
-    <header className={`sticky w-full p-8 flex justify-center ${headerClass}`}>
+    <header className={`sticky w-full p-8 flex justify-center ${headerClass} font-youngSerif`}>
       <Container>
         <div className='relative pr-4 sm:px-6 lg:px-8 flex h-6 items-center justify-between w-full'>
           
           {/* Logo */}
           <Link href='/' className='-ml-6'>
-            {/* <div className='flex items-center'>
+            <div className='flex items-center'>
               <h1 className='text-3xl font-youngSerif text-white'>YanWilly</h1>
-            </div> */}
-            <Image
+            </div>
+            {/* <Image
               src='/logo.png'
               alt='Logo'
               width={160}
               height={100}
               priority
-            />
+            /> */}
           </Link>
           
           {/* Navigation and Session Content */}
@@ -76,7 +76,7 @@ const Header = () => {
                     <Link 
                       key={i}
                       href={route.href}
-                      className='block px-4 py-1 text-3xl font-youngSerif'
+                      className='block px-4 py-1 text-3xl'
                     >
                       {route.label}
                     </Link>

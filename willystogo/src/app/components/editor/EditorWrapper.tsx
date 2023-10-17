@@ -10,7 +10,7 @@ import StarterKit from '@tiptap/starter-kit'
 import { Color } from '@tiptap/extension-color'
 import TextStyle from '@tiptap/extension-text-style'
 
-
+// TODO: CONVERT TO SERVER COMPONENT
 const EditorWrapper = ({documentId}: {documentId: string}) => {
     const { status, data: session } = useSession()
     const [fetchedContent, setFetchedContent] = useState('')
