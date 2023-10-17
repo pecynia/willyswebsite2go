@@ -32,8 +32,8 @@ const LandingImg = () => {
   }, []);
 
   return (
-    <div className="flex justify-start space-x-4 space-y-10 overflow-hidden h-[70vh] sm:h-full" ref={ref}>
-      <motion.div style={{ y }} className={`absolute z-[-1] left-0 w-full h-full top-[-10%]`}>
+    <div className="flex justify-center sm:justify-start space-x-4 space-y-10 overflow-hidden h-[70vh] sm:h-full" ref={ref}>
+      <motion.div style={{ y }} className={`absolute z-[-1] left-0 w-full h-full top-[-15%]`}>
         <Image 
           className="object-cover object-center -mt-2"
           src="/imgs/cocktails.jpg"
