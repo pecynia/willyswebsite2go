@@ -42,12 +42,12 @@ const LandingImg = () => {
           fill
         />
       </motion.div>
-      <div className="z-20 p-4 pt-24 sm:p-6 lg:p-8 rounded-lg overflow-hidden max-w-2xl w-3/4 md:w-3/4 lg:w-auto">
+      <div className="z-20 p-0 pt-24 sm:p-6 lg:p-8 rounded-lg overflow-hidden max-w-2xl w-3/4 md:w-3/4 lg:w-auto">
         <div className="rounded-3xl relative overflow-hidden bg-cover bg-center backdrop-blur-md bg-white bg-opacity-20 flex flex-col justify-start items-center text-center gap-y-8">
           <div className="text-4xl sm:text-5xl lg:text-6xl sm:max-w-xl max-w-xs text-black bg-secondary/60 p-6 sm:p-8 lg:p-10 rounded-lg">
-            <h2 className="pb-2 font-youngSerif text-white">Indonesische Catering</h2>
-            <Button className="w-3/4 py-6 text-lg hover:bg-primary">
-              <Send className="mr-2" />
+            <h2 className="pb-6 font-youngSerif text-white">Indonesische Catering</h2>
+            <Button className="w-3/4 py-6 text-lg hover:bg-primary rounded-xl">
+              <Send className="mr-2"/>
               <span className="textWithAnimatedUnderline">Bereik Ons</span>
             </Button>
           </div>
