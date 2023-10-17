@@ -1,6 +1,6 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { HexColorPicker } from "react-colorful"
-import hexToHsl from "@/app/utils/hexToHsl"
+import {hexToHsl, hslToHex} from "@/app/utils/hexToHsl"
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useForm } from 'react-hook-form'
 import * as yup from 'yup'
@@ -27,6 +27,12 @@ let validationSchema = yup.object().shape({
 
 function ThemeColorDialog({ colorName }: { colorName: keyof ThemeColors }) {
     const [tryingColor, setTryingColor] = useState("#50ad30")
+
+    // Set the trying color on mount to the current color 
+    useEffect(() => {
+        const currentColor = hslToHex(getComputedStyle(document.documentElement).getPropertyValue(`--${colorName}`))
+        setTryingColor(currentColor)
+    }, [])
 
     const { register, setValue, formState: { errors }, trigger } = useForm({
         resolver: yupResolver(validationSchema)

@@ -88,17 +88,17 @@ const Header = () => {
             {/* Desktop Navigation */}
             <nav className='mx-6 items-center space-x-4 lg:space-x-6 hidden md:block'>
               {routes.map((route, i) => (
-                <Button key={i}>
+                <button key={i}>
                   <Link 
                     key={i}
                     href={route.href}
-                    className='transition-colors text-base'
+                    className='transition-colors px-4'
                   >
-                    <span className='textWithAnimatedUnderline'>
+                    <span className='textWithAnimatedUnderline text-primary-foreground'>
                       {route.label}
                     </span>
                   </Link>
-                </Button>
+                </button>
               ))}
             </nav>
             

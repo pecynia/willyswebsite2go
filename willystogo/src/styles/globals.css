@@ -8,7 +8,7 @@
  
 @layer base {
   :root {
-    --background: 34, 10%, 82%;
+    --background: 34 10% 82%;
     --foreground: 222.2 84% 4.9%;
 
     --card: 0 0% 100%;
@@ -20,13 +20,13 @@
     --primary: 22 100% 13%;
     --primary-foreground: 210 40% 98%; /* A contrast to the deep green */
 
-    --secondary: 34, 32%, 82%; /* Beige color */
-    --secondary-foreground: 72, 82%, 38%; /* A contrast to the beige */
+    --secondary: 34 32% 82%; /* Beige color */
+    --secondary-foreground: 72 82% 38%; /* A contrast to the beige */
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%; 
 
-    --accent: 134, 38%, 65%; /* Slightly lighter shade of green for accent */
+    --accent: 134 38% 65%; /* Slightly lighter shade of green for accent */
     --accent-foreground: 222.2 47.4% 11.2%; 
 
     --destructive: 0 84.2% 60.2%;
@@ -34,7 +34,7 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 134, 38%, 49%; /* Using primary green for the ring */
+    --ring: 134 38% 49%; /* Using primary green for the ring */
 
     --radius: 0.5rem;
 

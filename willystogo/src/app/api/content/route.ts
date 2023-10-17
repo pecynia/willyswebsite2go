@@ -10,9 +10,6 @@ export async function GET(request: Request) {
     }
 
     const result = await getParagraphJson(documentId);
-
-    console.log("Get request:", result);
-
     return new Response(JSON.stringify(result), {
         headers: { "Content-Type": "application/json" },
     });

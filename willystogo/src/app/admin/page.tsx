@@ -3,9 +3,10 @@
 import { useState } from 'react';
 import { useSession } from 'next-auth/react'
 import { Button } from '@/app/components/ui/button';
-import ThemeColorDialog from '@/app/components/themeColors';
+import ThemeColorDialog from '@/app/components/admin/themeColors';
 import { ReloadIcon } from "@radix-ui/react-icons"
 import Loading from './loading';
+import Container from '../components/ui/container';
 
 const Profile = () => {
     const { status, data: session } = useSession()
@@ -16,30 +17,47 @@ const Profile = () => {
     }
 
     return (
-        <section className='flex justify-center py-5  min-h-screen bg-gray-100'>
-            <div className='bg-white p-12 rounded-lg shadow-lg w-2/3'>
-                <h1 className='text-4xl font-bold '>
-                    Welcome
-                </h1>
-                <hr className='my-6 border-t border-gray-300'/>
-                <div>
-                    <h2 className='text-2xl font-medium'>
-                        You are logged in as:
-                    </h2>
-                    <p className='mt-4 text-gray-700 text-xl'>
-                        {session?.user?.name}
-                    </p>
+        <Container>
+            <div className='bg-white rounded-lg shadow-lg p-12 mt-12 w-full max-w-4xl mx-auto'>
+                <h1 className='text-3xl font-youngSerif mb-6'>Welkom {session?.user?.name}</h1>
+                <hr className='mb-6' />
+    
+                {/* Settings */}
+                <div className='mb-8'>
+                    <h2 className='font-bold text-2xl mb-4'>Instellingen</h2>
+                    {/* ... other settings can go here ... */}
                 </div>
-                <hr className='my-6 border-t border-gray-300'/>
-                <div>
-                    <h2 className='text-xl font-medium'>
-                        Customize Theme:
-                    </h2>
-                    <ThemeColorDialog colorName="primary" />
+    
+                {/* Theme Colors */}
+                <div className='mb-8 flex flex-col'>
+                    <h2 className='font-bold text-2xl mb-4'>Thema kleuren</h2>
+                    <div className='flex flex-col space-y-4'>
+                        <div className='flex space-x-4'>
+                            <h1 className=''>  
+                                Primary: 
+                            </h1>
+                            <ThemeColorDialog colorName='primary' />
+                        </div>
+                        <div className='flex space-x-4'>
+                            <h1 className=''>
+                                Background:
+                            </h1>
+                            <ThemeColorDialog colorName='background' />
+                        </div>
+                        <div className='flex space-x-4'>
+                            <h1 className=''>
+                                Secondary:
+                            </h1>
+                            <ThemeColorDialog colorName='secondary' />
+                        </div>
+                    </div>
                 </div>
+    
+                {/* Additional sections can go here */}
             </div>
-        </section>
+        </Container>
     )
+    
 }
 
 export default Profile;
