@@ -106,7 +106,7 @@ const ParallaxScrollInfo = () => {
 
   return (
     <div>
-      <div className="h-[90vh] sm:h-[125vh] lg:h-[170vh] overflow-hidden bg-cover bg-center bg-primary">
+      <div className="h-[110vh] sm:h-[125vh] lg:h-[170vh] overflow-hidden bg-cover bg-center bg-primary">
         <div ref={gallery} className="h-[175vh] overflow-hidden bg-cover bg-center relative z-10">
           <div className="relative -top-12 h-[200vh] flex space-x-4 px-4">
             <Column images={[images[0], images[1], images[2]]} y={y} positionClass="top-[-40%]" />
