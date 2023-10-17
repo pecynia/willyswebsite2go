@@ -27,7 +27,7 @@ import { Separator } from '@/app/components/ui/separator'
 const MenuBar = ({ editor }: { editor: Editor | null }) => {
     if (!editor) return null
     return (
-        <div className='flex md:flex-nowrap flex-wrap h-5 items-center text-sm mb-4'>
+        <div className='absolute -top-12 left-0 pb-7 pt-6 w-full h-10 bg-secondary rounded-xl bg-opacity-80 flex justify-between items-center px-4'>
             <div className='flex space-x-1'>
                 <Button variant='ghost' size='sm'
                     onClick={() => editor.chain().focus().toggleBold().run()}

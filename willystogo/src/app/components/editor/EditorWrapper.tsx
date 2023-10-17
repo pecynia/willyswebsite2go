@@ -40,15 +40,13 @@ const EditorWrapper = ({documentId}: {documentId: string}) => {
 
     // Wait until the session is loaded (not in "loading" status)
     if (status === "loading") {
-        return <div className="mt-5 flex items-center justify-center p-2">
-            <ReloadIcon className="w-3 h-3 animate-spin" />
+        return <div className="mt-10 h-36 flex items-center justify-center p-2">
+            <ReloadIcon className="w-4 h-4 animate-spin" />
         </div>
     }
 
     return (
-        <div className="">
-            <EditorComponent documentId={documentId} editable={session ? true : false} initialContent={fetchedContent} />
-        </div>
+        <EditorComponent documentId={documentId} editable={session ? true : false} initialContent={fetchedContent} />
     )
 }
 

@@ -88,7 +88,7 @@ const EditorComponent: React.FC<EditorComponentProps> = ({
     
       
     return (
-        <div className='flex flex-col'>
+        <div className='relative flex flex-col'>
             {editable ? <MenuBar editor={editor} /> : null}
             <EditorContent editor={editor} />
 
