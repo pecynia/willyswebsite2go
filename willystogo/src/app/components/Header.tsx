@@ -20,8 +20,32 @@ const Header = () => {
       label: "Home",
     },
     {
-      href: "/satebar",
-      label: "Satebar",
+      href: "/ons-aanbod",
+      label: "Ons Aanbod",
+    },
+    {
+      href: "/evenementen",
+      label: "Evenementen",
+    },
+    {
+      href: "/drankjes",
+      label: "Drankjes",
+    },
+    {
+      href: "/faciliteiten",
+      label: "Faciliteiten",
+    },
+    {
+      href: "/ervaringen-en-recensies",
+      label: "Ervaringen & Recensies",
+    },
+    {
+      href: "/contact",
+      label: "Contact",
+    },
+    {
+      href: "/over-ons",
+      label: "Over Ons",
     },
   ]
 
@@ -45,7 +69,7 @@ const Header = () => {
   return (
     <header className={`sticky w-full p-4 pr-0 flex justify-center ${headerClass} font-youngSerif`}>
       <Container>
-        <div className='relative sm:px-6 lg:px-8 flex h-6 items-center justify-between w-full'>
+        <div className='relative sm:px-6 lg:px-8 flex space-x-4 h-6 items-center justify-between w-full'>
           
           {/* Logo */}
           <Link href='/' className=''>
@@ -75,7 +99,7 @@ const Header = () => {
                     <Link 
                       key={i}
                       href={route.href}
-                      className='block px-4 py-1 text-3xl'
+                      className='block px-4 py-1 text-xl'
                     >
                       {route.label}
                     </Link>
@@ -92,7 +116,7 @@ const Header = () => {
             )}
 
             {/* Desktop Navigation */}
-            <nav className='bg-primary header-shadow-right-light px-10 items-center space-x-4 lg:space-x-6 hidden md:block mt-2 pt-2 pb-1'>
+            <nav className='bg-primary header-shadow-right-light px-10 items-center hidden md:block mt-2 pt-2 pb-1'>
               {routes.map((route, i) => (
                 <button key={i}>
                   <Link 
@@ -100,7 +124,7 @@ const Header = () => {
                     href={route.href}
                     className='transition-colors px-4'
                   >
-                    <span className='textWithAnimatedUnderline text-secondary text-xl font-raleway'>
+                    <span className='textWithAnimatedUnderline text-secondary text-sm font-raleway'>
                       {route.label}
                     </span>
                   </Link>
