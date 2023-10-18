@@ -3,6 +3,16 @@
 import React, { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import { useTransform, useScroll, motion } from 'framer-motion'
+import AnimatedWord from '@/app/components/animatedText'
+
+const container = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.025
+    }
+  }
+};
 
 const LandingImg = () => {
   const ref = useRef(null)
@@ -42,12 +52,14 @@ const LandingImg = () => {
       </motion.div>
       <div className="z-20 p-0 pt-24 sm:p-6 lg:p-8 overflow-hidden max-w-2xl w-3/4 md:w-3/4 lg:w-auto">
         <div className="header-shadow-left pb-8 relative overflow-hidden bg-cover bg-center bg-secondary flex flex-col justify-start items-center text-left">
-          <div className="text-4xl sm:text-5xl lg:text-6xl sm:max-w-xl max-w-xsbg-secondary/60 p-6 sm:p-8 lg:p-10">
-            <h2 className="pb-6 font-youngSerif text-secondary-foreground">Indonesische Catering</h2>
+          <motion.div className="text-4xl sm:text-5xl lg:text-6xl sm:max-w-xl max-w-xsbg-secondary/60 p-6 sm:p-8 lg:p-10" variants={container} initial="hidden" animate="visible">
+            {"Indonesische Catering".split(" ").map((word, index) => (
+              <AnimatedWord key={index} word={word} />
+            ))}
             <p className='text-lg sm:text-xl text-secondary-foreground'>
               Willys2Go is een Indonesische catering service in de regio Ede. Wij verzorgen de lekkerste Indonesische gerechten voor uw gelegenheid.
             </p>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>
