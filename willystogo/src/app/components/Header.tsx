@@ -6,7 +6,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useSession } from 'next-auth/react';
 
-import { Button } from '@/app/components/ui/button';
 import { AdminModeWithLogout } from "@/app/components/admin/headerButton";
 import { Sheet, SheetContent, SheetTrigger } from '@/app/components/ui/sheet';
 import { Menu } from 'lucide-react';
@@ -41,15 +40,15 @@ const Header = () => {
     };
   });
 
-  const headerClass = visible ? 'top-0 transition-all duration-400 ease-out z-50 bg-primary' : 'bg-primary -top-24 transition-all duration-400 ease-out z-50';
+  const headerClass = visible ? 'top-0 transition-all duration-400 ease-out z-50' : '-top-20 transition-all duration-400 ease-out z-50';
 
   return (
-    <header className={`sticky w-full p-8 flex justify-center ${headerClass} font-youngSerif`}>
+    <header className={`sticky w-full p-4 pr-0 flex justify-center ${headerClass} font-youngSerif`}>
       <Container>
-        <div className='relative pr-4 sm:px-6 lg:px-8 flex h-6 items-center justify-between w-full'>
+        <div className='relative sm:px-6 lg:px-8 flex h-6 items-center justify-between w-full'>
           
           {/* Logo */}
-          <Link href='/' className='-ml-6'>
+          <Link href='/' className=''>
             <div className='flex items-center'>
               <h1 className='text-3xl font-youngSerif text-white'>YanWilly</h1>
             </div>
@@ -86,7 +85,7 @@ const Header = () => {
             </Sheet>
             
             {/* Desktop Navigation */}
-            <nav className='mx-6 items-center space-x-4 lg:space-x-6 hidden md:block'>
+            <nav className='bg-primary header-shadow-right-light px-10 items-center space-x-4 lg:space-x-6 hidden md:block mt-2 pt-2 pb-1'>
               {routes.map((route, i) => (
                 <button key={i}>
                   <Link 
@@ -94,7 +93,7 @@ const Header = () => {
                     href={route.href}
                     className='transition-colors px-4'
                   >
-                    <span className='textWithAnimatedUnderline text-primary-foreground'>
+                    <span className='textWithAnimatedUnderline text-secondary text-xl font-raleway'>
                       {route.label}
                     </span>
                   </Link>

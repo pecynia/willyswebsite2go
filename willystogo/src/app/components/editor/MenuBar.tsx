@@ -23,11 +23,12 @@ import {
     Palette,
  } from 'lucide-react'
 import { Separator } from '@/app/components/ui/separator'
+import { hslToHex } from '@/app/utils/hexToHsl'
 
 const MenuBar = ({ editor }: { editor: Editor | null }) => {
     if (!editor) return null
     return (
-        <div className='absolute -top-12 left-0 pb-7 pt-6 w-full h-10 bg-secondary rounded-xl bg-opacity-80 flex justify-between items-center px-4'>
+        <div className='absolute -top-12 left-0 pb-7 pt-6 w-full h-10 bg-white rounded-xl bg-opacity-80 flex justify-between items-center px-4'>
             <div className='flex space-x-1'>
                 <Button variant='ghost' size='sm'
                     onClick={() => editor.chain().focus().toggleBold().run()}
@@ -69,24 +70,18 @@ const MenuBar = ({ editor }: { editor: Editor | null }) => {
                 >
                     <Strikethrough className='w-4 h-4' />
                 </Button>
-                {/* <Button variant='ghost' size='sm'
-                    onClick={() => editor.chain().focus().toggleCode().run()}
-                    disabled={
-                    !editor.can()
-                        .chain()
-                        .focus()
-                        .toggleCode()
-                        .run()
-                    }
-                    className={editor.isActive('code') ? 'bg-secondary' : ''}
-                >
-                    <Code2 className='w-4 h-4' />
-                </Button> */}
+                {/* Text colours */}
                 <Button variant='ghost' size="sm"
-                    onClick={() => editor.chain().focus().setColor('red').run()}
+                    onClick={() => editor.chain().focus().setColor(hslToHex(getComputedStyle(document.documentElement).getPropertyValue('--secondary-foreground'))).run()}
                     className={editor.isActive('textStyle', { color: 'secondary' }) ? 'bg-secondary' : ''}
                 >
-                    <Palette className='w-4 h-4' />
+                    <div className='bg-secondary-foreground rounded-full w-4 h-4' />
+                </Button>
+                <Button variant='ghost' size="sm"
+                    onClick={() => editor.chain().focus().setColor(hslToHex(getComputedStyle(document.documentElement).getPropertyValue('--primary'))).run()}
+                    className={editor.isActive('textStyle', { color: 'secondary' }) ? 'bg-secondary' : ''}
+                >
+                    <div className='bg-primary rounded-full w-4 h-4' />
                 </Button>
             </div>
                 <Separator orientation='vertical' />
@@ -134,12 +129,6 @@ const MenuBar = ({ editor }: { editor: Editor | null }) => {
                 >
                     <ListOrdered className='w-5 h-5' />
                 </Button>
-                {/* <Button variant='ghost' size="sm"
-                    onClick={() => editor.chain().focus().toggleCodeBlock().run()}
-                    className={editor.isActive('codeBlock') ? 'bg-secondary' : ''}
-                >
-                    <SquareCode className='w-5 h-5' />
-                </Button> */}
                 <Button variant='ghost' size="sm"
                     onClick={() => editor.chain().focus().toggleBlockquote().run()}
                     className={editor.isActive('blockquote') ? 'bg-secondary' : ''}

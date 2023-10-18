@@ -29,12 +29,13 @@ interface TextboxProps {
 
 const Textbox: React.FC<TextboxProps> = ({ y, isActive }) => (
   <motion.div 
-    className={`absolute right-0 top-20 mr-12 my-4 w-2/5 h-2/5 mb-12 bg-secondary p-4 hidden lg:block ${isActive ? 'fixed' : ''}`}
+    className={`header-shadow-right absolute right-0 top-20 mr-12 my-4 w-2/5 h-2/5 mb-12 bg-secondary p-4 hidden lg:block ${isActive ? 'fixed' : ''}`}
     style={{ y }}
   >
       <EditorWrapper documentId="intro"/>
   </motion.div>
 )
+
 
 const Column: React.FC<ColumnProps> = ({ images, y, positionClass }) => (
   <motion.div 
@@ -42,8 +43,8 @@ const Column: React.FC<ColumnProps> = ({ images, y, positionClass }) => (
     style={{ y }}
   >
     {images.map((src, i) => (
-      <div key={i} className="h-[33%] relative overflow-hidden rounded-xl">
-        <Image src={`/imgs/${src}`} alt="image" fill className='object-cover object-center my-4 rounded-xl' />
+      <div key={i} className="h-[33%] relative overflow-hidden">
+        <Image src={`/imgs/${src}`} alt="image" fill className='object-cover object-center my-4' />
       </div>
     ))}
   </motion.div>
@@ -106,7 +107,7 @@ const ParallaxScrollInfo = () => {
 
   return (
     <div>
-      <div className="-mb-1  h-[110vh] sm:h-[125vh] lg:h-[170vh] overflow-hidden bg-cover bg-center bg-primary">
+      <div className="-mb-1  h-[110vh] sm:h-[125vh] lg:h-[170vh] overflow-hidden bg-cover bg-center bg-primary-secondary-foreground">
         <div ref={gallery} className="h-[175vh] overflow-hidden bg-cover bg-center relative z-10">
           <div className="relative -top-12 h-[200vh] flex space-x-4 px-4">
             <Column images={[images[0], images[4], images[2]]} y={y} positionClass="top-[-40%]" />
