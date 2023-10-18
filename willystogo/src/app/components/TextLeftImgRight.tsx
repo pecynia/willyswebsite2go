@@ -1,49 +1,49 @@
-"use client";
+"use client"
 
-import { useEffect, useRef, useState } from "react";
-import { useTransform, useScroll, motion } from "framer-motion";
-import Image from "next/image";
-import Lenis from "@studio-freight/lenis";
-import EditorWrapper from "@/app/components/editor/EditorWrapper";
+import { useEffect, useRef, useState } from "react"
+import { useTransform, useScroll, motion } from "framer-motion"
+import Image from "next/image"
+import Lenis from "@studio-freight/lenis"
+import EditorWrapper from "@/app/components/editor/EditorWrapper"
 
 interface TextLeftImgRightProps {
-  documentId: string;
-  images: string[];
+  documentId: string
+  images: string[]
 }
 
 const TextLeftImgRight: React.FC<TextLeftImgRightProps> = ({ documentId, images }) => {
-  const container = useRef<HTMLDivElement | null>(null);
-  const [dimension, setDimension] = useState({ width: 0, height: 0 });
+  const container = useRef<HTMLDivElement | null>(null)
+  const [dimension, setDimension] = useState({ width: 0, height: 0 })
   const { scrollYProgress } = useScroll({
     target: container,
     offset: ["start end", "end start"],
-  });
+  })
 
   useEffect(() => {
     const lenis = new Lenis({
       smoothWheel: true,
       smoothTouch: true,
       normalizeWheel: true,
-    });
+    })
 
     const raf = (time: number) => {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    };
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
 
     const resize = () => {
-      setDimension({ width: window.innerWidth, height: window.innerHeight });
-    };
+      setDimension({ width: window.innerWidth, height: window.innerHeight })
+    }
 
-    window.addEventListener("resize", resize);
-    requestAnimationFrame(raf);
-    resize();
+    window.addEventListener("resize", resize)
+    requestAnimationFrame(raf)
+    resize()
 
     return () => {
-      lenis.destroy();
-      window.removeEventListener("resize", resize);
-    };
-  }, []);
+      lenis.destroy()
+      window.removeEventListener("resize", resize)
+    }
+  }, [])
 
   return (
     <div ref={container} className="mt-0 sm:mt-10 pl-8 sm:pl-24 h-[500px] flex justify-start p-4 sm:p-16 items-center">
@@ -59,7 +59,7 @@ const TextLeftImgRight: React.FC<TextLeftImgRightProps> = ({ documentId, images 
         </motion.div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default TextLeftImgRight;
+export default TextLeftImgRight

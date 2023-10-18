@@ -1,18 +1,18 @@
 "use client"
 
-import React, { useState, useEffect } from 'react';
-import Container from '@/app/components/ui/container';
-import Link from 'next/link';
-import Image from 'next/image';
-import { useSession } from 'next-auth/react';
+import React, { useState, useEffect } from 'react'
+import Container from '@/app/components/ui/container'
+import Link from 'next/link'
+import Image from 'next/image'
+import { useSession } from 'next-auth/react'
 
-import { AdminModeWithLogout } from "@/app/components/admin/headerButton";
-import { Sheet, SheetContent, SheetTrigger } from '@/app/components/ui/sheet';
-import { Menu } from 'lucide-react';
+import { AdminModeWithLogout } from "@/app/components/admin/headerButton"
+import { Sheet, SheetContent, SheetTrigger } from '@/app/components/ui/sheet'
+import { Menu } from 'lucide-react'
 
 
 const Header = () => {
-  const { data: session } = useSession();
+  const { data: session } = useSession()
 
   const routes = [
     {
@@ -23,24 +23,24 @@ const Header = () => {
       href: "/satebar",
       label: "Satebar",
     },
-  ];
+  ]
 
-  const [position, setPosition] = useState(typeof window !== 'undefined' ? window.scrollY : 0);
-  const [visible, setVisible] = useState(true);
+  const [position, setPosition] = useState(typeof window !== 'undefined' ? window.scrollY : 0)
+  const [visible, setVisible] = useState(true)
 
   useEffect(() => {
     const handleScroll = () => {
-      let moving = window.scrollY;
-      setVisible(position > moving);
-      setPosition(moving);
-    };
-    window.addEventListener("scroll", handleScroll);
+      let moving = window.scrollY
+      setVisible(position > moving)
+      setPosition(moving)
+    }
+    window.addEventListener("scroll", handleScroll)
     return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  });
+      window.removeEventListener("scroll", handleScroll)
+    }
+  })
 
-  const headerClass = visible ? 'top-0 transition-all duration-400 ease-out z-50' : '-top-20 transition-all duration-400 ease-out z-50';
+  const headerClass = visible ? 'top-0 transition-all duration-400 ease-out z-50' : '-top-20 transition-all duration-400 ease-out z-50'
 
   return (
     <header className={`sticky w-full p-4 pr-0 flex justify-center ${headerClass} font-youngSerif`}>
@@ -114,7 +114,7 @@ const Header = () => {
         </div>
       </Container>
     </header>
-  );
+  )
 }  
 
-export default Header;
+export default Header

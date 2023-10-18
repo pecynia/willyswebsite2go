@@ -1,33 +1,33 @@
 "use client"
 
-import React, { useEffect, useRef, useState } from 'react';
-import Image from 'next/image';
-import { useTransform, useScroll, motion } from 'framer-motion';
+import React, { useEffect, useRef, useState } from 'react'
+import Image from 'next/image'
+import { useTransform, useScroll, motion } from 'framer-motion'
 
 const LandingImg = () => {
-  const ref = useRef(null);
-  const [dimension, setDimension] = useState({width: 0, height: 0});
+  const ref = useRef(null)
+  const [dimension, setDimension] = useState({width: 0, height: 0})
   
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start end', 'end start']
-  });
+  })
 
-  const { height } = dimension;
-  const y = useTransform(scrollYProgress, [0, 1], [height * 0.5, 1]);
+  const { height } = dimension
+  const y = useTransform(scrollYProgress, [0, 1], [height * 0.5, 1])
 
   useEffect(() => {
     const resize = () => {
-      setDimension({ width: window.innerWidth, height: window.innerHeight });
-    };
+      setDimension({ width: window.innerWidth, height: window.innerHeight })
+    }
 
-    window.addEventListener("resize", resize);
-    resize();
+    window.addEventListener("resize", resize)
+    resize()
 
     return () => {
-      window.removeEventListener("resize", resize);
-    };
-  }, []);
+      window.removeEventListener("resize", resize)
+    }
+  }, [])
 
   return (
     <div className="flex justify-center sm:justify-start space-x-4 space-y-10 overflow-hidden h-screen sm:h-screen" ref={ref}>
@@ -51,7 +51,7 @@ const LandingImg = () => {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default LandingImg;
+export default LandingImg
