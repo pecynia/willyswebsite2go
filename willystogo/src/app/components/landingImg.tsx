@@ -45,7 +45,7 @@ const LandingImg = () => {
           <div className="text-4xl sm:text-5xl lg:text-6xl sm:max-w-xl max-w-xsbg-secondary/60 p-6 sm:p-8 lg:p-10">
             <h2 className="pb-6 font-youngSerif text-secondary-foreground">Indonesische Catering</h2>
             <p className='text-lg sm:text-xl text-secondary-foreground'>
-              Willy's2Go is een Indonesische catering service in de regio Ede. Wij verzorgen de lekkerste Indonesische gerechten voor uw gelegenheid.
+              Willys2Go is een Indonesische catering service in de regio Ede. Wij verzorgen de lekkerste Indonesische gerechten voor uw gelegenheid.
             </p>
           </div>
         </div>

@@ -67,9 +67,9 @@ const Header = () => {
             {/* Mobile Navigation (SheetTrigger) */}
             <Sheet>
               <SheetTrigger>
-                <Menu className="h-6 md:hidden invert" />
+                <Menu className="h-6 md:hidden invert mr-4" />
               </SheetTrigger>
-              <SheetContent side="right" className='w-[300px] sm:w-[400px]'>
+              <SheetContent side="right" className='w-[300px] sm:w-[400px] font-youngSerif text-primary'>
                 <nav className='flex flex-col gap-4'>
                   {routes.map((route, i) => (
                     <Link 
@@ -90,7 +90,7 @@ const Header = () => {
                 <AdminModeWithLogout />
               </div>
             )}
-            
+
             {/* Desktop Navigation */}
             <nav className='bg-primary header-shadow-right-light px-10 items-center space-x-4 lg:space-x-6 hidden md:block mt-2 pt-2 pb-1'>
               {routes.map((route, i) => (
