@@ -83,6 +83,13 @@ const Header = () => {
                 </nav>
               </SheetContent>
             </Sheet>
+
+            {/* Session Content */}
+            {session && (
+              <div className='flex items-center'>
+                <AdminModeWithLogout />
+              </div>
+            )}
             
             {/* Desktop Navigation */}
             <nav className='bg-primary header-shadow-right-light px-10 items-center space-x-4 lg:space-x-6 hidden md:block mt-2 pt-2 pb-1'>
@@ -101,13 +108,7 @@ const Header = () => {
               ))}
             </nav>
             
-            {/* Session Content */}
-            {session && (
-              <div className='flex items-center'>
-                <AdminModeWithLogout />
-              </div>
-            )}
-  
+
           </div> {/* End of Navigation and Session Content */}
           
         </div>

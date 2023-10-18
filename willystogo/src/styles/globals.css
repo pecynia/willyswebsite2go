@@ -215,7 +215,7 @@ html.lenis {
 }
 
 .header-shadow-left-light {
-  box-shadow: -11px 11px 0px 0px hsl(var(--primary-foreground));
+  box-shadow: -11px 11px 0px 0px hsl(var(--secondary));
 }
 
 .header-shadow-right-light {

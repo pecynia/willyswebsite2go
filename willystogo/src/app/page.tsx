@@ -14,7 +14,8 @@ export default function Home() {
       <div className='h-16 -mt-10 overflow-hidden rounded-t-3xl'></div>
 
       <ParallaxScrollInfo />
-      <TextLeftImgRight documentId="test" images={['/imgs/sates.jpg', '/imgs/batik_2.png']} />
+      <TextLeftImgRight documentId="test" images={['/imgs/sates.jpg', '/imgs/willy.png']} />
+      <div className='h-screen'/>
 
     </div>
     
