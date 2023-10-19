@@ -140,6 +140,7 @@
   
   ul.special-icon-list > li::before {
     content: url('/check.svg');
+    stroke: hsl(var(--primary));
     display: inline-block;
     vertical-align: middle;
     width: 2em;
@@ -147,7 +148,7 @@
     margin-right: 0.5em; /* Adjust based on your icon size and desired spacing */
     position: absolute;
     left: -0.5em;
-    top: 0;
+    top: -0.1em;
   }
   
   
