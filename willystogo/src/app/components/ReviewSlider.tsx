@@ -80,7 +80,7 @@ const ReviewSlider: React.FC = () => {
 
     // Feedback: add the author of the review, make it bigger, make sure the button appears on the image when hovered over. Set the text to primary-foreground when hovered over
     return (
-      <div className="p-4 w-full px-12 relative">
+      <div className="p-4 w-full px-16 relative">
           <h2 className="text-2xl font-bold mb-4 pl-4 text-primary">
               Reviews
           </h2>
@@ -88,31 +88,34 @@ const ReviewSlider: React.FC = () => {
               {reviewsData.quotes.map((review, index) => (
                   <div 
                       key={index} 
-                      className="space-x-4 p-4 hover:bg-opacity-60 hover:bg-primary transition-all duration-300 relative group"
+                      className="space-x-4 p-4 relative group transition-all duration-300"
                   >
-                      <div className="w-full h-48 relative">
+                      <div className="w-full h-72 relative group-hover:opacity-50 transition-opacity duration-300">
                           <Image
                               src={review.img.path}
                               alt={review.img.alt}
                               className="object-cover object-center"
                               fill
                           />
+                          <Link href={`/ervaringen-en-recensies#${review.id}`}>
+                              <div className="absolute inset-0 flex items-center justify-center">
+                                  <Button 
+                                      variant="secondary" 
+                                      className="rounded-none hover:text-primary-foreground hover:bg-primary shadow-none opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                                  >
+                                      Bekijk meer
+                                  </Button>
+                              </div>
+                          </Link>
                       </div>
-                      <h3 className="font-semibold">{review.companyName}</h3>
-                      <p className="text-sm">{review.quote}</p>
-                      <Link href={`/ervaringen-en-recensies#${review.id}`}>
-                        <Button 
-                            variant="secondary" 
-                            className="rounded-none hover:bg-primary shadow-none"
-                        >
-                          Bekijk meer
-                        </Button>
-                      </Link>
+                      <h3 className="font-semibold text-primary">{review.companyName}</h3>
+                      <p className="text-md text-primary">{review.quote}</p>
                   </div>
               ))}
           </Slider>
       </div>
   );
+  
 };
 
 export default ReviewSlider;
