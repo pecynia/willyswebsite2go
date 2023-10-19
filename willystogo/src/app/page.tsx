@@ -2,7 +2,8 @@ import LandingImg from '@/app/components/landingImg'
 import ParallaxScrollInfo from '@/app/components/parallaxScrollInfo'
 import TextLeftImgRight from '@/app/components/TextLeftImgRight'
 import SmallEditor from '@/app/components/SmallEditor'
-import AnimatedHeader from './components/AnimatedHeader'
+import AnimatedHeader from '@/app/components/AnimatedHeader'
+import ReviewSlider from '@/app/components/ReviewSlider'
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
         </div>
       </div>
 
+      <ReviewSlider />
     </div>
   )
 }

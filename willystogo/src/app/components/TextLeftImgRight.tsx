@@ -47,10 +47,10 @@ const TextLeftImgRight: React.FC<TextLeftImgRightProps> = ({ documentId, images 
 
   return (
     <div ref={container} className="mt-0 sm:mt-10 pl-8 sm:pl-24 min-h-[500px] grid grid-cols-1 md:grid-cols-5 gap-4 p-4 sm:p-16">
-        <div className="header-shadow-left col-span-3 bg-secondary flex px-10 pt-4 pb-14">
+        <div className="header-shadow-left col-span-3 lg:col-span-2 bg-secondary flex px-10 pt-4 pb-14">
             <EditorWrapper documentId={documentId} />
         </div>
-        <div className="relative col-span-2 h-full -z-1">
+        <div className="relative col-span-2 lg:col-span-3 h-full -z-1">
             <motion.div 
                 style={{ y: useTransform(scrollYProgress, [0, 1], [0, -dimension.height * 0.2]) }} 
                 className="absolute w-[100%] h-[40%] top-[50%] left-[10%] lg:w-[80%] lg:h-[70%] lg:top-[35%]">

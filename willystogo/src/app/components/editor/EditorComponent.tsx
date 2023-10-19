@@ -8,17 +8,17 @@ import { Save } from 'lucide-react'
 import StarterKit from '@tiptap/starter-kit'
 import { Color } from '@tiptap/extension-color'
 import ListItem from '@tiptap/extension-list-item'
-import BulletList from '@tiptap/extension-bullet-list'
 import Dropcursor from '@tiptap/extension-dropcursor'
 import Placeholder from '@tiptap/extension-placeholder'
 import TextStyle from '@tiptap/extension-text-style'
+import CustomBulletList from '@/app/components/editor/checklistBullet'
+
 
 import { generateJSON } from '@tiptap/html'
 
 
 import MenuBar from '@/app/components/editor/MenuBar'
 import { Button } from '@/app/components/ui/button'
-import CustomBulletList from './checklistBullet'
 
 interface EditorComponentProps {
     initialContent?: string,
