@@ -7,6 +7,7 @@
             },
             "id": "company-1",
             "companyName": "Company 1",
+            "author": "John Doe",
             "quote": "This catering company is amazing! The food was delicious and the service was exceptional."
         },
         {
@@ -16,6 +17,7 @@
             },
             "id": "company-2",
             "companyName": "Company 2",
+            "author": "John Doe",
             "quote": "We were blown away by the quality of the food and the professionalism of the staff. Highly recommend!"
         },
         {
@@ -25,6 +27,7 @@
             },
             "id": "company-3",
             "companyName": "Company 3",
+            "author": "John Doe",
             "quote": "The catering for our event was perfect. The food was delicious and beautifully presented. Thank you!"
         },
         {
@@ -34,6 +37,7 @@
             },
             "id": "company-4",
             "companyName": "Company 4",
+            "author": "John Doe",
             "quote": "The food was delicious and the service was exceptional."
         },
         {
@@ -43,6 +47,7 @@
             },
             "id": "company-5",
             "companyName": "Company 5",
+            "author": "John Doe",
             "quote": "We were blown away by the quality of the food and the professionalism of the staff. Highly recommend!"
         },
         {
@@ -52,6 +57,7 @@
             },
             "id": "company-6",
             "companyName": "Company 6",
+            "author": "John Doe",
             "quote": "The catering for our event was perfect. The food was delicious and beautifully presented. Thank you!"
         }
     ]

@@ -7,6 +7,8 @@ import { ArrowRightCircle, ArrowLeftCircle } from "lucide-react";
 import reviewsData from "@/dictionaries/reviews.json";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Button } from "@/app/components/ui/button";
+import Link from "next/link";
 
 interface ArrowProps {
     className?: string;
@@ -76,29 +78,41 @@ const ReviewSlider: React.FC = () => {
         ],
     };
 
+    // Feedback: add the author of the review, make it bigger, make sure the button appears on the image when hovered over. Set the text to primary-foreground when hovered over
     return (
-        <div className="p-4 w-4/5 md:w-3/4 lg:w-2/3 relative">
-            <h2 className="text-2xl font-bold mb-4 text-primary">
-                Reviews
-            </h2>
-            <Slider {...settings}>
-                {reviewsData.quotes.map((review, index) => (
-                    <div key={index} className="space-x-4  p-4 hover:bg-primary">
-                        <div className="w-full h-48 relative ">
-                            <Image
-                                src={review.img.path}
-                                alt={review.img.alt}
-                                className="object-cover object-center"
-                                fill
-                            />
-                        </div>
-                        <h3 className="font-semibold">{review.companyName}</h3>
-                        <p className="text-sm">{review.quote}</p>
-                    </div>
-                ))}
-            </Slider>
-        </div>
-    );
+      <div className="p-4 w-full px-12 relative">
+          <h2 className="text-2xl font-bold mb-4 pl-4 text-primary">
+              Reviews
+          </h2>
+          <Slider {...settings}>
+              {reviewsData.quotes.map((review, index) => (
+                  <div 
+                      key={index} 
+                      className="space-x-4 p-4 hover:bg-opacity-60 hover:bg-primary transition-all duration-300 relative group"
+                  >
+                      <div className="w-full h-48 relative">
+                          <Image
+                              src={review.img.path}
+                              alt={review.img.alt}
+                              className="object-cover object-center"
+                              fill
+                          />
+                      </div>
+                      <h3 className="font-semibold">{review.companyName}</h3>
+                      <p className="text-sm">{review.quote}</p>
+                      <Link href={`/ervaringen-en-recensies#${review.id}`}>
+                        <Button 
+                            variant="secondary" 
+                            className="rounded-none hover:bg-primary shadow-none"
+                        >
+                          Bekijk meer
+                        </Button>
+                      </Link>
+                  </div>
+              ))}
+          </Slider>
+      </div>
+  );
 };
 
 export default ReviewSlider;
