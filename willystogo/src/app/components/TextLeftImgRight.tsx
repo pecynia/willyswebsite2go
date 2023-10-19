@@ -50,16 +50,16 @@ const TextLeftImgRight: React.FC<TextLeftImgRightProps> = ({ documentId, images 
         <div className="header-shadow-left col-span-3 bg-secondary flex px-10 pt-4 pb-14">
             <EditorWrapper documentId={documentId} />
         </div>
-        <div className="relative col-span-2 h-full">
+        <div className="relative col-span-2 h-full -z-1">
             <motion.div 
                 style={{ y: useTransform(scrollYProgress, [0, 1], [0, -dimension.height * 0.2]) }} 
-                className="absolute w-full h-[45%] top-0 left-0">
-                <Image src={images[0]} alt="Image 1" layout="fill" className="object-cover object-center"/>
+                className="absolute w-[100%] h-[40%] top-[50%] left-[10%] lg:w-[80%] lg:h-[70%] lg:top-[35%]">
+                <Image src={images[0]} alt="Image 1" fill className="object-cover object-center"/>
             </motion.div>
             <motion.div 
-                style={{ y: useTransform(scrollYProgress, [0, 1], [0, dimension.height * 0.2]) }} 
-                className="absolute w-full h-[45%] bottom-0 left-0">
-                <Image src={images[1]} alt="Image 2" layout="fill" className="object-cover object-center"/>
+                style={{ y: useTransform(scrollYProgress, [0, 1], [0, dimension.height * 0.5]) }} 
+                className="absolute w-[80%] h-[40%] bottom-[70%] left-[30%] lg:w-[60%] lg:h-[60%] lg:top-[-20%] lg:left-[25%]">
+                <Image src={images[1]} alt="Image 2" fill className="object-cover object-center"/>
             </motion.div>
         </div>
     </div>

@@ -21,6 +21,8 @@ import {
     Link,
     Anchor,
     Palette,
+    CheckCheckIcon,
+    ListChecks,
  } from 'lucide-react'
 import { Separator } from '@/app/components/ui/separator'
 import { hslToHex } from '@/app/utils/hexToHsl'
@@ -117,12 +119,19 @@ const MenuBar = ({ editor }: { editor: Editor | null }) => {
                 >
                     <Heading3 className='w-4 h-4' />    
                 </Button>
-                <Button variant='ghost' size="sm"
+                {/* <Button variant='ghost' size="sm"
                     onClick={() => editor.chain().focus().toggleBulletList().run()}
                     className={editor.isActive('bulletList') ? 'bg-secondary' : ''}
                     >
                     <List className='w-5 h-5' />
+                </Button> */}
+                <Button variant='ghost' size="sm"
+                    onClick={() => editor.chain().focus().toggleBulletList().run()}
+                    className={editor.isActive('bulletList') ? 'bg-secondary' : ''}
+                >
+                    <ListChecks className='w-5 h-5' />
                 </Button>
+
                 <Button variant='ghost' size="sm"
                     onClick={() => editor.chain().focus().toggleOrderedList().run()}
                     className={editor.isActive('orderedList') ? 'bg-secondary' : ''}

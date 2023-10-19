@@ -133,7 +133,28 @@
     display: none;
   }
 
-
+  ul.special-icon-list > li {
+    display: block;
+    position: relative;
+  }
+  
+  ul.special-icon-list > li::before {
+    content: url('/check.svg');
+    display: inline-block;
+    vertical-align: middle;
+    width: 2em;
+    height: 1em;
+    margin-right: 0.5em; /* Adjust based on your icon size and desired spacing */
+    position: absolute;
+    left: -0.5em;
+    top: 0;
+  }
+  
+  
+  ul.special-icon-list, ul.special-icon-list li {
+    @apply pl-8;
+  }
+  
   
   hr {
     @apply mt-8 mb-8 border-2 border-gray-300 w-full;
@@ -147,6 +168,10 @@
   height: 0;
   pointer-events: none;
 }
+
+
+
+
 
 div[contenteditable="true"] {
   @apply outline-none;
@@ -221,4 +246,6 @@ html.lenis {
 .header-shadow-right-light {
   box-shadow: 7px 7px 0px 0px hsl(var(--secondary));
 }
+
+
 

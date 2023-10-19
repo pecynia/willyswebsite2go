@@ -36,8 +36,8 @@ const Header = () => {
       label: "Faciliteiten",
     },
     {
-      href: "/ervaringen-en-recensies",
-      label: "Ervaringen & Recensies",
+      href: "/ervaringen",
+      label: "Ervaringen",
     },
     {
       href: "/contact",
@@ -69,7 +69,7 @@ const Header = () => {
   return (
     <header className={`sticky w-full p-4 pr-0 flex justify-center ${headerClass} font-youngSerif`}>
       <Container>
-        <div className='relative sm:px-6 lg:px-8 flex space-x-4 h-6 items-center justify-between w-full'>
+        <div className='relative sm:px-6 lg:px-2 lg:pr-3 flex space-x-4 h-6 items-center justify-between w-full'>
           
           {/* Logo */}
           <Link href='/' className=''>
@@ -91,9 +91,9 @@ const Header = () => {
             {/* Mobile Navigation (SheetTrigger) */}
             <Sheet>
               <SheetTrigger>
-                <Menu className="h-6 md:hidden invert mr-4" />
+                <Menu className="h-6 lg:hidden invert mr-4" />
               </SheetTrigger>
-              <SheetContent side="right" className='w-[300px] sm:w-[400px] font-youngSerif text-primary'>
+              <SheetContent side="top" className='w-full font-youngSerif text-center text-primary'>
                 <nav className='flex flex-col gap-4'>
                   {routes.map((route, i) => (
                     <Link 
@@ -116,7 +116,7 @@ const Header = () => {
             )}
 
             {/* Desktop Navigation */}
-            <nav className='bg-primary header-shadow-right-light px-10 items-center hidden md:block mt-2 pt-2 pb-1'>
+            <nav className='bg-primary header-shadow-right-light px-5 items-center hidden lg:block mt-2 pt-2 pb-1'>
               {routes.map((route, i) => (
                 <button key={i}>
                   <Link 

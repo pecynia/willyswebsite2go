@@ -18,6 +18,7 @@ import { generateJSON } from '@tiptap/html'
 
 import MenuBar from '@/app/components/editor/MenuBar'
 import { Button } from '@/app/components/ui/button'
+import CustomBulletList from './checklistBullet'
 
 interface EditorComponentProps {
     initialContent?: string,
@@ -42,8 +43,8 @@ const EditorComponent: React.FC<EditorComponentProps> = ({
             TextStyle,
             Dropcursor,
             Color,
+            CustomBulletList,
             ListItem,
-            BulletList,
         ],
         content: '',
         editorProps: {

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
+import { twMerge } from "tailwind-merge";
 
-export default function AnimatedWord({ word }: { word: string }) {
+export default function AnimatedWord({ word, className }: { word: string, className?: string }) {
   const item = {
     hidden: {
       y: "150%",
