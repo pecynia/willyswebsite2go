@@ -23,6 +23,30 @@
             },
             "companyName": "Company 3",
             "quote": "The catering for our event was perfect. The food was delicious and beautifully presented. Thank you!"
+        },
+        {
+            "img": {
+                "path": "/imgs/tafel.jpg",
+                "alt": "Company 4"
+            },
+            "companyName": "Company 4",
+            "quote": "The food was delicious and the service was exceptional."
+        },
+        {
+            "img": {
+                "path": "/imgs/yan_sate.jpg",
+                "alt": "Company 5"
+            },
+            "companyName": "Company 5",
+            "quote": "We were blown away by the quality of the food and the professionalism of the staff. Highly recommend!"
+        },
+        {
+            "img": {
+                "path": "/imgs/kratje.jpg",
+                "alt": "Company 6"
+            },
+            "companyName": "Company 6",
+            "quote": "The catering for our event was perfect. The food was delicious and beautifully presented. Thank you!"
         }
     ]
 }

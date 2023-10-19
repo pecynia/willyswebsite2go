@@ -4,32 +4,9 @@ import React, { Component } from "react";
 import Slider from "react-slick";
 import Image from "next/image";
 import { ArrowRightCircle, ArrowLeftCircle } from "lucide-react";
-import reviews from '@/dictionaries/reviews.json'
-
-interface ArrowProps {
-    className?: string;
-    style?: React.CSSProperties;
-    onClick?: () => void;
-}
-
-// Custom Arrow components for the Slider
-function SampleNextArrow(props: ArrowProps) {
-  const { className, style, onClick } = props;
-  return (
-    <div className={className} style={{ ...style, display: "block", color: "black" }} onClick={onClick}>
-      <ArrowRightCircle size={24} />
-    </div>
-  );
-}
-
-function SamplePrevArrow(props: ArrowProps) {
-  const { className, style, onClick } = props;
-  return (
-    <div className={className} style={{ ...style, display: "block", color: "black" }} onClick={onClick}>
-      <ArrowLeftCircle size={24} />
-    </div>
-  );
-}
+import reviewsData from "@/dictionaries/reviews.json";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 export default class ReviewSlider extends Component {
   render() {
@@ -37,38 +14,43 @@ export default class ReviewSlider extends Component {
       dots: true,
       infinite: true,
       speed: 500,
-      slidesToShow: 1, // Default for small screens
+      slidesToShow: 3,
       slidesToScroll: 1,
       autoplay: true,
-      autoplaySpeed: 2000, // 2 seconds
-      nextArrow: <SampleNextArrow />,
-      prevArrow: <SamplePrevArrow />,
+      autoplaySpeed: 2000,
       responsive: [
         {
-          breakpoint: 768, // md
+          breakpoint: 1280, // lg
+          settings: {
+            slidesToShow: 3,
+          }
+        },
+        {
+          breakpoint: 1024, // md
           settings: {
             slidesToShow: 2,
           }
         },
         {
-          breakpoint: 1024, // lg
+          breakpoint: 768, // sm
           settings: {
-            slidesToShow: 3,
+            slidesToShow: 1,
           }
         }
       ]
     };
+
     return (
-      <div className="p-4">
-        <h2 className="text-2xl font-bold mb-4">Recencies</h2>
+      <div className="p-4 w-4/5 md:w-3/4 lg:w-2/3">
+        <h2 className="text-2xl font-bold mb-4 text-primary-foreground">Reviews</h2>
         <Slider {...settings}>
-          {reviews.quotes.map((review, index) => (
-            <div key={index} className="relative h-60 lg:h-80 rounded-md overflow-hidden shadow-lg p-4">
-              <Image src={review.img.path} alt={review.img.alt} className="object-cover object-center" layout="fill" />
-              <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-end p-4">
-                <h3 className="text-white font-semibold">{review.companyName}</h3>
-                <p className="text-white mt-2">{review.quote}</p>
+          {reviewsData.quotes.map((review, index) => (
+            <div key={index} className=" space-x-4 bg-secondary p-4 ">
+              <div className="w-full h-48 relative">
+                <Image src={review.img.path} alt={review.img.alt} className="object-cover object-center" fill />
               </div>
+              <h3 className="font-semibold">{review.companyName}</h3>
+              <p className="text-sm">{review.quote}</p>
             </div>
           ))}
         </Slider>

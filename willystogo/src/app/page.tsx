@@ -15,12 +15,11 @@ export default function Home() {
       <TextLeftImgRight documentId="test" images={['/imgs/sates.jpg', '/imgs/willy.png']} />
       
       <div className='h-screen bg-primary sticky'>
-        <div className='flex justify-center items-center'>
+        <div className='flex flex-col justify-center items-center'>
           <AnimatedHeader header="Wat onze klanten zeggen" className="text-center text-4xl pt-16" />
+          <ReviewSlider />
         </div>
       </div>
-
-      <ReviewSlider />
     </div>
   )
 }
