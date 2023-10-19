@@ -5,6 +5,7 @@
                 "path": "/imgs/tafel.jpg",
                 "alt": "Company 1"
             },
+            "id": "company-1",
             "companyName": "Company 1",
             "quote": "This catering company is amazing! The food was delicious and the service was exceptional."
         },
@@ -13,6 +14,7 @@
                 "path": "/imgs/yan_sate.jpg",
                 "alt": "Company 2"
             },
+            "id": "company-2",
             "companyName": "Company 2",
             "quote": "We were blown away by the quality of the food and the professionalism of the staff. Highly recommend!"
         },
@@ -21,6 +23,7 @@
                 "path": "/imgs/kratje.jpg",
                 "alt": "Company 3"
             },
+            "id": "company-3",
             "companyName": "Company 3",
             "quote": "The catering for our event was perfect. The food was delicious and beautifully presented. Thank you!"
         },
@@ -29,6 +32,7 @@
                 "path": "/imgs/tafel.jpg",
                 "alt": "Company 4"
             },
+            "id": "company-4",
             "companyName": "Company 4",
             "quote": "The food was delicious and the service was exceptional."
         },
@@ -37,6 +41,7 @@
                 "path": "/imgs/yan_sate.jpg",
                 "alt": "Company 5"
             },
+            "id": "company-5",
             "companyName": "Company 5",
             "quote": "We were blown away by the quality of the food and the professionalism of the staff. Highly recommend!"
         },
@@ -45,6 +50,7 @@
                 "path": "/imgs/kratje.jpg",
                 "alt": "Company 6"
             },
+            "id": "company-6",
             "companyName": "Company 6",
             "quote": "The catering for our event was perfect. The food was delicious and beautifully presented. Thank you!"
         }
