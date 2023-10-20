@@ -16,7 +16,7 @@ export default function Home() {
       
       <div className='h-screen bg-secondary sticky'>
         <div className='flex flex-col justify-center items-center pt-10'>
-          <AnimatedHeader header="Wat onze klanten zeggen" className="text-center text-4xl" />
+          <AnimatedHeader header="Wat onze klanten zeggen" className="text-center text-4xl px-6" />
           <ReviewSlider />
         </div>
       </div>
