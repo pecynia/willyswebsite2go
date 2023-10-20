@@ -17,8 +17,8 @@ export const routes: Route[] = [
     label: "Evenementen",
 },
 {
-    href: "/drankjes",
-    label: "Drankjes",
+    href: "/drank",
+    label: "Drank",
 },
 {
     href: "/faciliteiten",

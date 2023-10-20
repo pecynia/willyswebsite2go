@@ -7,7 +7,7 @@ import ReviewSlider from '@/app/components/ReviewSlider'
 
 export default function Home() {
   return (
-    <div style={{'--svg': 'hsl(var(--primary))'} as React.CSSProperties}>
+    <div>
       <LandingImg />
       <SmallEditor documentId="intro" />
 
