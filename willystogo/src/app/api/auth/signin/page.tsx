@@ -10,6 +10,7 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import { Button } from "@/app/components/ui/button"
 import { Input } from "@/app/components/ui/input"
 import { LogIn } from "lucide-react"
+import Image from 'next/image'
 
 let validationSchema = yup.object().shape({
   password: yup.string()
@@ -43,9 +44,16 @@ const SignInPage: NextPage = () => {
   }
 
   return (
-      <section className='flex min-h-full overflow-hidden pt-16 sm:py-28'>
-          <div className='mx-auto flex w-full max-w-2xl flex-col px-4 sm:px-6'>
-              <div className='sm:rounded-5xl -mx-4 flex-auto bg-white px-4 header-shadow-right sm:mx-0 sm:flex-none sm:p-10'>
+      <section className='flex min-h-screen overflow-hidden pt-16 sm:py-28'>
+          <div className='mx-auto flex w-full max-w-2xl flex-col px-4 sm:px-6 items-center space-y-4'>
+            <Image 
+                src='/logo.png'
+                alt='logo'
+                width={200}
+                height={200}
+            />
+              <div className='sm:rounded-5xl w-full -mx-4 flex-auto bg-white px-4 header-shadow-right sm:mx-0 sm:flex-none sm:p-10'>
+                  
                   <form onSubmit={handleSubmit(handleFormSubmit)}>
                       <div className='space-y-2'>
                           <label htmlFor='password' className='block text-md font-medium text-gray-700'>

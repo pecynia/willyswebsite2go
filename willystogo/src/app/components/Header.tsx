@@ -40,7 +40,7 @@ const Header = () => {
           {/* Logo */}
           <Link href='/' className=''>
             <div className='flex items-center'>
-              <h1 className='text-3xl font-youngSerif text-white'>YanWilly</h1>
+              <h1 className='text-3xl font-youngSerif text-primary'>YanWilly</h1>
             </div>
             {/* <Image
               src='/logo.png'
