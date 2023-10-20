@@ -59,7 +59,7 @@ const Footer = () => {
             {/* Bottom */}
             <div className="mt-8 flex justify-center items-center space-x-4">
                 <p>kvk: {contactInfo.kvk}</p>
-                <p>&copy; Willy's2Go {new Date().getFullYear()}</p>
+                <p>&copy; Willys2Go {new Date().getFullYear()}</p>
                 <p>Website made by <span className="font-bold">Humainly</span></p>
             </div>
         </footer>
