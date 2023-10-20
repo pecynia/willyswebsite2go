@@ -15,8 +15,8 @@ export default function Home() {
       <TextLeftImgRight documentId="test" images={['/imgs/sates.jpg', '/imgs/willy.png']} />
       
       <div className='h-screen bg-secondary sticky'>
-        <div className='flex flex-col justify-center items-center'>
-          <AnimatedHeader header="Wat onze klanten zeggen" className="text-center text-4xl pt-16" />
+        <div className='flex flex-col justify-center items-center pt-10'>
+          <AnimatedHeader header="Wat onze klanten zeggen" className="text-center text-4xl" />
           <ReviewSlider />
         </div>
       </div>

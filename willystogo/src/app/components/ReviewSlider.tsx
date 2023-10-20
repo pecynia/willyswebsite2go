@@ -4,7 +4,7 @@ import React from "react";
 import Slider from "react-slick";
 import Image from "next/image";
 import { ArrowRightCircle, ArrowLeftCircle } from "lucide-react";
-import reviewsData from "@/dictionaries/reviews.json";
+import { reviews} from "@/dictionaries/reviews";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Button } from "@/app/components/ui/button";
@@ -85,10 +85,10 @@ const ReviewSlider: React.FC = () => {
               Reviews
           </h2>
           <Slider {...settings}>
-              {reviewsData.quotes.map((review, index) => (
+              {reviews.quotes.map((review, index) => (
                   <div 
                       key={index} 
-                      className="space-x-4 p-4 relative group transition-all duration-300"
+                      className="space-x-0 space-y-2 p-4 relative group transition-all duration-300"
                   >
                       <div className="w-full h-72 relative group-hover:opacity-50 transition-opacity duration-300">
                           <Image
@@ -108,8 +108,9 @@ const ReviewSlider: React.FC = () => {
                               </div>
                           </Link>
                       </div>
-                      <h3 className="font-semibold text-primary">{review.companyName}</h3>
-                      <p className="text-md text-primary">{review.quote}</p>
+                      <h3 className="font-semibold text-primary text-2xl">{review.companyName}</h3>
+                      <p className="text-lg text-primary">{review.quote}</p>
+                      <p className="text-secondary-foreground italic">{review.author}</p>
                   </div>
               ))}
           </Slider>

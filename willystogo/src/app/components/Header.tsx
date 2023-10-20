@@ -9,45 +9,11 @@ import { useSession } from 'next-auth/react'
 import { AdminModeWithLogout } from "@/app/components/admin/headerButton"
 import { Sheet, SheetContent, SheetTrigger } from '@/app/components/ui/sheet'
 import { Menu } from 'lucide-react'
+import { routes } from '@/dictionaries/routes'
 
 
 const Header = () => {
   const { data: session } = useSession()
-
-  const routes = [
-    {
-      href: "/",
-      label: "Home",
-    },
-    {
-      href: "/ons-aanbod",
-      label: "Ons Aanbod",
-    },
-    {
-      href: "/evenementen",
-      label: "Evenementen",
-    },
-    {
-      href: "/drankjes",
-      label: "Drankjes",
-    },
-    {
-      href: "/faciliteiten",
-      label: "Faciliteiten",
-    },
-    {
-      href: "/ervaringen",
-      label: "Ervaringen",
-    },
-    {
-      href: "/contact",
-      label: "Contact",
-    },
-    {
-      href: "/over-ons",
-      label: "Over Ons",
-    },
-  ]
 
   const [position, setPosition] = useState(typeof window !== 'undefined' ? window.scrollY : 0)
   const [visible, setVisible] = useState(true)
