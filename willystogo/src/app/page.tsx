@@ -1,9 +1,8 @@
 import LandingImg from '@/app/components/landingImg'
 import ParallaxScrollInfo from '@/app/components/parallaxScrollInfo'
-import TextLeftImgRight from '@/app/components/TextLeftImgRight'
+import TextTwoImages from '@/app/components/TextTwoImages'
 import SmallEditor from '@/app/components/SmallEditor'
-import AnimatedHeader from '@/app/components/AnimatedHeader'
-import ReviewSlider from '@/app/components/ReviewSlider'
+import ReviewSliderWrapper from './components/ReviewSliderWrapper'
 
 export default function Home() {
   return (
@@ -12,14 +11,9 @@ export default function Home() {
       <SmallEditor documentId="intro" />
 
       <ParallaxScrollInfo />
-      <TextLeftImgRight documentId="test" images={['/imgs/sates.jpg', '/imgs/willy.png']} />
+      <TextTwoImages documentId="test" images={['/imgs/sates.jpg', '/imgs/willy.png']} imagesPosition='right'/>
       
-      <div className='h-screen bg-secondary sticky'>
-        <div className='flex flex-col justify-center items-center pt-10'>
-          <AnimatedHeader header="Wat onze klanten zeggen" className="text-center text-4xl px-6" />
-          <ReviewSlider />
-        </div>
-      </div>
+      <ReviewSliderWrapper />
     </div>
   )
 }

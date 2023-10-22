@@ -235,10 +235,10 @@ html.lenis {
   box-shadow: -11px 11px 0px 0px hsl(var(--primary));
 } 
 .header-shadow-left-light {
-  box-shadow: -11px 11px 0px 0px hsl(var(--secondary));
+  box-shadow: -11px 11px 0px 0px hsl(var(--secondary-foreground));
 }
 .header-shadow-right-light {
-  box-shadow: 7px 7px 0px 0px hsl(var(--secondary));
+  box-shadow: 11px 11px 0px 0px hsl(var(--secondary-foreground));
 }
 
 
