@@ -52,34 +52,34 @@ const TextSingleImage: React.FC<SingleImageProps> = ({ documentId, image, imageP
 
   const getShadowClass = () => {
     if (theme === "light") {
-      return imagePosition === "left" ? "header-shadow-right-light" : "header-shadow-left-light"
+      return imagePosition === "right" ? "header-shadow-right-light" : "header-shadow-left-light"
     }
-    return imagePosition === "left" ? "header-shadow-right" : "header-shadow-left"
+    return imagePosition === "right" ? "header-shadow-right" : "header-shadow-left"
   }
 
   const TextEditor = (
-      <div className={twMerge(getShadowClass(), "col-span-3 lg:col-span-2 bg-secondary flex px-10 pt-4 pb-14")}>
-          <EditorWrapper documentId={documentId} />
-      </div>
+    <div className={twMerge(getShadowClass(), "col-span-full lg:col-span-2 bg-secondary flex px-10 pt-4 min-w-[200px] max-w-full", imagePosition === 'left' && 'lg:order-2')}>
+        <EditorWrapper documentId={documentId} />
+    </div>
   )
 
   const SingleImg = (
-    <div className="relative col-span-2 lg:col-span-3 h-full -z-1">
+    <div className={twMerge("pt-20 lg:pt-0 relative col-span-full lg:col-span-3 h-[500px] lg:h-full", imagePosition === 'right' && 'lg:order-2')}>
       <motion.div 
         style={{ y: useTransform(scrollYProgress, [0, 1], [0, -dimension.height * 0.2]) }} 
-        className={twMerge("absolute w-full h-full top-[10%] left-0", className)}
+        className={twMerge("w-full h-full lg:absolute top-[10%] left-0 flex-shrink-0", className)}
       >
-        <Image src={image} alt="Image" fill className="object-cover object-center"/>
+        <Image src={image} alt="Image" fill className="object-cover object-center max-w-full"/>
       </motion.div>
     </div>
   )
 
   return (
-    <div ref={container} className="mt-0 space-x-10 sm:mt-10 pl-8 sm:pl-24 min-h-[500px] grid grid-cols-1 md:grid-cols-5 gap-4 p-4 sm:p-16">
-      {imagePosition === "left" ? SingleImg : TextEditor}
-      {imagePosition === "left" ? TextEditor : SingleImg}
+    <div ref={container} className="  mt-0 space-x-0 lg:space-x-10 lg:mt-10 pl-8 lg:pl-24 min-h-[500px] grid grid-cols-1 lg:grid-cols-5 gap-4 p-4 lg:p-16">
+      {verticalPosition === 'above' ? SingleImg : TextEditor}
+      {verticalPosition === 'below' ? SingleImg : TextEditor}
     </div>
   )
 }
 
-export default TextSingleImage
+export default TextSingleImage;
