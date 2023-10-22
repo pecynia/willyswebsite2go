@@ -5,14 +5,17 @@ import { useTransform, useScroll, motion } from "framer-motion"
 import Image from "next/image"
 import Lenis from "@studio-freight/lenis"
 import EditorWrapper from "@/app/components/editor/EditorWrapper"
+import { twMerge } from "tailwind-merge"
 
 interface TwoImagesProps {
-  documentId: string
-  images: [string, string]
-  imagesPosition: "left" | "right"
+  documentId: string;
+  images: [string, string];
+  imagesPosition: "left" | "right";
+  theme: "light" | "dark";
+  className?: string;
 }
 
-const TextTwoImages: React.FC<TwoImagesProps> = ({ documentId, images, imagesPosition }) => {
+const TextTwoImages: React.FC<TwoImagesProps> = ({ documentId, images, imagesPosition, theme, className }) => {
   const container = useRef<HTMLDivElement | null>(null)
   const [dimension, setDimension] = useState({ width: 0, height: 0 })
   const { scrollYProgress } = useScroll({
@@ -46,8 +49,15 @@ const TextTwoImages: React.FC<TwoImagesProps> = ({ documentId, images, imagesPos
     }
   }, [])
 
+  const getShadowClass = () => {
+    if (theme === "light") {
+      return imagesPosition === "left" ? "header-shadow-right-light" : "header-shadow-left-light";
+    }
+    return imagesPosition === "left" ? "header-shadow-right" : "header-shadow-left";
+  }
+
   const TextEditor = (
-    <div className="header-shadow-left col-span-3 lg:col-span-2 bg-secondary flex px-10 pt-4 pb-14">
+    <div className={twMerge(getShadowClass(), "col-span-3 lg:col-span-2 bg-secondary flex px-10 pt-4 pb-14")}>
       <EditorWrapper documentId={documentId} />
     </div>
   )

@@ -11,7 +11,7 @@ export default function Home() {
       <SmallEditor documentId="intro" />
 
       <ParallaxScrollInfo />
-      <TextTwoImages documentId="test" images={['/imgs/sates.jpg', '/imgs/willy.png']} imagesPosition='right'/>
+      <TextTwoImages documentId="test" images={['/imgs/sates.jpg', '/imgs/willy.png']} imagesPosition='right' theme="dark" />
       
       <ReviewSliderWrapper />
     </div>

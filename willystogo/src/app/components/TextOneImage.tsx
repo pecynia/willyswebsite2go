@@ -10,12 +10,13 @@ import { twMerge } from "tailwind-merge"
 interface SingleImageProps {
   documentId: string
   image: string
-  imagePosition: "left" | "right"
-  theme: "light" | "dark"
+  imagePosition?: "left" | "right"
+  theme?: "light" | "dark"
+  verticalPosition?: "above" | "below";
   className?: string
 }
 
-const TextSingleImage: React.FC<SingleImageProps> = ({ documentId, image, imagePosition, theme, className }) => {
+const TextSingleImage: React.FC<SingleImageProps> = ({ documentId, image, imagePosition = "left", theme = "dark", verticalPosition= "above", className }) => {
   const container = useRef<HTMLDivElement | null>(null)
   const [dimension, setDimension] = useState({ width: 0, height: 0 })
   const { scrollYProgress } = useScroll({

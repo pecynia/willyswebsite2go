@@ -87,7 +87,7 @@
   @apply p-4;
 
   p {
-    @apply mt-2 mb-2;
+    @apply mt-2 mb-4 leading-snug;
   }
 
   h1 {
