@@ -39,9 +39,8 @@ const EditorWrapper = ({documentId}: {documentId: string}) => {
         fetchData()
     }, [])
 
-    // Wait until the session is loaded (not in "loading" status)
     if (status === "loading") {
-        return <div className="mt-10 h-36 flex items-center justify-center p-2">
+        return <div className="flex justify-center items-center w-full h-full">
             <ReloadIcon className="w-4 h-4 animate-spin" />
         </div>
     }

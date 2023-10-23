@@ -66,15 +66,16 @@ const TextTwoImages: React.FC<TwoImagesProps> = ({ documentId, images, imagesPos
   const Images = (
     <div className={twMerge("pt-20 lg:pt-0 relative col-span-full lg:col-span-3 h-[500px] lg:h-full", imagesPosition === 'right' && 'lg:order-2')}>
       <motion.div 
-        style={{ y: useTransform(scrollYProgress, [0, 1], [0, dimension.height * 0.5]) }} 
-        className="absolute w-[70%] h-[80%] top-[-25%] left-[25%] lg:w-[60%] lg:h-[60%] lg:top-[-20%] lg:left-[25%]">
-        <Image src={images[1]} alt="Image 2" fill className="object-cover object-center"/>
-      </motion.div>
-      <motion.div 
         style={{ y: useTransform(scrollYProgress, [0, 1], [0, -dimension.height * 0.2]) }} 
         className="absolute w-[60%] h-[70%] top-[30%] left-[5%] lg:w-[80%] lg:h-[70%] lg:top-[35%]">
         <Image src={images[0]} alt="Image 1" fill className="object-cover object-center"/>
       </motion.div>
+      <motion.div 
+        style={{ y: useTransform(scrollYProgress, [0, 1], [0, dimension.height * 0.5]) }} 
+        className="absolute w-[70%] h-[80%] top-[-25%] left-[25%] lg:w-[60%] lg:h-[60%] lg:top-[-20%] lg:left-[25%]">
+        <Image src={images[1]} alt="Image 2" fill className="object-cover object-center"/>
+      </motion.div>
+
     </div>
   )
 

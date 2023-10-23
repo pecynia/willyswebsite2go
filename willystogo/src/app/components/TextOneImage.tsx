@@ -58,9 +58,9 @@ const TextSingleImage: React.FC<SingleImageProps> = ({ documentId, image, imageP
   }
 
   const TextEditor = (
-    <motion.div layout className={twMerge(getShadowClass(), "col-span-full lg:col-span-2 bg-secondary flex px-10 pt-4 min-w-[200px] max-w-full", imagePosition === 'left' && 'lg:order-2')}>
+    <div className={twMerge(getShadowClass(), "col-span-full lg:col-span-2 bg-secondary flex px-10 pt-4 min-w-[200px] max-w-full", imagePosition === 'left' && 'lg:order-2')}>
         <EditorWrapper documentId={documentId} />
-    </motion.div>
+    </div>
   )
 
   const SingleImg = (

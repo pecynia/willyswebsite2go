@@ -10,7 +10,7 @@ function page() {
         <AnimatedHeader header="Ons Aanbod" className='text-4xl' />
       </div>
       <TextOneImage documentId="buffetten" image="/imgs/cocktails.jpg" imagePosition="left" theme="dark" verticalPosition="below" />
-      <div className='-mt-36'>
+      <div className='-mt-24 lg:mt-0'>
         <TextThreeImages documentId="satebar" images={['/imgs/sates.jpg', '/imgs/willy.png', '/imgs/cocktails.jpg']} imagesPosition='right' theme="dark"/>
       </div>
       <div className='sticky'>
