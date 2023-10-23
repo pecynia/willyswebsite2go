@@ -10,9 +10,11 @@ function page() {
         <AnimatedHeader header="Ons Aanbod" className='text-4xl' />
       </div>
       <TextOneImage documentId="buffetten" image="/imgs/cocktails.jpg" imagePosition="left" theme="dark" verticalPosition="below" />
-      <TextThreeImages documentId="satebar" images={['/imgs/sates.jpg', '/imgs/willy.png', '/imgs/batik_2.pngcocktails.jpg']} imagesPosition='right' theme="dark"/>
-      <div className='sticky pt-10'>
-        <TextOneImage documentId="eigen_event" image="/imgs/cocktails.jpg" imagePosition="left" theme="dark" />
+      <div className='-mt-32'>
+        <TextThreeImages documentId="satebar" images={['/imgs/sates.jpg', '/imgs/willy.png', '/imgs/cocktails.jpg']} imagesPosition='right' theme="dark"/>
+      </div>
+      <div className='sticky'>
+        <TextOneImage documentId="eigen_event" image="/imgs/cocktails.jpg" imagePosition="left" theme="dark" verticalPosition='below'/>
       </div>
     </div>
   )
