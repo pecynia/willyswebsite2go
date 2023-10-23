@@ -77,7 +77,7 @@ const TextThreeImages: React.FC<ThreeImagesProps> = ({ documentId, images, image
         }}
         style={{ y: useTransform(scrollYProgress, [0, 1], [0, -dimension.height * 0.1]) }} 
         className="absolute w-[80%] md:w-[70%] h-[60%] md:h-[100%] top-[30%] md:top-[15%] left-[5%]">
-        <Image src={images[0]} alt="Image 1" fill className="object-cover object-center"/>
+        <Image src={images[0]} priority alt="Image 1" fill className="object-cover object-center"/>
       </motion.div>
       <motion.div 
         initial={{ opacity: 0, scale: 0.5 }}

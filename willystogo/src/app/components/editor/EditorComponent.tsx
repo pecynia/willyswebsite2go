@@ -42,10 +42,8 @@ const EditorComponent: React.FC<EditorComponentProps> = ({
                 placeholder: 'Begin met typen...',
             }),
             TextStyle,
-            Dropcursor,
             Color,
             CustomBulletList,
-            ListItem,
         ],
         content: '',
         editorProps: {

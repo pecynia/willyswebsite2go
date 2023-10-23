@@ -5,9 +5,11 @@ import Container from '@/app/components/ui/container'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useSession } from 'next-auth/react'
+import { usePathname } from 'next/navigation'
 import { AdminModeWithLogout } from "@/app/components/admin/headerButton"
 import { Sheet, SheetContent, SheetTrigger } from '@/app/components/ui/sheet'
 import { Menu } from 'lucide-react'
+
 import { routes } from '@/dictionaries/routes'
 
 const Header = () => {
@@ -27,6 +29,8 @@ const Header = () => {
       window.removeEventListener("scroll", handleScroll)
     }
   })
+
+  const pathname = usePathname()
 
   const headerClass = visible ? 'top-0 transition-all duration-400 ease-out z-50' : '-top-20 lg:top-0 transition-all duration-400 ease-out z-50'
 
@@ -73,7 +77,7 @@ const Header = () => {
                     href={route.href}
                     className='transition-colors px-4'
                   >
-                    <span className='textWithAnimatedUnderline text-secondary text-sm font-raleway'>
+                    <span className={`textWithAnimatedUnderline text-secondary text-sm font-raleway ${pathname === route.href ? 'textWithUnderline' : ''}`}>
                       {route.label}
                     </span>
                   </Link>

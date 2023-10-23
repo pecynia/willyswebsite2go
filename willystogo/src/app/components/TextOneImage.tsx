@@ -79,7 +79,7 @@ const TextSingleImage: React.FC<SingleImageProps> = ({ documentId, image, imageP
         style={{ y: useTransform(scrollYProgress, [0, 1], [0, -dimension.height * 0.2]) }} 
         className={twMerge("w-full h-full lg:absolute top-[20%] left-0 flex-shrink-0", className)}
       >
-        <Image src={image} alt="Image" fill className="object-cover object-center max-w-full"/>
+        <Image src={image} alt="Image" fill className="object-cover object-center"/>
       </motion.div>
     </div>
   )

@@ -9,7 +9,7 @@ const container = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.025
+      staggerChildren: 0.05
     }
   }
 };

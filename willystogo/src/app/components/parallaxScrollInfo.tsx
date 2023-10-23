@@ -51,7 +51,7 @@ const Column: React.FC<ColumnProps> = ({ images, y, positionClass }) => (
   >
     {images.map((src, i) => (
       <div key={i} className="h-[33%] relative overflow-hidden">
-        <Image src={`/imgs/${src}`} alt="image" fill className='object-cover object-center my-4' />
+        <Image src={`/imgs/${src}`} alt="image" fill className='object-cover object-center my-4'/>
       </div>
     ))}
   </motion.div>
