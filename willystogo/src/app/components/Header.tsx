@@ -5,12 +5,10 @@ import Container from '@/app/components/ui/container'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useSession } from 'next-auth/react'
-
 import { AdminModeWithLogout } from "@/app/components/admin/headerButton"
 import { Sheet, SheetContent, SheetTrigger } from '@/app/components/ui/sheet'
 import { Menu } from 'lucide-react'
 import { routes } from '@/dictionaries/routes'
-
 
 const Header = () => {
   const { data: session } = useSession()
@@ -30,34 +28,23 @@ const Header = () => {
     }
   })
 
-  const headerClass = visible ? 'top-0 transition-all duration-400 ease-out z-50' : '-top-20 transition-all duration-400 ease-out z-50'
+  const headerClass = visible ? 'top-0 transition-all duration-400 ease-out z-50' : '-top-20 lg:top-0 transition-all duration-400 ease-out z-50'
 
   return (
-    <header className={`sticky w-full p-4 pr-0 flex justify-center ${headerClass} font-youngSerif`}>
+    <header className={`sticky lg:fixed w-full p-4 pr-0 flex justify-center ${headerClass} font-youngSerif`}>
       <Container>
         <div className='relative sm:px-6 lg:px-2 lg:pr-3 flex space-x-4 h-6 items-center justify-between w-full'>
-          
-          {/* Logo */}
-          <Link href='/' className=''>
+          <Link href='/'>
             <div className='flex items-center'>
               <h1 className='text-3xl font-youngSerif text-primary'>YanWilly</h1>
             </div>
-            {/* <Image
-              src='/logo.png'
-              alt='Logo'
-              width={160}
-              height={100}
-              priority
-            /> */}
           </Link>
-          
-          {/* Navigation and Session Content */}
           <div className='flex items-center'>
-            
-            {/* Mobile Navigation (SheetTrigger) */}
             <Sheet>
               <SheetTrigger>
-                <Menu className="h-6 lg:hidden invert mr-4" />
+                <div className='lg:hidden bg-primary rounded-full mr-4 p-2 cursor-pointer'>
+                  <Menu className="h-6 lg:hidden invert" />
+                </div>
               </SheetTrigger>
               <SheetContent side="top" className='w-full font-youngSerif text-center text-primary'>
                 <nav className='flex flex-col gap-4'>
@@ -73,15 +60,11 @@ const Header = () => {
                 </nav>
               </SheetContent>
             </Sheet>
-
-            {/* Session Content */}
             {session && (
               <div className='flex items-center'>
                 <AdminModeWithLogout />
               </div>
             )}
-
-            {/* Desktop Navigation */}
             <nav className='bg-primary header-shadow-right-light px-5 items-center hidden lg:block mt-2 pt-2 pb-1'>
               {routes.map((route, i) => (
                 <button key={i}>
@@ -97,10 +80,7 @@ const Header = () => {
                 </button>
               ))}
             </nav>
-            
-
-          </div> {/* End of Navigation and Session Content */}
-          
+          </div>
         </div>
       </Container>
     </header>

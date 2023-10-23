@@ -75,7 +75,7 @@ const TextSingleImage: React.FC<SingleImageProps> = ({ documentId, image, imageP
         }}
         ref={container}
         style={{ y: useTransform(scrollYProgress, [0, 1], [0, -dimension.height * 0.2]) }} 
-        className={twMerge("w-full h-full lg:absolute top-[10%] left-0 flex-shrink-0", className)}
+        className={twMerge("w-full h-full lg:absolute top-[20%] left-0 flex-shrink-0", className)}
       >
         <Image src={image} alt="Image" fill className="object-cover object-center max-w-full"/>
       </motion.div>
@@ -83,7 +83,7 @@ const TextSingleImage: React.FC<SingleImageProps> = ({ documentId, image, imageP
   )
 
   return (
-    <div ref={container} className="  mt-0 space-x-0 lg:space-x-10 lg:mt-10 pl-8 lg:pl-24 min-h-[500px] grid grid-cols-1 lg:grid-cols-5 gap-4 p-4 lg:p-16">
+    <div ref={container} className="mt-0 space-x-0 lg:space-x-10 lg:mt-10 pl-8 lg:pl-24 min-h-[500px] grid grid-cols-1 lg:grid-cols-5 gap-4 lg:gap-10 p-4 lg:p-16">
       {verticalPosition === 'above' ? SingleImg : TextEditor}
       {verticalPosition === 'below' ? SingleImg : TextEditor}
     </div>

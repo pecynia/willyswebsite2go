@@ -29,7 +29,7 @@ interface TextboxProps {
 
 const Textbox: React.FC<TextboxProps> = ({ y, isActive }) => (
   <motion.div 
-    className={`header-shadow-right absolute right-0 top-0 mr-12 my-4 w-2/5 min-h-[20%] max-h-[80%] mb-12 bg-secondary p-4 overflow-y-auto hidden lg:block ${isActive ? 'fixed' : ''}`}
+    className={`header-shadow-right absolute right-0 top-16 mr-12 my-4 w-2/5 min-h-[20%] max-h-[80%] mb-12 bg-secondary p-4 overflow-hidden hidden lg:block ${isActive ? 'fixed' : ''}`}
     style={{ y }}
   >
       <EditorWrapper documentId="intro"/>
