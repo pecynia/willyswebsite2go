@@ -5,6 +5,7 @@ import EditorComponent from "@/app/components/editor/EditorComponent"
 import { useSession } from 'next-auth/react'
 import { generateHTML } from '@tiptap/html'
 import { ReloadIcon } from "@radix-ui/react-icons"
+import { motion } from "framer-motion"
 
 import StarterKit from '@tiptap/starter-kit'
 import { Color } from '@tiptap/extension-color'
@@ -46,7 +47,9 @@ const EditorWrapper = ({documentId}: {documentId: string}) => {
     }
 
     return (
-        <EditorComponent documentId={documentId} editable={session ? true : false} initialContent={fetchedContent} />
+        <motion.div layout>
+            <EditorComponent documentId={documentId} editable={session ? true : false} initialContent={fetchedContent} />
+        </motion.div>
     )
 }
 

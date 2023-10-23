@@ -19,6 +19,7 @@ import { generateJSON } from '@tiptap/html'
 
 import MenuBar from '@/app/components/editor/MenuBar'
 import { Button } from '@/app/components/ui/button'
+import { motion } from 'framer-motion'
 
 interface EditorComponentProps {
     initialContent?: string,
@@ -89,11 +90,13 @@ const EditorComponent: React.FC<EditorComponentProps> = ({
     
       
     return (
-        <div className='relative flex flex-col -mb-5'>
-            {editable ? <MenuBar editor={editor} /> : null}
+        <motion.div className='relative flex flex-col -mb-5' layout>
+          {editable ? <MenuBar editor={editor} /> : null}
+          <motion.div layout transition={{ type: "spring", ease: "easeInOut", duration: 0.1 }}>
             <EditorContent editor={editor} />
-
-            <div className="flex justify-end mt-5">
+          </motion.div>
+    
+          <div className="flex justify-end mt-5">
                 {editable && hasChanges && (
                     isSaving ? 
                     <Button disabled size="lg">
@@ -106,7 +109,7 @@ const EditorComponent: React.FC<EditorComponentProps> = ({
                     </Button>
                 )}
             </div>
-        </div>
+        </motion.div>
     )
 }
 
