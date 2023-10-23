@@ -86,7 +86,12 @@ const LandingImg = () => {
           fill
         />
       </motion.div>
-      <div className="z-20 p-0 pt-24 sm:p-6 lg:p-8 overflow-hidden max-w-2xl w-3/4 md:w-3/4 lg:w-auto">
+      <motion.div 
+        initial={{ opacity: 0, x: '-100%' }}
+        animate={{ opacity: 1, x: '0%' }}
+        transition={{ duration: 0.7, delay: 0.3, ease: [0, 0.71, 0.2, 1.01] }}
+        className="z-20 p-0 pt-24 sm:p-6 lg:p-8 overflow-hidden max-w-2xl w-3/4 md:w-3/4 lg:w-auto"
+      >
         <div className="header-shadow-left pb-8 relative overflow-hidden bg-cover bg-center bg-secondary flex flex-col justify-start items-center text-left">
         <motion.div 
           ref={headingRef}
@@ -103,7 +108,7 @@ const LandingImg = () => {
             </p>        
           </motion.div>
         </div>
-      </div>
+      </motion.div>
     </div>
   )
 }

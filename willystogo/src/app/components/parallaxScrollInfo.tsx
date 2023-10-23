@@ -29,6 +29,9 @@ interface TextboxProps {
 
 const Textbox: React.FC<TextboxProps> = ({ y, isActive }) => (
   <motion.div 
+    initial={{ opacity: 0, x: '100%' }}
+    animate={{ opacity: 1, x: '0%' }}
+    transition={{ duration: 0.7, delay: 0.3, ease: [0, 0.71, 0.2, 1.01] }}
     className={`header-shadow-right absolute right-0 top-16 mr-12 my-4 w-2/5 min-h-[20%] max-h-[80%] mb-12 bg-secondary p-4 overflow-hidden hidden lg:block ${isActive ? 'fixed' : ''}`}
     style={{ y }}
   >
@@ -39,7 +42,10 @@ const Textbox: React.FC<TextboxProps> = ({ y, isActive }) => (
 
 
 const Column: React.FC<ColumnProps> = ({ images, y, positionClass }) => (
-  <motion.div 
+  <motion.div
+    initial={{ opacity: 0, x: '-100%' }}
+    animate={{ opacity: 1, x: '0%' }}
+    transition={{ duration: 0.7, delay: 0.3, ease: [0, 0.71, 0.2, 1.01] }}
     className={`relative h-3/4 sm:h-full w-full lg:w-1/4 min-w-[250px] flex flex-col ${positionClass}`}
     style={{ y }}
   >

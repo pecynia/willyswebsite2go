@@ -80,12 +80,17 @@ const TextTwoImages: React.FC<TwoImagesProps> = ({ documentId, images, imagesPos
   )
 
   return (
-    <div ref={container} className="mt-0 sm:mt-10 pl-8 sm:pl-24 min-h-[500px] grid grid-cols-1 lg:grid-cols-5 gap-4 p-4 sm:p-16">
+    <motion.div 
+      initial={{ opacity: 0, y: '100%' }}
+      animate={{ opacity: 1, y: '0%' }}
+      transition={{ duration: 0.7, delay: 0.3, ease: [0, 0.71, 0.2, 1.01] }}
+      ref={container} 
+      className="mt-0 sm:mt-10 pl-8 sm:pl-24 min-h-[500px] grid grid-cols-1 lg:grid-cols-5 gap-4 p-4 sm:p-16">
       {verticalPosition === 'above' ? (imagesPosition === "left" ? Images : TextEditor) : null}
       {verticalPosition === 'below' ? (imagesPosition === "left" ? TextEditor : Images) : null}
       {verticalPosition === 'above' ? (imagesPosition === "left" ? TextEditor : Images) : null}
       {verticalPosition === 'below' ? (imagesPosition === "left" ? Images : TextEditor) : null}
-    </div>
+    </motion.div>
   )
 }
 
