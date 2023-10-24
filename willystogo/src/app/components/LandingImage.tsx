@@ -14,7 +14,7 @@ const container = {
   }
 };
 
-const LandingImg = () => {
+const LandingImage = () => {
   const ref = useRef(null)
   const [dimension, setDimension] = useState({width: 0, height: 0})
   
@@ -113,4 +113,4 @@ const LandingImg = () => {
   )
 }
 
-export default LandingImg
+export default LandingImage

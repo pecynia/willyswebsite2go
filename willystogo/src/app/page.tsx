@@ -1,13 +1,15 @@
-import LandingImg from '@/app/components/landingImg'
+import LandingImage from '@/app/components/LandingImage'
 import ParallaxScrollInfo from '@/app/components/parallaxScrollInfo'
 import TextTwoImages from '@/app/components/TextTwoImages'
 import SmallEditor from '@/app/components/SmallEditor'
-import ReviewSliderWrapper from './components/ReviewSliderWrapper'
+import ReviewSliderWrapper from '@/app/components/ReviewSliderWrapper'
+import LandingVideo from '@/app/components/LandingVideo'
 
 export default function Home() {
   return (
     <div>
-      <LandingImg />
+      {/* <LandingImage /> */}
+      <LandingVideo />
       <SmallEditor documentId="intro" />
 
       <ParallaxScrollInfo />
