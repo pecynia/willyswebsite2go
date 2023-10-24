@@ -66,7 +66,7 @@ const LandingImg = () => {
 
 
   return (
-    <div className="flex justify-center sm:justify-start space-x-4 space-y-10 overflow-hidden h-screen sm:h-screen" ref={ref}>
+    <div className="-mb-40 md:mb-0 flex justify-center sm:justify-start space-x-4 space-y-10 overflow-hidden h-screen sm:h-screen" ref={ref}>
       <motion.div 
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}

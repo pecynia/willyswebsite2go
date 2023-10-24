@@ -52,9 +52,9 @@ const TextThreeImages: React.FC<ThreeImagesProps> = ({ documentId, images, image
 
   const getShadowClass = () => {
     if (theme === "light") {
-      return imagesPosition === "right" ? "header-shadow-right-light" : "header-shadow-left-light";
+      return imagesPosition === "right" ? "header-shadow-left-light" : "header-shadow-left-right";
     }
-    return imagesPosition === "right" ? "header-shadow-right" : "header-shadow-left";
+    return imagesPosition === "right" ? "header-shadow-left" : "header-shadow-right";
   }
 
   const TextEditor = (
