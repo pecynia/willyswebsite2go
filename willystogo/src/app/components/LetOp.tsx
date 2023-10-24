@@ -18,7 +18,7 @@ function LetOp() {
           initial={{ opacity: 0, y: '100%' }} // Starts off-screen to the left
           whileInView={{ opacity: 1, y: '0%' }} // Comes in to view
           transition={{ type: "spring", ease: "easeInOut", duration: 0.8 }}
-          className='header-shadow-right min-w-[50%] min-h-[20%] bg-secondary flex items-center px-10 pt-4 z-10'
+          className='header-shadow-right min-w-[50%] min-h-[20%] max-w-[80%] bg-secondary flex items-center px-10 pt-4 z-10'
         >
             <EditorWrapper documentId="let_op" />
         </motion.div>

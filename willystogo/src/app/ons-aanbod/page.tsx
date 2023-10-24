@@ -16,14 +16,14 @@ function page() {
         <AnimatedHeader header="Ons Aanbod" className='text-4xl' />
       </div>
       
-      <TextOneImage documentId="buffetten" image="/imgs/cocktails.jpg" imagePosition="left" theme="dark" verticalPosition="below" />
+      <TextOneImage documentId="buffetten" image="/imgs/buffetten.jpg" imagePosition="left" theme="dark" verticalPosition="below" />
       
       <div className='-mt-24 lg:mt-0'>
-        <TextThreeImages documentId="satebar" images={['/imgs/sates.jpg', '/imgs/willy.png', '/imgs/cocktails.jpg']} imagesPosition='right' theme="dark"/>
+        <TextThreeImages documentId="satebar" images={['/imgs/sates.jpg', '/imgs/willy.png', '/imgs/sates_2.jpg']} imagesPosition='right' theme="dark"/>
       </div>
       
       <div className='sticky'>
-        <TextOneImage documentId="eigen_event" image="/imgs/cocktails.jpg" imagePosition="left" theme="dark" verticalPosition='below'/>
+        <TextOneImage documentId="eigen_event" image="/imgs/tafel.jpg" imagePosition="left" theme="dark" verticalPosition='below'/>
       </div>
 
       {/* Let op */}
