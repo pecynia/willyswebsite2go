@@ -35,7 +35,7 @@ const Header = () => {
   const headerClass = visible ? 'top-0 transition-all duration-400 ease-out z-50' : '-top-20 lg:top-0 transition-all duration-400 ease-out z-50'
 
   return (
-    <header className={`sticky lg:fixed w-full p-4 pr-0 flex justify-center ${headerClass} font-youngSerif`}>
+    <header className={`fixed w-full p-4 pr-0 flex justify-center ${headerClass} font-youngSerif`}>
       <Container>
         <div className='relative sm:px-6 lg:px-2 lg:pr-3 flex space-x-4 h-6 items-center justify-between w-full'>
           <Link href='/'>

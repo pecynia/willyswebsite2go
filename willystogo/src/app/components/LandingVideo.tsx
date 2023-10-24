@@ -1,20 +1,74 @@
-import React from 'react'
+"use client"
+
+import React, { useEffect, useRef, useState } from 'react'
+import { motion } from 'framer-motion'
+import AnimatedWord from '@/app/components/animatedText'
 
 function LandingVideo() {
+  const [isVisible, setIsVisible] = useState(true);
+  const headingRef = useRef(null);
+  
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+      }
+    );
+
+    if (headingRef.current) {
+      observer.observe(headingRef.current);
+    }
+
+    return () => {
+      if (headingRef.current) {
+        observer.unobserve(headingRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <div className="w-full h-screen top-0 ">
-        <video 
-            playsInline 
-            autoPlay 
-            muted 
-            loop 
-            preload="auto"
-            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-auto min-w-full min-h-full object-cover"
+    <div className="relative w-full h-screen top-0">
+      <video 
+          playsInline 
+          autoPlay 
+          muted 
+          loop 
+          preload="auto"
+          className="absolute top-0 left-0 w-full h-full object-cover 0"
+      >
+        <source src="/imgs/full_video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      
+      <div className="absolute top-24 left-16 10">
+        <motion.div 
+            initial={{ opacity: 0, x: '-100%' }}
+            animate={{ opacity: 1, x: '0%' }}
+            transition={{ duration: 0.7, delay: 0.3, ease: [0, 0.71, 0.2, 1.01] }}
+            className="10 p-0 pt-24 md:p-6 lg:p-8 max-w-2xl w-3/4 md:w-3/4 lg:w-auto"
         >
-            <source src="/imgs/full_video.mp4" type="video/mp4" />
-            {/* Fallback content */}
-            Your browser does not support the video tag.
-        </video>
+          <div className="header-shadow-left pb-8 relative bg-cover bg-center bg-secondary flex flex-col justify-start items-center text-left">
+            <motion.div 
+                ref={headingRef}
+                className="text-4xl md:text-5xl lg:text-6xl md:max-w-xl max-w-xsbg-secondary/60 p-6 md:p-8 lg:p-10"
+                initial="hidden"
+                animate={isVisible ? "visible" : "hidden"}
+            >
+              {"Indonesische Catering".split(" ").map((word, index) => (
+                  <AnimatedWord key={index} word={word} />
+              ))}
+              <p className='text-lg md:text-xl text-secondary-foreground'>
+                Willys2Go is een Indonesische catering service in de regio Ede. Wij verzorgen de lekkerste Indonesische gerechten voor uw gelegenheid.
+              </p>        
+            </motion.div>
+          </div>
+        </motion.div>
+      </div>
     </div>
   )
 }
