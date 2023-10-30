@@ -80,7 +80,7 @@ const ReviewSlider: React.FC = () => {
 
     // Feedback: add the author of the review, make it bigger, make sure the button appears on the image when hovered over. Set the text to primary-foreground when hovered over
     return (
-      <div className="p-4 w-full px-16 relative">
+      <div className="p-4 w-full px-16 relative pb-10">
           <h2 className="text-2xl font-bold mb-4 pl-4 text-primary">
               Reviews
           </h2>
