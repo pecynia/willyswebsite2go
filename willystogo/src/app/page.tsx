@@ -12,7 +12,10 @@ export default function Home() {
       <LandingVideo />
       <SmallEditor documentId="intro" />
 
-      <ParallaxScrollInfo />
+      <div className='mt-10'>
+        <ParallaxScrollInfo />
+      </div>
+      
       <TextTwoImages documentId="test" images={['/imgs/sates.jpg', '/imgs/willy.png']} imagesPosition='right' theme="dark" />
       
       <ReviewSliderWrapper />

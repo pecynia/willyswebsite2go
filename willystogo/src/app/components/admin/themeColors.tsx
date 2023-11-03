@@ -25,12 +25,19 @@ let validationSchema = yup.object().shape({
         .matches(/^#([0-9a-f]{3}){1,2}$/i, 'Kleurcode is onjuist')
 })
 
-function ThemeColorDialog({ colorName }: { colorName: keyof ThemeColors }) {
+function kebabToCamel(s: string): string {
+    // kebab-case to camelCase
+    return s.replace(/(-\w)/g, m => m[1].toUpperCase());
+}
+  
+function ThemeColorDialog({ colorNameKebab }: { colorNameKebab: string }) {
+    // Convert kebab-case to camelCase if necessary
+    const colorName = kebabToCamel(colorNameKebab) as keyof ThemeColors;
     const [tryingColor, setTryingColor] = useState("#50ad30")
 
     // Set the trying color on mount to the current color 
     useEffect(() => {
-        const currentColor = hslToHex(getComputedStyle(document.documentElement).getPropertyValue(`--${colorName}`))
+        const currentColor = hslToHex(getComputedStyle(document.documentElement).getPropertyValue(`--${colorNameKebab}`))
         setTryingColor(currentColor)
     }, [])
 
@@ -67,7 +74,7 @@ function ThemeColorDialog({ colorName }: { colorName: keyof ThemeColors }) {
     const handleSave = () => {
         const hsl = hexToHsl(tryingColor)
         if (hsl) {
-            document.documentElement.style.setProperty(`--${colorName}`, `${hsl[0]} ${hsl[1]}% ${hsl[2]}%`)
+            document.documentElement.style.setProperty(`--${colorNameKebab}`, `${hsl[0]} ${hsl[1]}% ${hsl[2]}%`)
         }
         console.log(hsl)
     }
@@ -76,7 +83,7 @@ function ThemeColorDialog({ colorName }: { colorName: keyof ThemeColors }) {
         <Dialog>
             <DialogTrigger asChild>
                 <Button variant="outline" size="icon">
-                    <Paintbrush className="h-5 w-5" />
+                    <Paintbrush className="h-5 w-5" style={{ color: hslToHex(getComputedStyle(document.documentElement).getPropertyValue(`--${colorNameKebab}`)) }} />
                     <span className="sr-only">Theme color</span>
                 </Button>
             </DialogTrigger>

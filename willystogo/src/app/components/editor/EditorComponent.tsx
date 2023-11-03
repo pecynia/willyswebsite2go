@@ -7,8 +7,6 @@ import { Save } from 'lucide-react'
 
 import StarterKit from '@tiptap/starter-kit'
 import { Color } from '@tiptap/extension-color'
-import ListItem from '@tiptap/extension-list-item'
-import Dropcursor from '@tiptap/extension-dropcursor'
 import Placeholder from '@tiptap/extension-placeholder'
 import TextStyle from '@tiptap/extension-text-style'
 import CustomBulletList from '@/app/components/editor/checklistBullet'
@@ -65,7 +63,7 @@ const EditorComponent: React.FC<EditorComponentProps> = ({
         }
     }, [initialContent, editor])
 
-    // Make a post fetch request to our secure API endpoint
+    // Make a post fetch request to secure API endpoint
     const handleSave = async () => {
         setIsSaving(true);
         try {
@@ -77,7 +75,7 @@ const EditorComponent: React.FC<EditorComponentProps> = ({
                     'Document-ID': documentId  // using the documentId prop
                 },
             });
-            // you might want to check for res.ok or other conditions here
+            // check for res.ok or other conditions here
             setHasChanges(false);
         } catch (error) {
             console.error('Failed to save:', error);
@@ -88,9 +86,9 @@ const EditorComponent: React.FC<EditorComponentProps> = ({
     
       
     return (
-        <motion.div className='relative flex flex-col -mb-5' layout>
+        <motion.div className='relative flex flex-col -mb-5' layout transition={{ type: "spring", ease: "easeInOut", duration: 0.1 }}>
           {editable ? <MenuBar editor={editor} /> : null}
-          <motion.div layout transition={{ type: "spring", ease: "easeInOut", duration: 0.1 }}>
+          <motion.div layout >
             <EditorContent editor={editor} />
           </motion.div>
     

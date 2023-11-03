@@ -30,8 +30,8 @@ import { hslToHex } from '@/app/utils/hexToHsl'
 const MenuBar = ({ editor }: { editor: Editor | null }) => {
     if (!editor) return null
     return (
-        <div className='absolute -top-12 left-0 pb-7 pt-6 w-full h-10 bg-white rounded-xl bg-opacity-80 flex justify-between items-center px-4'>
-            <div className='flex space-x-1'>
+        <div className='sticky -mt-32 z-10 bg-white shadow-lg rounded-xl'>
+            <div className='flex flex-wrap items-center px-4 py-2 space-x-1'>
                 <Button variant='ghost' size='sm'
                     onClick={() => editor.chain().focus().toggleBold().run()}
                     disabled={
@@ -87,7 +87,7 @@ const MenuBar = ({ editor }: { editor: Editor | null }) => {
                 </Button>
             </div>
                 <Separator orientation='vertical' />
-            <div className='flex space-x-1'>
+            <div className='flex flex-wrap items-center px-4 py-2 space-x-1'>
                 <Button variant='ghost' size='sm'
                     onClick={() => editor.chain().focus().unsetAllMarks().run()}>
                     <RemoveFormatting className='w-4 h-4' />

@@ -6,7 +6,8 @@ import { Button } from '@/app/components/ui/button';
 import ThemeColorDialog from '@/app/components/admin/themeColors';
 import { ReloadIcon } from "@radix-ui/react-icons"
 import Loading from './loading';
-import Container from '../components/ui/container';
+import Container from '@/app/components/ui/container';
+import { hslToHex } from '@/app/utils/hexToHsl';
 
 const Profile = () => {
     const { status, data: session } = useSession()
@@ -36,19 +37,19 @@ const Profile = () => {
                             <h1 className=''>  
                                 Primary: 
                             </h1>
-                            <ThemeColorDialog colorName='primary' />
+                            <ThemeColorDialog colorNameKebab='primary' />
                         </div>
                         <div className='flex space-x-4'>
                             <h1 className=''>
                                 Background:
                             </h1>
-                            <ThemeColorDialog colorName='background' />
+                            <ThemeColorDialog colorNameKebab='background' />
                         </div>
                         <div className='flex space-x-4'>
                             <h1 className=''>
                                 Secondary:
                             </h1>
-                            <ThemeColorDialog colorName='secondary-foreground' />
+                            <ThemeColorDialog colorNameKebab='secondary-foreground' />
                         </div>
                     </div>
                 </div>

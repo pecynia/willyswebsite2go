@@ -32,7 +32,7 @@ const Textbox: React.FC<TextboxProps> = ({ y, isActive }) => (
     initial={{ opacity: 0, x: '100%' }}
     animate={{ opacity: 1, x: '0%' }}
     transition={{ duration: 0.7, delay: 0.3, ease: [0, 0.71, 0.2, 1.01] }}
-    className={`header-shadow-right absolute right-0 top-16 mr-12 my-4 w-2/5 min-h-[20%] max-h-[80%] mb-12 bg-secondary p-4 overflow-hidden hidden lg:block ${isActive ? 'fixed' : ''}`}
+    className={`header-shadow-right absolute right-0 top-24 mr-12 my-4 w-2/5 min-h-[20%] max-h-[80%] mb-12 bg-secondary p-4 hidden lg:block ${isActive ? 'fixed' : ''}`}
     style={{ y }}
   >
       <EditorWrapper documentId="intro"/>
