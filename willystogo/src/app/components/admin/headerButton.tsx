@@ -5,8 +5,8 @@ import { LogOut, Settings, Loader2 } from 'lucide-react'
 
 export const AdminModeWithLogout = () => {
   return (
-    <div className="flex items-center bg-background font-light rounded-lg pl-4">
-      <div className="text-black">Edit mode</div>
+    <div className="flex items-center bg-background font-light pl-4 mt-2 mr-2 rounded-lg">
+      <div className="text-black">Editing</div>
 
       <Link href="/admin">
         <Button 

@@ -45,7 +45,7 @@ function AnimatedHeader({ header, className }: { header: string, className?: str
     return (
         <motion.div 
             // ref={headingRef}
-            className={twMerge("font-youngSerif text-secondary-foreground pb-1", className)}
+            className={twMerge("font-youngSerif text-primary pb-1", className)}
             // variants={container}
             // initial="hidden"
             // animate={isVisible ? "visible" : "hidden"}

@@ -32,16 +32,20 @@ const Header = () => {
 
   const pathname = usePathname()
 
-  const headerClass = visible ? 'top-0 transition-all duration-400 ease-out z-50' : '-top-20 lg:top-0 transition-all duration-400 ease-out z-50'
+  const headerClass = visible ? 'top-0 transition-all duration-400 ease-out z-50' : '-top-28 lg:top-0 transition-all duration-400 ease-out z-50'
 
   return (
     <header className={`fixed w-full p-4 pr-0 flex justify-center ${headerClass} font-youngSerif`}>
       <Container>
-        <div className='relative sm:px-6 lg:px-2 lg:pr-3 flex space-x-4 h-6 items-center justify-between w-full'>
+        <div className='relative sm:px-6 lg:px-2 lg:pr-3 flex space-x-4 h-6 pt-8 items-center justify-between w-full'>
           <Link href='/'>
-            <div className='flex items-center'>
-              <h1 className='text-3xl font-youngSerif text-primary'>YanWilly</h1>
-            </div>
+            <Image 
+              src='/logo.png'
+              alt='Logo'
+              width={200}
+              height={100}
+              priority
+            />
           </Link>
           <div className='flex items-center'>
             <Sheet>
@@ -69,7 +73,7 @@ const Header = () => {
                 <AdminModeWithLogout />
               </div>
             )}
-            <nav className='bg-primary header-shadow-right-light px-5 items-center hidden lg:block mt-2 pt-2 pb-1'>
+            <nav className='bg-primary px-5 items-center hidden lg:block mt-2 pt-2 pb-1'>
               {routes.map((route, i) => (
                 <button key={i}>
                   <Link 

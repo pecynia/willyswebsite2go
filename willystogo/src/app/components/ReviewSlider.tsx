@@ -1,23 +1,23 @@
 "use client"
 
-import React from "react";
-import Slider from "react-slick";
-import Image from "next/image";
-import { ArrowRightCircle, ArrowLeftCircle } from "lucide-react";
-import { reviews} from "@/dictionaries/reviews";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import { Button } from "@/app/components/ui/button";
-import Link from "next/link";
+import React from "react"
+import Slider from "react-slick"
+import Image from "next/image"
+import { ArrowRightCircle, ArrowLeftCircle } from "lucide-react"
+import { reviews } from "@/dictionaries/reviews"
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
+import { Button } from "@/app/components/ui/button"
+import Link from "next/link"
 
 interface ArrowProps {
-    className?: string;
-    style?: React.CSSProperties;
-    onClick?: () => void;
+    className?: string
+    style?: React.CSSProperties
+    onClick?: () => void
 }
 
 function SampleNextArrow(props: ArrowProps) {
-    const { className, style, onClick } = props;
+    const { className, style, onClick } = props
     return (
         <div
             className={`absolute top-1/2 right-2 z-10 ${className}`}
@@ -26,11 +26,11 @@ function SampleNextArrow(props: ArrowProps) {
         >
             <ArrowRightCircle size={24} />
         </div>
-    );
+    )
 }
 
 function SamplePrevArrow(props: ArrowProps) {
-    const { className, style, onClick } = props;
+    const { className, style, onClick } = props
     return (
         <div
             className={`absolute top-1/2 left-2 z-10 ${className}`}
@@ -39,7 +39,7 @@ function SamplePrevArrow(props: ArrowProps) {
         >
             <ArrowLeftCircle size={24} />
         </div>
-    );
+    )
 }
 
 const ReviewSlider: React.FC = () => {
@@ -76,47 +76,49 @@ const ReviewSlider: React.FC = () => {
                 },
             },
         ],
-    };
+    }
 
-    // Feedback: add the author of the review, make it bigger, make sure the button appears on the image when hovered over. Set the text to primary-foreground when hovered over
     return (
-      <div className="p-4 w-full px-16 relative pb-10">
-          <h2 className="text-2xl font-bold mb-4 pl-4 text-primary">
-              Reviews
-          </h2>
-          <Slider {...settings}>
-              {reviews.quotes.map((review, index) => (
-                  <div 
-                      key={index} 
-                      className="space-x-0 space-y-2 p-4 relative group transition-all duration-300"
-                  >
-                      <div className="w-full h-72 relative group-hover:opacity-50 transition-opacity duration-300">
-                          <Image
-                              src={review.img.path}
-                              alt={review.img.alt}
-                              className="object-cover object-center"
-                              fill
-                          />
-                          <Link href={`/ervaringen-en-recensies#${review.id}`}>
-                              <div className="absolute inset-0 flex items-center justify-center">
-                                  <Button 
-                                      variant="secondary" 
-                                      className="rounded-none hover:text-primary-foreground hover:bg-primary shadow-none opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                                  >
-                                      Bekijk meer
-                                  </Button>
-                              </div>
-                          </Link>
-                      </div>
-                      <h3 className="font-semibold text-primary text-2xl">{review.companyName}</h3>
-                      <p className="text-lg text-primary">{review.quote}</p>
-                      <p className="text-secondary-foreground italic">{review.author}</p>
-                  </div>
-              ))}
-          </Slider>
-      </div>
-  );
-  
-};
+        <div className="p-4 w-full px-16 relative pb-10">
+            <h2 className="text-2xl font-bold mb-4 pl-4 text-primary">
+                Reviews
+            </h2>
+            <Slider {...settings}>
+                {reviews.quotes.map((review, index) => (
+                    <div 
+                        key={index} 
+                        className="space-y-2 p-4 relative transition-all duration-300"
+                    >
+                        <div className="w-full h-72 relative overflow-hidden ">
+                            <Image
+                                src={review.img.path}
+                                alt={review.img.alt}
+                                className="object-cover object-center"
+                                layout="fill"
+                            />
+                        </div>
+                        <div className="flex items-center space-x-3 text-primary">
+                            {review.logo && (
+                                <img
+                                    src={review.logo}
+                                    alt={`${review.companyName || review.author} logo`}
+                                    className="w-16 h-16 object-contain"
+                                />
+                            )}
+                            <div>
+                                <h3 className="font-youngSerif text-2xl py-2">{review.companyName || review.author}</h3>
+                                
+                            </div>
+                        </div>
+                        
+                        <p className="">{review.quote}</p>
+                        <p className="italic font-light">{review.date}</p>
+                        {review.companyName && <p className="font-bold pt-4">{review.author}</p>}
+                    </div>
+                ))}
+            </Slider>
+        </div>
+    )
+}
 
-export default ReviewSlider;
+export default ReviewSlider

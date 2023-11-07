@@ -55,14 +55,14 @@ function LandingVideo() {
           <div className="header-shadow-left pb-8 relative bg-cover bg-center bg-secondary flex flex-col justify-start items-center text-left">
             <motion.div 
                 ref={headingRef}
-                className="text-4xl md:text-5xl lg:text-6xl md:max-w-xl max-w-xsbg-secondary/60 p-6 md:p-8 lg:p-10"
+                className="text-4xl md:text-5xl lg:text-6xl md:max-w-xl max-w-xs bg-secondary/60 p-6 md:p-8 lg:p-10"
                 initial="hidden"
                 animate={isVisible ? "visible" : "hidden"}
             >
               {"Indonesische Catering".split(" ").map((word, index) => (
                   <AnimatedWord key={index} word={word} />
               ))}
-              <p className='text-lg md:text-xl text-secondary-foreground'>
+              <p className='text-lg md:text-xl text-primary'>
                 Willys2Go is een Indonesische catering service in de regio Ede. Wij verzorgen de lekkerste Indonesische gerechten voor uw gelegenheid.
               </p>        
             </motion.div>

@@ -16,7 +16,7 @@ export default function AnimatedWord({ word, className }: { word: string, classN
   return (
     <span style={{ overflow: "hidden", display: "inline-block", marginRight: "5px" }}>
       <motion.span
-        className="font-youngSerif text-secondary-foreground pb-1"
+        className="font-youngSerif text-primary pb-1"
         variants={item}
         style={{ display: "inline-block" }}
       >

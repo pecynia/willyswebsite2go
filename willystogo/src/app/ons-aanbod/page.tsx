@@ -6,6 +6,8 @@ import TextOneImage from '@/app/components/TextOneImage'
 import TextThreeImages from '@/app/components/TextThreeImages'
 import LetOp from '@/app/components/LetOp'
 import { motion } from 'framer-motion'
+import Spacer from '@/app/components/Spacer'
+import SpacerBig from '@/app/components/SpacerBig'
 
 function page() {
   return (
@@ -18,13 +20,19 @@ function page() {
       
       <TextOneImage documentId="buffetten" image="/imgs/buffetten.jpg" imagePosition="left" theme="dark" verticalPosition="below" />
       
+      <Spacer />
+      
       <div className='-mt-24 lg:mt-0'>
         <TextThreeImages documentId="satebar" images={['/imgs/sates.jpg', '/imgs/willy.png', '/imgs/sates_2.jpg']} imagesPosition='right' theme="dark"/>
       </div>
+
+      <Spacer />
       
-      <div className='sticky'>
+      <div>
         <TextOneImage documentId="eigen_event" image="/imgs/tafel.jpg" imagePosition="left" theme="dark" verticalPosition='below'/>
       </div>
+      
+      <SpacerBig />
 
       {/* Let op */}
       <LetOp />
