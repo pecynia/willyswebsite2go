@@ -14,7 +14,7 @@ function OtherReviews() {
             whileInView={{ opacity: 1, x: '0%' }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.2, ease: [0, 0.71, 0.2, 1.01] }}
-            className={`flex flex-col md:flex-row items-center max-w-4xl mx-auto m-16 bg-secondary-foreground ${index % 2 === 0 ? 'header-shadow-left lg:ml-[15%]' : 'header-shadow-right lg:mr-[15%]'}`}
+            className={`flex flex-col md:flex-row items-center max-w-5xl mx-auto m-16 bg-secondary-foreground ${index % 2 === 0 ? 'header-shadow-left lg:ml-[15%]' : 'header-shadow-right lg:mr-[15%]'}`}
           >
             <div className={`${index % 2 === 0 ? 'order-2' : ''} w-full md:w-1/4 relative`} style={{ aspectRatio: '1 / 1.5' }}>
               <Image
