@@ -3,13 +3,22 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+
 import EditorWrapper from '@/app/components/editor/EditorWrapper'
 
-function LetOp() {
+
+interface Props {
+  documentId: string
+  imgPath: string
+  link?: string;
+  buttonText?: string;
+}
+
+function TextPopup({ documentId, imgPath, link, buttonText }: Props) {
   return (
-    <div className='flex flex-col items-center justify-center w-full h-96 relative'>
+    <div className='flex flex-col items-center justify-center w-full py-48 relative'>
         <Image 
-            src="/imgs/cocktails.jpg" 
+            src={imgPath}
             alt="Image" 
             fill
             className="object-cover object-center"
@@ -18,12 +27,13 @@ function LetOp() {
           initial={{ opacity: 0, y: '100%' }} // Starts off-screen to the left
           whileInView={{ opacity: 1, y: '0%' }} // Comes in to view
           transition={{ type: "spring", ease: "easeInOut", duration: 0.5 }}
-          className='header-shadow-right min-w-[50%] min-h-[20%] max-w-[80%] bg-secondary pb-10 flex items-center px-10 pt-4 z-10'
+          viewport={{ once: true }}
+          className='header-shadow-right min-w-[50%] min-h-[20%] max-w-[70%] bg-secondary mb-20 pb-10 flex px-10 pt-4 z-10'
         >
-            <EditorWrapper documentId="let_op" />
+            <EditorWrapper documentId={documentId} link={link} buttonText={buttonText} />
         </motion.div>
       </div>
   )
 }
 
-export default LetOp
+export default TextPopup

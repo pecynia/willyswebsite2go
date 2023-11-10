@@ -21,7 +21,7 @@ export const reviews: ReviewsHandler = {
     quotes: [
         {
             img: {
-                path: "/imgs/tafel.jpg",
+                path: "/logo.png",
                 alt: "Lukkien Ede",
             },
             logo: "https://media.licdn.com/dms/image/C4E0BAQG5g3DPgxoNyQ/company-logo_200_200/0/1641900142051?e=2147483647&v=beta&t=OSQNNk_TWm5n8iJVFgm81ma7GDp6jm_pXzuS8RhJzg8",
@@ -33,7 +33,7 @@ export const reviews: ReviewsHandler = {
         },
         {
             img: {
-                path: "/imgs/yan_sate.jpg",
+                path: "/imgs/reviews/basiliek.jpg",
                 alt: "Basiliek Veenendaal",
             },
             logo: "https://www.basiliekveenendaal.nl/wp-content/uploads/2023/01/140502_Logo_Basiliek-01.svg",
@@ -45,7 +45,7 @@ export const reviews: ReviewsHandler = {
         },
         {
             img: {
-                path: "/imgs/willy.png",
+                path: "/imgs/reviews/zgv.jpg",
                 alt: "ZGV (Ziekenhuis Geldersche Vallei)",
             },
             logo: "https://www.wur.nl/upload/d70f2758-3da7-4b39-ac9e-60aa05603d1a_logo%20ZGV.jpg",
@@ -57,7 +57,7 @@ export const reviews: ReviewsHandler = {
         },
         {
             img: {
-                path: "/imgs/tafel.jpg",
+                path: "/imgs/reviews/attract.jpg",
                 alt: "Attract professionals Ede",
             },
             logo: "https://media.licdn.com/dms/image/C560BAQGLPFr0aBZOLA/company-logo_200_200/0/1574069834313?e=2147483647&v=beta&t=Kh10ViBinzaZB6Tw9Bt-nK9gqXCi84JNgrQlgDhEeV4",
@@ -69,7 +69,7 @@ export const reviews: ReviewsHandler = {
         },
         {
             img: {
-                path: "/imgs/tafel.jpg",
+                path: "/imgs/reviews/jillis.jpg",
                 alt: "Jillis Baggerman Makerlaardij",
             },
             logo: "https://jillisbaggerman.nl/wp-content/uploads/2021/04/logo-website-1.png",
@@ -81,10 +81,10 @@ export const reviews: ReviewsHandler = {
         },
         {
             img: {
-                path: "/imgs/tafel.jpg",
+                path: "/logo.png",
                 alt: "Kaapcommunications",
             },
-            logo: "https://kaapcommunications.com/wp-content/uploads/2023/01/cropped-Logo-White.png",
+            logo: "",
             id: "kaapcommunications",
             companyName: "Kaapcommunications",
             author: "Dimitri",
@@ -93,19 +93,19 @@ export const reviews: ReviewsHandler = {
         },
         {
             img: {
-              path: "/imgs/path_to_image.jpg", // Replace with actual image path
+              path: "/imgs/reviews/hartman.jpg", // Replace with actual image path
               alt: "Meta Karman Event"
             },
             logo: "",
             id: "meta-karman",
             companyName: "",
             author: "Meta Karman",
-            quote: "Willy heeft voor ons een voortreffelijke, heerlijk avond verzorgd. Na een flinke verbouwing in onze nieuwe woning in de eerste maanden van 2022, hadden onze hulp troepen wel een relax avond verdiend. Daarnaast was ik (Meta) ook nog jarig. Bij zo'n feestje hoort natuurlijk lekker eten bij. Voor ons, de vrienden en familie is dat Indisch eten. Willy is al enthousiast voordat je verteld wat de bedoeling is. Hij neemt je gelijk mee in het feestje wat nog moet beginnen. Wij zijn zelf niet van party makers, maar hij maakte dat bijna wel van ons ��. We hebben genoten van zijn ideeën en oplossingen die hij voor ons bedacht. De avond zelf was geweldig, alles op tijd en mooi aangekleed. Erg fijn dat Willy ging uitserveren en wij er geen omkijken naar hadden. Het eten was voortreffelijk en voor iedereen wat te kiezen. Zelfs de grote fijnproevers onder ons (en zelf goede “Indische” koks) hebben genoten van het eten en waren blij dat ze nog een “left over” meekregen. Een topavond en zeker voor herhaling vatbaar.",
+            quote: "Willy heeft voor ons een voortreffelijke, heerlijk avond verzorgd. Na een flinke verbouwing in onze nieuwe woning in de eerste maanden van 2022, hadden onze hulp troepen wel een relax avond verdiend. Daarnaast was ik (Meta) ook nog jarig. Bij zo'n feestje hoort natuurlijk lekker eten bij. Voor ons, de vrienden en familie is dat Indisch eten. Willy is al enthousiast voordat je verteld wat de bedoeling is. Hij neemt je gelijk mee in het feestje wat nog moet beginnen. Wij zijn zelf niet van party makers, maar hij maakte dat bijna wel van ons. We hebben genoten van zijn ideeën en oplossingen die hij voor ons bedacht. De avond zelf was geweldig, alles op tijd en mooi aangekleed. Erg fijn dat Willy ging uitserveren en wij er geen omkijken naar hadden. Het eten was voortreffelijk en voor iedereen wat te kiezen. Zelfs de grote fijnproevers onder ons (en zelf goede “Indische” koks) hebben genoten van het eten en waren blij dat ze nog een “left over” meekregen. Een topavond en zeker voor herhaling vatbaar.",
             date: "13 augustus 2022" // Replace with actual date of the event
           },
           {
             img: {
-              path: "/imgs/path_to_image.jpg", // Replace with actual image path
+              path: "/logo.png", // Replace with actual image path
               alt: "De Vries Event"
             },
             logo: "",
@@ -117,7 +117,7 @@ export const reviews: ReviewsHandler = {
           },
           {
             img: {
-              path: "/imgs/path_to_image.jpg", // Replace with actual image path
+              path: "/imgs/reviews/dhfinance.jpg", // Replace with actual image path
               alt: "DHFinance Event"
             },
             logo: "https://media-01.imu.nl/storage/dh-finance.nl/5803/winstadviseur-boekhouding-profit-first-1.jpg",

@@ -11,9 +11,7 @@ import Placeholder from '@tiptap/extension-placeholder'
 import TextStyle from '@tiptap/extension-text-style'
 import CustomBulletList from '@/app/components/editor/checklistBullet'
 
-
 import { generateJSON } from '@tiptap/html'
-
 
 import MenuBar from '@/app/components/editor/MenuBar'
 import { Button } from '@/app/components/ui/button'

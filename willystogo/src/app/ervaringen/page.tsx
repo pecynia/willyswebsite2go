@@ -1,14 +1,15 @@
 "use client"
 
-import React from 'react'
-import AnimatedHeader from '@/app/components/AnimatedHeader'
-import TextOneImage from '@/app/components/TextOneImage'
-import TextThreeImages from '@/app/components/TextThreeImages'
-import LetOp from '@/app/components/LetOp'
-import { motion } from 'framer-motion'
-import Spacer from '@/app/components/Spacer'
+import React from 'react';
+import AnimatedHeader from '@/app/components/AnimatedHeader';
+import { motion } from 'framer-motion';
 
-function page() {
+import SpacerBig from '@/app/components/SpacerBig';
+import SmallTextPopup from '@/app/components/fixedTextPopup';
+import Spacer from '@/app/components/Spacer';
+import OtherReviews from '@/app/components/OtherReviews';
+
+function ReviewsPage() {
   return (
     <motion.div layout
       transition={{ type: "spring", ease: "easeInOut", duration: 0.8 }}
@@ -16,9 +17,18 @@ function page() {
       <div className='px-16 mt-10 lg:mt-24 mb-0 lg:-mb-20'>
         <AnimatedHeader header="Ervaringen" className='text-4xl' />
       </div>
-        
+
+
+      <SpacerBig />
+
+      <SmallTextPopup documentId='lukkien-review' imgPath='/imgs/reviews/attract.jpg' link='/ervaringen/lukkien' buttonText='Lees meer' />
+      
+
+      {/* Different other reviews */}
+      <OtherReviews />
+
     </motion.div>
   )
 }
 
-export default page
+export default ReviewsPage;

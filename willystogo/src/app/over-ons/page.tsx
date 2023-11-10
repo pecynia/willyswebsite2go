@@ -4,7 +4,7 @@ import React from 'react'
 import AnimatedHeader from '@/app/components/AnimatedHeader'
 import TextOneImage from '@/app/components/TextOneImage'
 import TextThreeImages from '@/app/components/TextThreeImages'
-import LetOp from '@/app/components/LetOp'
+import LetOp from '@/app/components/textPopup'
 import { motion } from 'framer-motion'
 import Spacer from '@/app/components/Spacer'
 

@@ -60,7 +60,7 @@ const TextTwoImages: React.FC<TwoImagesProps> = ({ documentId, images, imagesPos
   const TextEditor = (
     <motion.div layout
       transition={{ duration: 0.7, delay: 0.3, ease: [0, 0.71, 0.2, 1.01] }}
-      className={twMerge(getShadowClass(), "col-span-full lg:col-span-2 bg-secondary flex px-10 pt-4 pb-10 min-w-[200px] max-w-full", imagesPosition === 'left' && 'lg:order-2')}>
+      className={twMerge(getShadowClass(), "col-span-full lg:col-span-2 bg-secondary-foreground flex px-10 pt-4 pb-10 min-w-[200px] max-w-full", imagesPosition === 'left' && 'lg:order-2')}>
       <EditorWrapper documentId={documentId} />
     </motion.div>
   )
@@ -68,12 +68,11 @@ const TextTwoImages: React.FC<TwoImagesProps> = ({ documentId, images, imagesPos
   const Images = (
     <div className={twMerge("pt-20 lg:pt-0 relative col-span-full lg:col-span-3 h-[500px] lg:h-full", imagesPosition === 'right' && 'lg:order-2')}>
       <motion.div 
-        style={{ y: useTransform(scrollYProgress, [0, 1], [0, -dimension.height * 0.2]) }} 
         className="absolute w-[60%] h-[70%] top-[30%] left-[5%] lg:w-[80%] lg:h-[70%] lg:top-[35%]">
         <Image src={images[0]} alt="Image 1" fill className="object-cover object-center"/>
       </motion.div>
       <motion.div 
-        style={{ y: useTransform(scrollYProgress, [0, 1], [0, dimension.height * 0.3]) }} 
+        style={{ y: useTransform(scrollYProgress, [0, 1], [0, dimension.height * 0.2]) }} 
         className="absolute w-[70%] h-[80%] top-[-15%] left-[25%] lg:w-[60%] lg:h-[60%] lg:top-[0%] lg:left-[25%]">
         <Image src={images[1]} priority alt="Image 2" fill className="object-cover object-center"/>
       </motion.div>

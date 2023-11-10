@@ -1,18 +1,26 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import EditorComponent from "@/app/components/editor/EditorComponent"
+import Link from "next/link"
+import { motion } from "framer-motion"
 import { useSession } from 'next-auth/react'
 import { generateHTML } from '@tiptap/html'
 import { ReloadIcon } from "@radix-ui/react-icons"
-import { motion } from "framer-motion"
 
+import EditorComponent from "@/app/components/editor/EditorComponent"
 import StarterKit from '@tiptap/starter-kit'
 import { Color } from '@tiptap/extension-color'
 import TextStyle from '@tiptap/extension-text-style'
+import { Button } from "@/app/components/ui/button"
+
+interface EditorWrapperProps {
+    documentId: string;
+    link?: string;
+    buttonText?: string;
+}
 
 // TODO: CONVERT TO SERVER COMPONENT (so we don't fetch everytime)
-const EditorWrapper = ({documentId}: {documentId: string}) => {
+const EditorWrapper = ({ documentId, link, buttonText }: EditorWrapperProps) => {
     const { status, data: session } = useSession()
     const [fetchedContent, setFetchedContent] = useState('')
 
@@ -47,7 +55,16 @@ const EditorWrapper = ({documentId}: {documentId: string}) => {
 
     return (
         <motion.div layout>
-            <EditorComponent documentId={documentId} editable={session ? true : false} initialContent={fetchedContent} />
+            <EditorComponent documentId={documentId} editable={!!session} initialContent={fetchedContent} />
+            {link && buttonText && (
+                <div className="px-4 -mt-8 flex justify-center">
+                    <Button className="rounded-none mt-4">
+                        <Link href={link}>
+                            <p>{buttonText}</p>
+                        </Link>
+                    </Button>
+                </div>
+            )}
         </motion.div>
     )
 }

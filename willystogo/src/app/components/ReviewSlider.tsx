@@ -3,44 +3,12 @@
 import React from "react"
 import Slider from "react-slick"
 import Image from "next/image"
-import { ArrowRightCircle, ArrowLeftCircle } from "lucide-react"
 import { reviews } from "@/dictionaries/reviews"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import { Button } from "@/app/components/ui/button"
 import Link from "next/link"
 
-interface ArrowProps {
-    className?: string
-    style?: React.CSSProperties
-    onClick?: () => void
-}
-
-function SampleNextArrow(props: ArrowProps) {
-    const { className, style, onClick } = props
-    return (
-        <div
-            className={`absolute top-1/2 right-2 z-10 ${className}`}
-            style={{ ...style }}
-            onClick={onClick}
-        >
-            <ArrowRightCircle size={24} />
-        </div>
-    )
-}
-
-function SamplePrevArrow(props: ArrowProps) {
-    const { className, style, onClick } = props
-    return (
-        <div
-            className={`absolute top-1/2 left-2 z-10 ${className}`}
-            style={{ ...style }}
-            onClick={onClick}
-        >
-            <ArrowLeftCircle size={24} />
-        </div>
-    )
-}
 
 const ReviewSlider: React.FC = () => {
     const settings = {
@@ -54,8 +22,6 @@ const ReviewSlider: React.FC = () => {
         pauseOnHover: true,
         autoplay: true,
         autoplaySpeed: 1500,
-        nextArrow: <SampleNextArrow />,
-        prevArrow: <SamplePrevArrow />,
         responsive: [
             {
                 breakpoint: 1280,
@@ -107,16 +73,22 @@ const ReviewSlider: React.FC = () => {
                             )}
                             <div>
                                 <h3 className="font-youngSerif text-2xl py-2">{review.companyName || review.author}</h3>
-                                
                             </div>
                         </div>
                         
-                        <p className="">{review.quote}</p>
+                        <p className="overflow-auto">{review.quote}</p>
                         <p className="italic font-light">{review.date}</p>
-                        {review.companyName && <p className="font-bold pt-4">{review.author}</p>}
+                        {review.companyName && <p className="font-bold pt-3">{review.author}</p>}
                     </div>
                 ))}
             </Slider>
+            <div className="flex justify-center items-center mt-8">
+                <Button className="rounded-none">
+                    <Link href="/ervaringen">
+                        <p>Meer reviews</p>
+                    </Link>
+                </Button>
+            </div>
         </div>
     )
 }

@@ -4,10 +4,10 @@ import React from 'react'
 import AnimatedHeader from '@/app/components/AnimatedHeader'
 import TextOneImage from '@/app/components/TextOneImage'
 import TextThreeImages from '@/app/components/TextThreeImages'
-import LetOp from '@/app/components/LetOp'
 import { motion } from 'framer-motion'
 import Spacer from '@/app/components/Spacer'
 import SpacerBig from '@/app/components/SpacerBig'
+import TextPopup from '@/app/components/textPopup'
 
 function page() {
   return (
@@ -35,7 +35,7 @@ function page() {
       <SpacerBig />
 
       {/* Let op */}
-      <LetOp />
+      <TextPopup documentId='let_op' imgPath='/imgs/tafel.jpg' />
     </motion.div>
   )
 }

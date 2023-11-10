@@ -5,6 +5,9 @@ import { motion } from 'framer-motion'
 import AnimatedHeader from '@/app/components/AnimatedHeader'
 import TextOneImage from '@/app/components/TextOneImage'
 import TextThreeImages from '@/app/components/TextThreeImages'
+import Spacer from '@/app/components/Spacer'
+import SpacerBig from '@/app/components/SpacerBig'
+import TextPopup from '@/app/components/textPopup'
 
 function page() {
     return (
@@ -18,9 +21,16 @@ function page() {
 
             <TextOneImage documentId="dranken_arrangement" image="/imgs/cocktails.jpg" imagePosition="right" theme="dark" verticalPosition="below" />
 
+            <Spacer />
+
             <div className='-mt-24 lg:mt-0 mb-28'>
                 <TextThreeImages documentId="cocktails" images={['/imgs/cocktails.jpg', '/imgs/willy.png', '/imgs/sates_2.jpg']} imagesPosition='left' theme="dark" verticalPosition='below'/>
             </div>
+
+            <SpacerBig />
+            <Spacer />
+
+            <TextPopup documentId="opruimen-naar-eigen-event" imgPath='/imgs/cocktails.jpg' link='faciliteiten' buttonText='Overige Faciliteiten' />
 
         </motion.div>
   )

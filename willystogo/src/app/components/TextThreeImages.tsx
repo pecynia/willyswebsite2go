@@ -60,13 +60,13 @@ const TextThreeImages: React.FC<ThreeImagesProps> = ({ documentId, images, image
   const TextEditor = (
     <motion.div layout
       transition={{ duration: 0.7, delay: 0.3, ease: [0, 0.71, 0.2, 1.01] }}
-      className={twMerge(getShadowClass(), "col-span-full lg:col-span-2 bg-secondary flex px-10 pt-4 pb-10 min-w-[200px] max-w-full", imagesPosition === 'left' && 'lg:order-2')}>
+      className={twMerge(getShadowClass(), "col-span-full lg:col-span-2 bg-secondary-foreground  flex px-10 pt-4 pb-10 min-w-[200px] max-w-full", imagesPosition === 'left' && 'lg:order-2')}>
       <EditorWrapper documentId={documentId} />
     </motion.div>
   )
 
   const Images = (
-    <div className={twMerge("pt-0 relative col-span-full lg:col-span-3 h-[500px] lg:h-full", imagesPosition === 'right' && 'lg:order-2')}>
+    <div className={twMerge("pt-0 relative col-span-full lg:col-span-4 h-[500px] lg:h-full", imagesPosition === 'right' && 'lg:order-2')}>
       <motion.div 
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -75,8 +75,8 @@ const TextThreeImages: React.FC<ThreeImagesProps> = ({ documentId, images, image
           delay: 0.2,
           ease: [0, 0.71, 0.2, 1.01]
         }}
-        style={{ y: useTransform(scrollYProgress, [0, 1], [0, -dimension.height * 0.1]) }} 
-        className="absolute w-[80%] md:w-[70%] h-[60%] md:h-[100%] top-[30%] md:top-[15%] left-[5%]">
+        // style={{ y: useTransform(scrollYProgress, [0, 1], [0, -dimension.height * 0.1]) }} 
+        className="absolute w-[80%] md:w-[50%] h-[60%] md:h-[150%] top-[30%] md:top-[-15%] left-[5%]">
         <Image src={images[0]} priority alt="Image 1" fill className="object-cover object-center"/>
       </motion.div>
       <motion.div 
@@ -87,7 +87,7 @@ const TextThreeImages: React.FC<ThreeImagesProps> = ({ documentId, images, image
           delay: 0.4,
           ease: [0, 0.71, 0.2, 1.01]
         }}
-        style={{ y: useTransform(scrollYProgress, [0, 1], [0, dimension.height * 0.2]) }} 
+        style={{ y: useTransform(scrollYProgress, [0, 1], [0, dimension.height * 0.1]) }} 
         className="absolute w-[70%] md:w-[50%] h-[50%] md:h-[70%] top-[-5%] md:top-[0%] left-[25%] md:left-[50%]">
         <Image src={images[1]} alt="Image 2" fill className="object-cover object-center"/>
       </motion.div>
@@ -99,7 +99,7 @@ const TextThreeImages: React.FC<ThreeImagesProps> = ({ documentId, images, image
           delay: 0.3,
           ease: [0, 0.71, 0.2, 1.01]
         }}
-        style={{ y: useTransform(scrollYProgress, [0, 1], [0, -dimension.height * 0.5]) }} 
+        style={{ y: useTransform(scrollYProgress, [0, 1], [0, -dimension.height * 0.2]) }} 
         className="absolute w-[60%] md:w-[40%] h-[40%] md:h-[60%] lg:h-[70%] top-[100%] md:top-[100%] left-[12%] md:left-[35%]">
         <Image src={images[2]} alt="Image 3" fill className="object-cover object-center"/>
       </motion.div>
@@ -112,7 +112,7 @@ const TextThreeImages: React.FC<ThreeImagesProps> = ({ documentId, images, image
       animate={{ opacity: 1, y: '0%' }}
       transition={{ duration: 0.7, delay: 0.3, ease: [0, 0.71, 0.2, 1.01] }}
       ref={container} 
-      className="mt-0 sm:mt-10 pl-8 sm:pl-24 min-h-[500px] grid grid-cols-1 lg:grid-cols-5 gap-4 p-4 sm:p-16"
+      className="mt-0 sm:mt-10 pl-8 sm:pl-24 min-h-[500px] grid grid-cols-1 lg:grid-cols-6 gap-4 p-4 sm:p-16"
     >
       {verticalPosition === 'above' ? (imagesPosition === "left" ? Images : TextEditor) : null}
       {verticalPosition === 'below' ? (imagesPosition === "left" ? TextEditor : Images) : null}
