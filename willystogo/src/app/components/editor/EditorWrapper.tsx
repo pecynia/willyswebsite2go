@@ -26,7 +26,7 @@ const EditorWrapper = ({ documentId, link, buttonText }: EditorWrapperProps) => 
 
     useEffect(() => {
         const fetchData = async () => {
-            const contentFromDb = await fetch('api/content', {
+            const contentFromDb = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/content`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
