@@ -1,10 +1,11 @@
 "use client"
 
-import React, { useRef } from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect, useRef, useState } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import EditorWrapper from '@/app/components/editor/EditorWrapper';
 import { twMerge } from 'tailwind-merge';
 import YoutubeComp from './YoutubeComp';
+import Lenis from '@studio-freight/lenis';
 
 interface TextVideoProps {
   documentId: string;
@@ -17,7 +18,38 @@ interface TextVideoProps {
 
 const TextOneVideo: React.FC<TextVideoProps> = ({ documentId, videoId, imagePosition = 'left', theme = 'dark', verticalPosition = 'above', className }) => {
   const container = useRef<HTMLDivElement | null>(null);
+  const [dimension, setDimension] = useState({ width: 0, height: 0 })
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ["start end", "end start"],
+  })
 
+  useEffect(() => {
+    const lenis = new Lenis({
+      smoothWheel: true,
+      smoothTouch: true,
+      normalizeWheel: true,
+    })
+
+    const raf = (time: number) => {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
+
+    const resize = () => {
+      setDimension({ width: window.innerWidth, height: window.innerHeight })
+    }
+
+    window.addEventListener("resize", resize)
+    requestAnimationFrame(raf)
+    resize()
+
+    return () => {
+      lenis.destroy()
+      window.removeEventListener("resize", resize)
+    }
+  }, [])
+  
   const getShadowClass = () => {
     if (theme === 'light') {
       return imagePosition === 'right' ? 'header-shadow-left-light' : 'header-shadow-right-light';
@@ -34,7 +66,22 @@ const TextOneVideo: React.FC<TextVideoProps> = ({ documentId, videoId, imagePosi
   );
 
   const videoComp = (
-    <YoutubeComp videoId={videoId} />
+    <div className={twMerge("pt-20 lg:pt-0 relative col-span-full lg:col-span-3 h-[500px] lg:h-full", imagePosition === 'right' && 'lg:order-2')}>
+      <motion.div layout
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{
+          duration: 0.8,
+          delay: 0.3,
+          ease: [0, 0.71, 0.2, 1.01]
+        }}
+        ref={container}
+        style={{ y: useTransform(scrollYProgress, [0, 1], [0, -dimension.height * 0.2]) }} 
+        className={twMerge("w-full h-full lg:absolute top-[10%] left-0 flex-shrink-0", className)}
+      >
+        <YoutubeComp videoId={videoId} />
+      </motion.div>
+    </div>
   );
 
   return (

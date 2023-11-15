@@ -19,6 +19,10 @@ function page() {
         <TextOneVideo documentId="lukkien-eisen" videoId='a8b3EN0R-M4' imagePosition="right" theme="dark" verticalPosition='below'/>
       </div>
 
+      <div>
+        <TextOneVideo documentId="lukkien-quote" videoId='a8b3EN0R-M4' imagePosition="left" theme="dark" verticalPosition='below'/>
+      </div>
+
 
     </motion.div>
   )
