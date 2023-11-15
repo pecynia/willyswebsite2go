@@ -16,7 +16,7 @@ interface Props {
 
 function TextPopup({ documentId, imgPath, link, buttonText }: Props) {
   return (
-    <div className='flex flex-col items-center justify-center w-full py-48 relative'>
+    <div className='flex flex-col items-center justify-center w-full py-32 relative'>
         <Image 
             src={imgPath}
             alt="Image" 

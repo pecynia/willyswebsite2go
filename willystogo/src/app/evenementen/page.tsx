@@ -8,7 +8,7 @@ import TextThreeImages from '@/app/components/TextThreeImages'
 import LetOp from '@/app/components/textPopup'
 import Spacer from '@/app/components/Spacer'
 import SpacerBig from '@/app/components/SpacerBig'
-import TextPopup from '@/app/components/textPopup'
+import SmallTextPopup from '@/app/components/fixedTextPopup'
 
 function page() {
   return (
@@ -45,7 +45,7 @@ function page() {
       <SpacerBig />
       <SpacerBig />
 
-      <TextPopup documentId="eigen-event" imgPath='/imgs/cocktails.jpg' link='contact' buttonText='Neem contact op' />
+      <SmallTextPopup documentId="eigen-event" imgPath='/imgs/cocktails.jpg' link='contact' buttonText='Neem contact op' />
         
     </motion.div>
   )

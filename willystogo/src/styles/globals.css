@@ -21,7 +21,7 @@
     --primary-foreground: 210 40% 98%;
 
     --secondary: 0 0% 100%; /* White */
-    --secondary-foreground: 0 0% 98%; /* Black */
+    --secondary-foreground: 0 0% 97%; /* Black */
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%; 
@@ -143,12 +143,12 @@
     stroke: hsl(var(--primary));
     display: inline-block;
     vertical-align: middle;
-    width: 2em;
+    width: 1.5em;
     height: 1em;
-    margin-right: 0.5em; /* Adjust based on your icon size and desired spacing */
+    margin-right: 0.2em; /* Adjust based on your icon size and desired spacing */
     position: absolute;
-    left: -0.5em;
-    top: -0.1em;
+    left: -0.25em;
+    top: -0em;
   }
   
   
