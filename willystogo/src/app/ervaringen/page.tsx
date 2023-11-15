@@ -18,11 +18,9 @@ function ReviewsPage() {
         <AnimatedHeader header="Ervaringen" className='text-4xl' />
       </div>
 
-
       <SpacerBig />
 
       <SmallTextPopup documentId='lukkien-review' imgPath='/imgs/reviews/attract.jpg' link='/ervaringen/lukkien' buttonText='Lees meer' />
-      
 
       {/* Different other reviews */}
       <OtherReviews />

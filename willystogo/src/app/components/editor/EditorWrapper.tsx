@@ -48,7 +48,7 @@ const EditorWrapper = ({ documentId, link, buttonText }: EditorWrapperProps) => 
     }, [])
 
     if (status === "loading") {
-        return <div className="flex justify-center items-center w-full h-full">
+        return <div className="flex justify-center items-center mt-5 w-full h-full">
             <ReloadIcon className="w-4 h-4 animate-spin" />
         </div>
     }

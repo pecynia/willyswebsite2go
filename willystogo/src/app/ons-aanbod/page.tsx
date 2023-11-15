@@ -8,6 +8,7 @@ import { motion } from 'framer-motion'
 import Spacer from '@/app/components/Spacer'
 import SpacerBig from '@/app/components/SpacerBig'
 import TextPopup from '@/app/components/textPopup'
+import SmallTextPopup from '../components/fixedTextPopup'
 
 function page() {
   return (
@@ -35,7 +36,7 @@ function page() {
       <SpacerBig />
 
       {/* Let op */}
-      <TextPopup documentId='let_op' imgPath='/imgs/tafel.jpg' />
+      <SmallTextPopup documentId='let_op' imgPath='/imgs/tafel.jpg' />
     </motion.div>
   )
 }
