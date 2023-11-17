@@ -24,9 +24,13 @@ function page() {
 
       <SmallTextPopup documentId='restaurant-naar-partner' imgPath='/imgs/reviews/attract.jpg' />
 
+      <Spacer />
+
       <div>
         <TextOneImage documentId="het-team" image="/imgs/tafel.jpg" imagePosition="right" theme="dark" verticalPosition='below'/>
       </div>
+
+      <Spacer />
 
       <FixedTextPopup documentId='goed-om-te-weten' imgPath='/imgs/reviews/attract.jpg' />
 

@@ -44,18 +44,31 @@ function LandingVideo() {
         <source src="/imgs/full_video.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-      
-      <div className="absolute top-24 left-16 10">
+
+      <div className="relative flex flex-col justify-center items-center w-full top-[80%]">
+        <motion.div 
+            initial={{ opacity: 0, y: '100%' }}
+            animate={{ opacity: 1, y: '0%' }}
+            transition={{ duration: 0.7, delay: 0.3, ease: [0, 0.71, 0.2, 1.01] }}
+        >
+          <div className=''>
+            <p className='text-7xl font-youngSerif text-white px-12 py-4'>Indonesische Catering</p>
+          </div>
+
+        </motion.div>
+      </div>
+
+      {/* <div className="absolute top-24 left-16">
         <motion.div 
             initial={{ opacity: 0, x: '-100%' }}
             animate={{ opacity: 1, x: '0%' }}
             transition={{ duration: 0.7, delay: 0.3, ease: [0, 0.71, 0.2, 1.01] }}
-            className="10 p-0 pt-24 md:p-6 lg:p-8 max-w-2xl w-3/4 md:w-3/4 lg:w-auto"
+            className="flex p-0 pt-24 md:p-6 lg:p-8 max-w-2xl w-3/4 md:w-3/4 lg:w-auto"
         >
           <div className="header-shadow-left pb-8 relative bg-cover bg-center bg-secondary flex flex-col justify-start items-center text-left">
             <motion.div 
                 ref={headingRef}
-                className="text-4xl md:text-5xl lg:text-6xl md:max-w-xl max-w-xs bg-secondary/60 p-6 md:p-8 lg:p-10"
+                className="text-4xl md:text-5xl lg:text-6xl md:max-w-xl max-w-xs p-6 md:p-8 lg:p-10"
                 initial="hidden"
                 animate={isVisible ? "visible" : "hidden"}
             >
@@ -68,7 +81,7 @@ function LandingVideo() {
             </motion.div>
           </div>
         </motion.div>
-      </div>
+      </div> */}
     </div>
   )
 }

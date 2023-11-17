@@ -142,20 +142,14 @@
     content: url('/check.svg');
     stroke: hsl(var(--primary));
     display: inline-block;
-    vertical-align: middle;
     width: 1.5em;
-    height: 1em;
-    margin-right: 0.2em; /* Adjust based on your icon size and desired spacing */
     position: absolute;
     left: -0.25em;
-    top: -0em;
   }
-  
   
   ul.special-icon-list, ul.special-icon-list li {
-    @apply pl-8;
+    @apply pl-8 -my-1;
   }
-  
   
   hr {
     @apply mt-8 mb-8 border-2 border-gray-300 w-full;

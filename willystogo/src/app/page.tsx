@@ -6,6 +6,7 @@ import ReviewSliderWrapper from '@/app/components/ReviewSliderWrapper'
 import LandingVideo from '@/app/components/LandingVideo'
 import SpacerBig from '@/app/components/SpacerBig'
 import Spacer from '@/app/components/Spacer'
+import SmallTextPopup from '@/app/components/fixedTextPopup'
 
 export default function Home() {
   return (
@@ -13,20 +14,23 @@ export default function Home() {
       {/* <LandingImage /> */}
       <LandingVideo />
 
-      <SpacerBig />
+      <Spacer />
 
-      <SmallEditor documentId="intro" />
+      {/* <SmallEditor documentId="intro" />
 
       <div className='mt-10'>
         <ParallaxScrollInfo />
-      </div>
+      </div> */}
+
+      <TextTwoImages documentId="intro" images={['/imgs/sates.jpg', '/imgs/willy.png']} imagesPosition='right' theme="dark" />
+
       
       <SpacerBig />
 
-      <TextTwoImages documentId="test" images={['/imgs/sates.jpg', '/imgs/willy.png']} imagesPosition='right' theme="dark" />
-      
-      <SpacerBig />
+      <SmallTextPopup documentId='test' imgPath='/imgs/reviews/attract.jpg' />
 
+      <Spacer />
+      
       <ReviewSliderWrapper />
     </div>
   )

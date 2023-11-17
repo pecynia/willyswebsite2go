@@ -14,6 +14,7 @@ function page() {
   return (
     <motion.div layout
       transition={{ type: "spring", ease: "easeInOut", duration: 0.8 }}
+      className='mt-24 sm:mt-0'
     >
       <div className='px-16 mt-10 lg:mt-24 mb-0 lg:-mb-20'>
         <AnimatedHeader header="Ons Aanbod" className='text-4xl' />
