@@ -6,7 +6,7 @@ import TextOneVideo from '@/app/components/TextOneVideo'
 import { motion } from 'framer-motion'
 import React from 'react'
 
-function page() {
+function Page() {
   return (
     <motion.div layout
       transition={{ type: "spring", ease: "easeInOut", duration: 0.8 }}
@@ -28,4 +28,4 @@ function page() {
   )
 }
 
-export default page
+export default Page

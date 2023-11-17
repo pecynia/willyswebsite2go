@@ -65,7 +65,7 @@ const ReviewSlider: React.FC = () => {
                         </div>
                         <div className="flex items-center space-x-3 text-primary">
                             {review.logo && (
-                                <img
+                                <Image
                                     src={review.logo}
                                     alt={`${review.companyName || review.author} logo`}
                                     className="w-16 h-16 object-contain"

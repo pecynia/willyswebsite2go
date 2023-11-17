@@ -3,16 +3,12 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { twMerge } from 'tailwind-merge';
-import Spacer from '@/app/components/Spacer';
 import { Button } from '@/app/components/ui/button';
 
-function page() {
+function Page() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
-
-
 
   return (
     <div className='flex flex-col items-center justify-center w-full py-36 relative'>
@@ -93,4 +89,4 @@ function page() {
   )
 }
 
-export default page;
+export default Page;

@@ -12,7 +12,7 @@ import TextPopup from '@/app/components/textPopup'
 import FixedTextPopup from '@/app/components/fixedTextPopup'
 import SmallTextPopup from '@/app/components/fixedTextPopup'
 
-function page() {
+function Page() {
   return (
     <motion.div layout
       transition={{ type: "spring", ease: "easeInOut", duration: 0.8 }}
@@ -40,4 +40,4 @@ function page() {
   )
 }
 
-export default page
+export default Page
