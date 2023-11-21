@@ -1,7 +1,7 @@
 import { signOut } from "next-auth/react"
 import { Button } from "@/app/components/ui/button"
 import Link from 'next/link'
-import { LogOut, Settings, Loader2 } from 'lucide-react'
+import { LogOut, Settings } from 'lucide-react'
 
 export const AdminModeWithLogout = () => {
   return (
