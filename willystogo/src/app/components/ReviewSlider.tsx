@@ -60,7 +60,7 @@ const ReviewSlider: React.FC = () => {
                                 src={review.img.path}
                                 alt={review.img.alt}
                                 className="object-cover object-center"
-                                layout="fill"
+                                fill
                             />
                         </div>
                         <div className="flex items-center space-x-3 text-primary">
@@ -69,6 +69,8 @@ const ReviewSlider: React.FC = () => {
                                     src={review.logo}
                                     alt={`${review.companyName || review.author} logo`}
                                     className="w-16 h-16 object-contain"
+                                    width={64}
+                                    height={64}
                                 />
                             )}
                             <div>
