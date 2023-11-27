@@ -7,6 +7,7 @@ import { Inter } from 'next/font/google'
 
 import Header from "@/app/components/Header"
 import Footer from "@/app/components/Footer"
+import GoogleAnalytics from '@/app/GoogleAnalytics'
 
 const inter = Inter({ 
   subsets: ['latin']
@@ -29,6 +30,7 @@ export default function RootLayout({
     >
       <body className='flex min-h-full flex-col font-raleway'>
         <NextAuthProvider>
+          <GoogleAnalytics />
           <Header />
           <main className='flex-grow'>{children}</main>
           <Footer />
