@@ -28,9 +28,9 @@ const EditorComponent: React.FC<EditorComponentProps> = ({
     editable = false, 
     documentId 
 }) => {    
-    const [editorContent, setEditorContent] = useState({});
-    const [isSaving, setIsSaving] = useState(false);
-    const [hasChanges, setHasChanges] = useState(false);
+    const [editorContent, setEditorContent] = useState({})
+    const [isSaving, setIsSaving] = useState(false)
+    const [hasChanges, setHasChanges] = useState(false)
     const editor = useEditor({
         extensions: [
             StarterKit,
@@ -49,9 +49,9 @@ const EditorComponent: React.FC<EditorComponentProps> = ({
         },
         editable: editable,
         onUpdate: ({ editor }) => {
-            const contentJson = generateJSON(editor.getHTML(), [StarterKit, TextStyle, Color]);
-            setEditorContent(contentJson);
-            setHasChanges(true);
+            const contentJson = generateJSON(editor.getHTML(), [StarterKit, TextStyle, Color])
+            setEditorContent(contentJson)
+            setHasChanges(true)
         },
     })
 
@@ -63,7 +63,7 @@ const EditorComponent: React.FC<EditorComponentProps> = ({
 
     // Make a post fetch request to secure API endpoint
     const handleSave = async () => {
-        setIsSaving(true);
+        setIsSaving(true)
         try {
             const res = await fetch('/api/save', {
                 method: 'POST',
@@ -72,15 +72,15 @@ const EditorComponent: React.FC<EditorComponentProps> = ({
                     'Content-Type': 'application/json',
                     'Document-ID': documentId  // using the documentId prop
                 },
-            });
+            })
             // check for res.ok or other conditions here
-            setHasChanges(false);
+            setHasChanges(false)
         } catch (error) {
-            console.error('Failed to save:', error);
+            console.error('Failed to save:', error)
         } finally {
-            setIsSaving(false);
+            setIsSaving(false)
         }
-    };
+    }
     
       
     return (

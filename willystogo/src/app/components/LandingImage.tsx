@@ -12,7 +12,7 @@ const container = {
       staggerChildren: 0.05
     }
   }
-};
+}
 
 const LandingImage = () => {
   const ref = useRef(null)
@@ -39,30 +39,30 @@ const LandingImage = () => {
     }
   }, [])
 
-  const [isVisible, setIsVisible] = useState(true); // Default to true for initial animation
-  const headingRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(true) // Default to true for initial animation
+  const headingRef = useRef(null)
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setIsVisible(entry.isIntersecting);
+        setIsVisible(entry.isIntersecting)
       },
       {
         root: null,
         rootMargin: '0px',
         threshold: 0.1
       }
-    );
+    )
 
     if (headingRef.current) {
-      observer.observe(headingRef.current);
+      observer.observe(headingRef.current)
     }
 
     return () => {
       if (headingRef.current) {
-        observer.unobserve(headingRef.current);
+        observer.unobserve(headingRef.current)
       }
-    };
-  }, []);
+    }
+  }, [])
 
 
   return (

@@ -1,6 +1,6 @@
 interface Route {
-    href: string;
-    label: string;
+    href: string
+    label: string
   }
   
 export const routes: Route[] = [
@@ -40,4 +40,4 @@ export const routes: Route[] = [
         href: "/over-ons",
         label: "Over Ons",
     },
-];
+]

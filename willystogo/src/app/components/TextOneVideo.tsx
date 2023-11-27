@@ -1,23 +1,23 @@
 "use client"
 
-import React, { useEffect, useRef, useState } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import EditorWrapper from '@/app/components/editor/EditorWrapper';
-import { twMerge } from 'tailwind-merge';
-import YoutubeComp from './YoutubeComp';
-import Lenis from '@studio-freight/lenis';
+import React, { useEffect, useRef, useState } from 'react'
+import { motion, useScroll, useTransform } from 'framer-motion'
+import EditorWrapper from '@/app/components/editor/EditorWrapper'
+import { twMerge } from 'tailwind-merge'
+import YoutubeComp from './YoutubeComp'
+import Lenis from '@studio-freight/lenis'
 
 interface TextVideoProps {
-  documentId: string;
-  videoId: string;
-  imagePosition?: 'left' | 'right';
-  theme?: 'light' | 'dark';
-  verticalPosition?: 'above' | 'below';
-  className?: string;
+  documentId: string
+  videoId: string
+  imagePosition?: 'left' | 'right'
+  theme?: 'light' | 'dark'
+  verticalPosition?: 'above' | 'below'
+  className?: string
 }
 
 const TextOneVideo: React.FC<TextVideoProps> = ({ documentId, videoId, imagePosition = 'left', theme = 'dark', verticalPosition = 'above', className }) => {
-  const container = useRef<HTMLDivElement | null>(null);
+  const container = useRef<HTMLDivElement | null>(null)
   const [dimension, setDimension] = useState({ width: 0, height: 0 })
   const { scrollYProgress } = useScroll({
     target: container,
@@ -52,10 +52,10 @@ const TextOneVideo: React.FC<TextVideoProps> = ({ documentId, videoId, imagePosi
   
   const getShadowClass = () => {
     if (theme === 'light') {
-      return imagePosition === 'right' ? 'header-shadow-left-light' : 'header-shadow-right-light';
+      return imagePosition === 'right' ? 'header-shadow-left-light' : 'header-shadow-right-light'
     }
-    return imagePosition === 'right' ? 'header-shadow-left' : 'header-shadow-right';
-  };
+    return imagePosition === 'right' ? 'header-shadow-left' : 'header-shadow-right'
+  }
 
   const textEditor = (
     <motion.div layout
@@ -63,7 +63,7 @@ const TextOneVideo: React.FC<TextVideoProps> = ({ documentId, videoId, imagePosi
       className={twMerge(getShadowClass(), 'mb-20 col-span-full lg:col-span-2 bg-secondary-foreground pb-10 flex px-10 pt-4 min-w-[200px] max-w-full', imagePosition === 'left' ? 'lg:col-start-3 lg:order-2' : '')}>
       <EditorWrapper documentId={documentId} />
     </motion.div>
-  );
+  )
 
   const videoComp = (
     <div className={twMerge("pt-20 lg:pt-0 relative col-span-full lg:col-span-3 h-[500px] lg:h-full", imagePosition === 'right' ? 'lg:order-2' : '')}>
@@ -82,7 +82,7 @@ const TextOneVideo: React.FC<TextVideoProps> = ({ documentId, videoId, imagePosi
         <YoutubeComp videoId={videoId} />
       </motion.div>
     </div>
-  );
+  )
   return (
     <motion.div       
       initial={{ opacity: 0, y: '100%' }}
@@ -97,8 +97,8 @@ const TextOneVideo: React.FC<TextVideoProps> = ({ documentId, videoId, imagePosi
           {verticalPosition === 'below' && videoComp}
         </>
     </motion.div>
-  );
+  )
   
-};
+}
 
-export default TextOneVideo;
+export default TextOneVideo
