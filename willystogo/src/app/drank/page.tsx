@@ -18,6 +18,8 @@ function Page() {
                 <AnimatedHeader header="Drank" className='text-4xl' />
             </div>
 
+            <Spacer />
+
 
             <TextOneImage documentId="dranken_arrangement" image="/imgs/cocktails.jpg" imagePosition="right" theme="dark" verticalPosition="below" />
 

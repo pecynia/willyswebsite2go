@@ -19,6 +19,8 @@ function Page() {
       <div className='px-16 mt-10 lg:mt-24 mb-0 lg:-mb-20'>
         <AnimatedHeader header="Ons Aanbod" className='text-4xl' />
       </div>
+
+      <Spacer />
       
       <TextOneImage documentId="buffetten" image="/imgs/buffetten.jpg" imagePosition="left" theme="dark" verticalPosition="below" />
       

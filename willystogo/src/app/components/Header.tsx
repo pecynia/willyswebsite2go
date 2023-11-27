@@ -56,7 +56,7 @@ const Header = () => {
               </SheetTrigger>
               <SheetContent side="top" className='w-full font-youngSerif text-center text-primary'>
                 <nav className='flex flex-col gap-4'>
-                  {routes.map((route, i) => (
+                  {routes.map((route, i) => ( route.includeInHeader &&
                     <Link 
                       key={i}
                       href={route.href}
@@ -74,7 +74,7 @@ const Header = () => {
               </div>
             )}
             <nav className='bg-primary px-5 items-center hidden lg:block mt-2 pt-2 pb-1'>
-              {routes.map((route, i) => (
+              {routes.map((route, i) => ( route.includeInHeader &&
                 <button key={i}>
                   <Link 
                     key={i}
