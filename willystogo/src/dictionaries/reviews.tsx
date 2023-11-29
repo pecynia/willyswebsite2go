@@ -21,7 +21,7 @@ export const reviews: ReviewsHandler = {
     quotes: [
         {
             img: {
-                path: "/logo.png",
+                path: "/imgs/reviews/lukkien.png",
                 alt: "Lukkien Ede",
             },
             logo: "", // logo: "https://media.licdn.com/dms/image/C4E0BAQG5g3DPgxoNyQ/company-logo_200_200/0/1641900142051?e=2147483647&v=beta&t=OSQNNk_TWm5n8iJVFgm81ma7GDp6jm_pXzuS8RhJzg8",
@@ -105,7 +105,7 @@ export const reviews: ReviewsHandler = {
           },
           {
             img: {
-              path: "/logo.png", // Replace with actual image path
+              path: "/imgs/reviews/tinus.jpg", // Replace with actual image path
               alt: "De Vries Event"
             },
             logo: "",

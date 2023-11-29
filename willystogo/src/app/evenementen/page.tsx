@@ -22,7 +22,7 @@ function Page() {
       <SpacerBig />
 
       <div className=''>
-        <TextThreeImages documentId="vlegeldag" images={['/imgs/sates.jpg', '/imgs/willy.png', '/imgs/sates_2.jpg']} imagesPosition='right' theme="dark"/>
+        <TextThreeImages documentId="vlegeldag" images={['/imgs/evenementen/vlegeldag.jpg', '/imgs/evenementen/willyenyan.jpg', '/imgs/evenementen/sates.jpg']} imagesPosition='right' theme="dark"/>
       </div>
 
       <SpacerBig />

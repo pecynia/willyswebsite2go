@@ -8,7 +8,8 @@ import { motion } from 'framer-motion'
 import Spacer from '@/app/components/Spacer'
 import SpacerBig from '@/app/components/SpacerBig'
 import TextPopup from '@/app/components/textPopup'
-import SmallTextPopup from '../components/fixedTextPopup'
+import SmallTextPopup from '@/app/components/fixedTextPopup'
+import TextSingleImageTall from '@/app/components/TextOneImageTall'
 
 function Page() {
   return (
@@ -22,24 +23,24 @@ function Page() {
 
       <Spacer />
       
-      <TextOneImage documentId="buffetten" image="/imgs/buffetten.jpg" imagePosition="left" theme="dark" verticalPosition="below" />
+      <TextSingleImageTall documentId="buffetten" image="/imgs/ons-aanbod/aanreik.jpg" imagePosition="left" theme="dark" verticalPosition="below" />
       
       <Spacer />
       
       <div className='-mt-24 lg:mt-0'>
-        <TextThreeImages documentId="satebar" images={['/imgs/sates.jpg', '/imgs/willy.png', '/imgs/sates_2.jpg']} imagesPosition='right' theme="dark"/>
+        <TextThreeImages documentId="satebar" images={['/imgs/ons-aanbod/willy.jpg', '/imgs/ons-aanbod/bbq.jpg', '/imgs/ons-aanbod/satebar.jpg']} imagesPosition='right' theme="dark"/>
       </div>
 
       <Spacer />
       
       <div>
-        <TextOneImage documentId="eigen_event" image="/imgs/tafel.jpg" imagePosition="left" theme="dark" verticalPosition='below'/>
+        <TextOneImage documentId="eigen_event" image="/imgs/ons-aanbod/event.jpg" imagePosition="left" theme="dark" verticalPosition='below'/>
       </div>
       
       <SpacerBig />
 
       {/* Let op */}
-      <SmallTextPopup documentId='let_op' imgPath='/imgs/tafel.jpg' />
+      <SmallTextPopup documentId='let_op' imgPath='/imgs/ons-aanbod/popup-2.jpg' />
     </motion.div>
   )
 }

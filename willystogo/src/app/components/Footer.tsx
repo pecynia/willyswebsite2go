@@ -28,7 +28,7 @@ const Footer = () => {
                 {/* Navigation */}
                 <div className=''>
                     <h1 className="font-youngSerif text-2xl text-secondary-foreground mb-4">Navigatie</h1>
-                    {routes.map(route => (
+                    {routes.map(route => ( route.includeInHeader &&
                         <Link key={route.href} href={route.href}>
                             <div className="mb-2 hover:underline cursor-pointer">{route.label}</div>
                         </Link>

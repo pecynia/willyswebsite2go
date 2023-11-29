@@ -22,12 +22,12 @@ export default function Home() {
         <ParallaxScrollInfo />
       </div> */}
 
-      <TextTwoImages documentId="intro" images={['/imgs/sates.jpg', '/imgs/willy.png']} imagesPosition='right' theme="dark" />
+      <TextTwoImages documentId="intro" images={['/imgs/home/sate.jpg', '/imgs/home/satebar.jpg']} imagesPosition='right' theme="dark" />
 
       
       <SpacerBig />
 
-      <SmallTextPopup documentId='test' imgPath='/imgs/reviews/attract.jpg' />
+      <SmallTextPopup documentId='test' imgPath='/imgs/home/popup.jpg' />
 
       <Spacer />
       

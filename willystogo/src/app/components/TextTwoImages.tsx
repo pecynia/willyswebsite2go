@@ -72,8 +72,8 @@ const TextTwoImages: React.FC<TwoImagesProps> = ({ documentId, images, imagesPos
         <Image src={images[0]} alt="Image 1" fill className="object-cover object-center"/>
       </motion.div>
       <motion.div 
-        style={{ y: useTransform(scrollYProgress, [0, 1], [0, dimension.height * 0.2]) }} 
-        className="absolute w-[70%] h-[80%] top-[-15%] left-[25%] lg:w-[60%] lg:h-[60%] lg:top-[0%] lg:left-[25%]">
+        style={{ y: useTransform(scrollYProgress, [0, 1], [0, dimension.height * 0.1]) }} 
+        className="absolute w-[70%] h-[80%] top-[-15%] left-[25%] lg:w-[60%] lg:h-[60%] lg:top-[-5%] lg:left-[25%]">
         <Image src={images[1]} priority alt="Image 2" fill className="object-cover object-center"/>
       </motion.div>
 

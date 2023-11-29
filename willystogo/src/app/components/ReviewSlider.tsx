@@ -21,7 +21,7 @@ const ReviewSlider: React.FC = () => {
         slidesToScroll: 1,
         pauseOnHover: true,
         autoplay: true,
-        autoplaySpeed: 1500,
+        autoplaySpeed: 1000,
         responsive: [
             {
                 breakpoint: 1280,

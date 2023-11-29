@@ -41,7 +41,7 @@ function LandingVideo() {
           preload="auto"
           className="absolute top-0 left-0 w-full h-full object-cover 0"
       >
-        <source src="/imgs/full_video.mp4" type="video/mp4" />
+        <source src="/imgs/home/1080.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
@@ -51,9 +51,9 @@ function LandingVideo() {
             animate={{ opacity: 1, y: '0%' }}
             transition={{ duration: 0.7, delay: 0.3, ease: [0, 0.71, 0.2, 1.01] }}
         >
-          <div className=''>
+          {/* <div className=''>
             <p className='text-7xl font-youngSerif text-white px-12 py-4'>Indonesische Catering</p>
-          </div>
+          </div> */}
 
         </motion.div>
       </div>
