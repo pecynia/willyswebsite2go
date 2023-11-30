@@ -7,6 +7,7 @@ import LandingVideo from '@/app/components/LandingVideo'
 import SpacerBig from '@/app/components/SpacerBig'
 import Spacer from '@/app/components/Spacer'
 import SmallTextPopup from '@/app/components/fixedTextPopup'
+import LightWidget from '@/app/components/LightWidget'
 
 export default function Home() {
   return (
@@ -32,6 +33,8 @@ export default function Home() {
       <Spacer />
       
       <ReviewSliderWrapper />
+
+      <LightWidget />
     </div>
   )
 }
