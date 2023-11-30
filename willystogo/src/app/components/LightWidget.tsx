@@ -28,7 +28,7 @@ function LightWidget() {
         <h1 className='text-4xl text-center font-youngSerif p-16 pt-24'>
             Volg ons op Instagram
         </h1>
-        <div className='max-w-7xl mx-auto pb-24'>
+        <div className='max-w-7xl mx-auto pb-24 px-10'>
             <iframe 
             src="//cdn.lightwidget.com/widgets/2d3e153452275f3fba57e4dd4c4bdfd2.html" 
             style={{ width: '100%', border: 0, overflow: 'hidden' }}
