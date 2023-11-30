@@ -32,7 +32,7 @@ function page() {
 
       <Spacer />
 
-      <FixedTextPopup documentId='goed-om-te-weten' imgPath='/imgs/over-ons/popup.jpg' />
+      <FixedTextPopup documentId='goed-om-te-weten' imgPath='/imgs/over-ons/pupop-pic.jpg' />
 
         
     </motion.div>
