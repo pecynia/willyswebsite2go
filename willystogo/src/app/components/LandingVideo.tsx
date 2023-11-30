@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import AnimatedWord from '@/app/components/animatedText'
 
-function LandingVideo() {
+function LandingVideo({ videoPath } : { videoPath: string }) {
   const [isVisible, setIsVisible] = useState(true);
   const headingRef = useRef(null);
   
@@ -41,7 +41,7 @@ function LandingVideo() {
           preload="auto"
           className="absolute top-0 left-0 w-full h-full object-cover 0"
       >
-        <source src="/imgs/home/1080.mp4" type="video/mp4" />
+        <source src={videoPath} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 

@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <div>
       {/* <LandingImage /> */}
-      <LandingVideo />
+      <LandingVideo videoPath="/imgs/home/1080.mp4"/>
 
       <Spacer />
 

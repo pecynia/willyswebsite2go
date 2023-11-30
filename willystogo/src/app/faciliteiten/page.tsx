@@ -21,21 +21,22 @@ function Page() {
         <AnimatedHeader header="Faciliteiten" className='text-4xl' />
       </div>
 
-      <Spacer />
+      <SpacerBig />
       
       <div>
-        <TextOneImage documentId="mogelijk_interessant" image="/imgs/tafel.jpg" imagePosition="right" theme="dark" verticalPosition='below'/>
+        <TextOneImage documentId="mogelijk_interessant" image="/imgs/faciliteiten/team.jpg" imagePosition="right" theme="dark" verticalPosition='below'/>
       </div>
 
       <SpacerBig />
 
       <div className=''>
-        <TextThreeImages documentId="zoals_beloofd" images={['/imgs/sates.jpg', '/imgs/willy.png', '/imgs/sates_2.jpg']} imagesPosition='right' theme="dark"/>
+        <TextThreeImages documentId="zoals_beloofd" images={['/imgs/faciliteiten/toeschouwers.jpg', '/imgs/faciliteiten/kind.jpg', '/imgs/faciliteiten/chili.jpg']} imagesPosition='right' theme="dark"/>
       </div>
 
+      <SpacerBig />
       <Spacer />
 
-      <SmallTextPopup documentId="faciliteiten_ps" imgPath='/imgs/cocktails.jpg' link='' buttonText='' />
+      <SmallTextPopup documentId="faciliteiten_ps" imgPath='/imgs/faciliteiten/willy.jpg' link='' buttonText='' />
         
       
     </motion.div>

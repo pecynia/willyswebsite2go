@@ -22,17 +22,17 @@ function page() {
 
       <SpacerBig />
 
-      <SmallTextPopup documentId='restaurant-naar-partner' imgPath='/imgs/reviews/attract.jpg' />
+      <SmallTextPopup documentId='restaurant-naar-partner' imgPath='/imgs/over-ons/meiden.png' />
 
       <Spacer />
 
       <div>
-        <TextOneImage documentId="het-team" image="/imgs/tafel.jpg" imagePosition="right" theme="dark" verticalPosition='below'/>
+        <TextOneImage documentId="het-team" image="/imgs/over-ons/team.jpg" imagePosition="right" theme="dark" verticalPosition='below'/>
       </div>
 
       <Spacer />
 
-      <FixedTextPopup documentId='goed-om-te-weten' imgPath='/imgs/reviews/attract.jpg' />
+      <FixedTextPopup documentId='goed-om-te-weten' imgPath='/imgs/over-ons/popup.jpg' />
 
         
     </motion.div>

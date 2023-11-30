@@ -20,7 +20,7 @@ function ReviewsPage() {
 
       <SpacerBig />
 
-      <SmallTextPopup documentId='lukkien-review' imgPath='/imgs/reviews/attract.jpg' link='/ervaringen/lukkien' buttonText='Lees meer' />
+      <SmallTextPopup documentId='lukkien-review' imgPath='/imgs/ervaringen/lukkien.png' link='/ervaringen/lukkien' buttonText='Lees meer' />
 
       {/* Different other reviews */}
       <OtherReviews />

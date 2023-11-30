@@ -60,7 +60,7 @@ const TextSingleImage: React.FC<SingleImageProps> = ({ documentId, image, imageP
   const TextEditor = (
     <motion.div layout
       transition={{ duration: 0.7, delay: 0.3, ease: [0, 0.71, 0.2, 1.01] }}
-      className={twMerge(getShadowClass(), "mb-20 col-span-full lg:col-span-2 bg-secondary-foreground pb-10 flex px-10 pt-4 min-w-[200px] max-w-full", imagePosition === 'left' && 'lg:order-2')}>
+      className={twMerge(getShadowClass(), "mb-20 mr-10 col-span-full lg:col-span-2 bg-secondary-foreground pb-10 flex px-10 pt-4 min-w-[200px] max-w-full", imagePosition === 'left' && 'lg:order-2')}>
         <EditorWrapper documentId={documentId} />
     </motion.div>
   )
@@ -77,7 +77,7 @@ const TextSingleImage: React.FC<SingleImageProps> = ({ documentId, image, imageP
         }}
         ref={container}
         style={{ y: useTransform(scrollYProgress, [0, 1], [0, -dimension.height * 0.2]) }} 
-        className={twMerge("w-full h-full lg:absolute top-[5%] left-0 flex-shrink-0", className)}
+        className={twMerge("w-full lg:w-[80%] h-full lg:absolute top-[5%] left-0 flex-shrink-0 mx-auto lg:ml-10 lg:mr-0", className)}
       >
         <Image src={image} alt="Image" fill className="object-cover object-center"/>
       </motion.div>
@@ -90,7 +90,7 @@ const TextSingleImage: React.FC<SingleImageProps> = ({ documentId, image, imageP
       animate={{ opacity: 1, y: '0%' }}
       transition={{ duration: 0.7, delay: 0.3, ease: [0, 0.71, 0.2, 1.01] }}
       ref={container} 
-      className="mt-0 space-x-0 lg:space-x-10 lg:mt-24 pl-8 lg:pl-24 min-h-[500px] grid grid-cols-1 lg:grid-cols-5 gap-4 lg:gap-10 p-4 lg:p-16"
+      className="mt-0 space-x-0 lg:space-x-10 lg:mt-24 pl-8 lg:pl-24 min-h-[500px] grid grid-cols-1 lg:grid-cols-5 gap-4 lg:gap-10 p-4 "
     >
       {verticalPosition === 'above' ? SingleImg : TextEditor}
       {verticalPosition === 'below' ? SingleImg : TextEditor}
