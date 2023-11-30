@@ -27,7 +27,9 @@ function OtherReviews() {
             <div className="flex-1 px-10 py-12 ">
               <h3 className="text-2xl font-bold">{review.companyName || review.author}</h3>
               <p className="italic">{review.date}</p>
+              <br />
               <p>{review.quote}</p>
+              <br />
               {review.companyName && <p className="font-bold">{review.author}</p>}
             </div>
           </motion.div>

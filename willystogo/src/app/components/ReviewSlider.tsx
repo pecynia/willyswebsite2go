@@ -2,12 +2,34 @@
 
 import React from "react"
 import Slider from "react-slick"
-import Image from "next/image"
-import { reviews } from "@/dictionaries/reviews"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
-import { Button } from "@/app/components/ui/button"
+
+import Image from "next/image"
 import Link from "next/link"
+
+import { reviews } from "@/dictionaries/reviews"
+import { Button } from "@/app/components/ui/button"
+import { ArrowBigLeft, ArrowBigRight } from "lucide-react"
+
+function SampleNextArrow(props: any) {
+    const { className, style, onClick } = props;
+    return (
+        <div className={className} style={{ ...style, display: "block", right: "0", zIndex: 10 }} onClick={onClick}>
+            <ArrowBigRight size={48} />
+        </div>
+    );
+}
+
+function SamplePrevArrow(props: any) {
+    const { className, style, onClick } = props;
+    return (
+        <div className={className} style={{ ...style, display: "block", left: "0", zIndex: 10 }} onClick={onClick}>
+            <ArrowBigLeft size={48} />
+        </div>
+    );
+}
+  
 
 
 const ReviewSlider: React.FC = () => {
@@ -18,10 +40,14 @@ const ReviewSlider: React.FC = () => {
         speed: 500,
         draggable: true,
         slidesToShow: 3,
+        arrows: true,
+        focusOnSelect: true,
         slidesToScroll: 1,
         pauseOnHover: true,
         autoplay: true,
         autoplaySpeed: 1000,
+        // nextArrow: <ArrowBigRight size={48} />,
+        // prevArrow: <ArrowBigLeft size={48} />,
         responsive: [
             {
                 breakpoint: 1280,
