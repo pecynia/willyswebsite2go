@@ -29,7 +29,7 @@ function SmallTextPopup({ documentId, imgPath, link, buttonText }: Props) {
           whileInView={{ opacity: 1, y: '0%' }} // Comes in to view
           transition={{ type: "spring", ease: "easeInOut", duration: 0.5 }}
           viewport={{ once: true }}
-          className='header-shadow-right min-w-[50%] min-h-[20%] max-w-[93%] md:max-w-[70%] bg-secondary pb-10 flex px-10 z-10'
+          className='header-shadow-right min-w-[50%] min-h-[20%] max-w-[93%] md:max-w-[70%] bg-secondary pb-10 pt-4 flex px-10 z-10'
         >
             <EditorWrapper documentId={documentId} link={link} buttonText={buttonText} />
         </motion.div>

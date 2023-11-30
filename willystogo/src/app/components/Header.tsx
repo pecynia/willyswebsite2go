@@ -34,6 +34,11 @@ const Header = () => {
 
   const headerClass = visible ? 'top-0 transition-all duration-400 ease-out z-50' : '-top-28 lg:top-0 transition-all duration-400 ease-out z-50'
 
+  const [open, setOpen] = useState(false)
+
+  const closeSheet = () => setOpen(false);
+
+
   return (
     <header className={`fixed w-full p-4 pr-0 flex justify-center ${headerClass} font-youngSerif`}>
       <Container>
@@ -48,7 +53,7 @@ const Header = () => {
             />
           </Link>
           <div className='flex items-center'>
-            <Sheet>
+            <Sheet open={open} onOpenChange={setOpen}>
               <SheetTrigger>
                 <div className='lg:hidden bg-primary rounded-full mr-4 p-2 cursor-pointer'>
                   <Menu className="h-6 lg:hidden invert" />
@@ -60,6 +65,7 @@ const Header = () => {
                     <Link 
                       key={i}
                       href={route.href}
+                      onClick={closeSheet}
                       className='block px-4 py-1 text-xl'
                     >
                       {route.label}

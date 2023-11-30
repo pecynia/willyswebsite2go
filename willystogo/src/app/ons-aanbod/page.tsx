@@ -25,7 +25,7 @@ function Page() {
       
       <TextSingleImageTall documentId="buffetten" image="/imgs/ons-aanbod/aanreik.jpg" imagePosition="left" theme="dark" verticalPosition="below" />
       
-      <Spacer />
+      <SpacerBig />
       
       <div className='-mt-24 lg:mt-0'>
         <TextThreeImages documentId="satebar" images={['/imgs/ons-aanbod/willy.jpg', '/imgs/ons-aanbod/bbq.jpg', '/imgs/ons-aanbod/satebar.jpg']} imagesPosition='right' theme="dark"/>

@@ -57,7 +57,7 @@ const EditorWrapper = ({ documentId, link, buttonText }: EditorWrapperProps) => 
         <motion.div layout>
             <EditorComponent documentId={documentId} editable={!!session} initialContent={fetchedContent} />
             {link && buttonText && (
-                <div className="px-4 -mt-8 flex justify-center">
+                <div className="px-4 flex justify-center">
                     <Button className="rounded-none mt-4">
                         <Link href={link}>
                             <p>{buttonText}</p>
