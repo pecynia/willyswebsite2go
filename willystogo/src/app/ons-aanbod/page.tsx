@@ -14,6 +14,7 @@ import TextSingleImageTall from '@/app/components/TextOneImageTall'
 import Willy from '../../../public/imgs/ons-aanbod/willy.jpg'
 import Bbq from '../../../public/imgs/ons-aanbod/bbq.jpg'
 import Satebar from '../../../public/imgs/ons-aanbod/satebar.jpg'
+import { Space } from 'lucide-react'
 
 function Page() {
   return (
@@ -21,14 +22,15 @@ function Page() {
       transition={{ type: "spring", ease: "easeInOut", duration: 0.8 }}
       className='mt-24 sm:mt-0'
     >
-      <div className='px-16 mt-10 lg:mt-24 mb-0 lg:-mb-20'>
+      {/* <div className='px-16 mt-10 lg:mt-24 mb-0 lg:-mb-20'>
         <AnimatedHeader header="Ons Aanbod" className='text-4xl' />
-      </div>
+      </div> */}
 
       <Spacer />
       
       <TextSingleImageTall documentId="buffetten" image="/imgs/ons-aanbod/aanreik.jpg" imagePosition="left" theme="dark" verticalPosition="below" />
       
+      <SpacerBig />
       <SpacerBig />
       
       <div className='-mt-24 lg:mt-0'>

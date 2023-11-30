@@ -17,9 +17,9 @@ function Page() {
     <motion.div layout
       transition={{ type: "spring", ease: "easeInOut", duration: 0.8 }}
     >
-      <div className='px-16 mt-10 lg:mt-24 mb-0 lg:-mb-20'>
+      {/* <div className='px-16 mt-10 lg:mt-24 mb-0 lg:-mb-20'>
         <AnimatedHeader header="Faciliteiten" className='text-4xl' />
-      </div>
+      </div> */}
 
       <SpacerBig />
       
