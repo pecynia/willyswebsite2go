@@ -2,14 +2,14 @@
 
 import { useEffect, useRef, useState } from "react"
 import { useTransform, useScroll, motion } from "framer-motion"
-import Image from "next/image"
+import Image, { StaticImageData } from "next/image"
 import Lenis from "@studio-freight/lenis"
 import EditorWrapper from "@/app/components/editor/EditorWrapper"
 import { twMerge } from "tailwind-merge"
 
 interface ThreeImagesProps {
   documentId: string;
-  images: [string, string, string];
+  images: [string | StaticImageData, string | StaticImageData, string | StaticImageData];
   imagesPosition: "left" | "right";
   theme: "light" | "dark";
   verticalPosition?: "above" | "below";

@@ -11,6 +11,10 @@ import TextPopup from '@/app/components/textPopup'
 import SmallTextPopup from '@/app/components/fixedTextPopup'
 import TextSingleImageTall from '@/app/components/TextOneImageTall'
 
+import Willy from '../../../public/imgs/ons-aanbod/willy.jpg'
+import Bbq from '../../../public/imgs/ons-aanbod/bbq.jpg'
+import Satebar from '../../../public/imgs/ons-aanbod/satebar.jpg'
+
 function Page() {
   return (
     <motion.div layout
@@ -28,7 +32,7 @@ function Page() {
       <SpacerBig />
       
       <div className='-mt-24 lg:mt-0'>
-        <TextThreeImages documentId="satebar" images={['/imgs/ons-aanbod/willy.jpg', '/imgs/ons-aanbod/bbq.jpg', '/imgs/ons-aanbod/satebar.jpg']} imagesPosition='right' theme="dark"/>
+        <TextThreeImages documentId="satebar" images={[Willy, Bbq, Satebar]} imagesPosition='right' theme="dark"/>
       </div>
 
       <Spacer />
