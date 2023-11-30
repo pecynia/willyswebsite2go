@@ -1,18 +1,13 @@
-import LandingImage from '@/app/components/LandingImage'
-import ParallaxScrollInfo from '@/app/components/parallaxScrollInfo'
 import TextTwoImages from '@/app/components/TextTwoImages'
-import SmallEditor from '@/app/components/SmallEditor'
 import ReviewSliderWrapper from '@/app/components/ReviewSliderWrapper'
 import LandingVideo from '@/app/components/LandingVideo'
 import SpacerBig from '@/app/components/SpacerBig'
 import Spacer from '@/app/components/Spacer'
 import SmallTextPopup from '@/app/components/fixedTextPopup'
-import LightWidget from '@/app/components/LightWidget'
 
 export default function Home() {
   return (
     <div>
-      {/* <LandingImage /> */}
       <LandingVideo videoPath="/imgs/home/1080.mp4"/>
 
       <Spacer />
@@ -34,7 +29,6 @@ export default function Home() {
       
       <ReviewSliderWrapper />
 
-      <LightWidget />
     </div>
   )
 }

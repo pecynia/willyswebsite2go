@@ -43,6 +43,7 @@ function Page() {
       
       <SpacerBig />
 
+
       {/* Let op */}
       <SmallTextPopup documentId='let_op' imgPath='/imgs/ons-aanbod/popup-2.jpg' />
     </motion.div>

@@ -10,6 +10,7 @@ import Spacer from '@/app/components/Spacer'
 import SpacerBig from '@/app/components/SpacerBig'
 import SmallTextPopup from '@/app/components/fixedTextPopup'
 import FixedTextPopup from '@/app/components/fixedTextPopup'
+import LightWidget from '@/app/components/LightWidget'
 
 function page() {
   return (
@@ -24,11 +25,15 @@ function page() {
 
       <SmallTextPopup documentId='restaurant-naar-partner' imgPath='/imgs/over-ons/meiden.png' />
 
-      <Spacer />
+      <SpacerBig />
 
       <div>
         <TextOneImage documentId="het-team" image="/imgs/over-ons/team.jpg" imagePosition="right" theme="dark" verticalPosition='below'/>
       </div>
+
+      <Spacer />
+
+      <LightWidget />
 
       <Spacer />
 
