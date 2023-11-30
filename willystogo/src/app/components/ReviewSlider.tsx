@@ -72,9 +72,7 @@ const ReviewSlider: React.FC = () => {
 
     return (
         <div className="p-4 w-full px-4 md:px-16 relative pb-10">
-            <h2 className="text-2xl font-bold mb-4 pl-4 text-primary">
-                Reviews
-            </h2>
+
             <Slider {...settings}>
                 {reviews.quotes.map((review, index) => (
                     <div 

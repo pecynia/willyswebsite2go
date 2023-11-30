@@ -76,7 +76,7 @@ const TextThreeImages: React.FC<ThreeImagesProps> = ({ documentId, images, image
           ease: [0, 0.71, 0.2, 1.01]
         }}
         // style={{ y: useTransform(scrollYProgress, [0, 1], [0, -dimension.height * 0.1]) }} 
-        className="absolute max-h-[600px] w-[80%] md:w-[50%] h-[60%] md:h-[90%] top-[30%] md:top-[-5%] left-[5%]">
+        className="absolute max-h-[600px] w-[80%] md:w-[50%] h-[60%] md:h-[90%] top-[30%] md:top-[-15%] left-[5%]">
         <Image src={images[0]} priority alt="Image 1" fill className="object-cover object-center"/>
       </motion.div>
       <motion.div 
@@ -88,7 +88,7 @@ const TextThreeImages: React.FC<ThreeImagesProps> = ({ documentId, images, image
           ease: [0, 0.71, 0.2, 1.01]
         }}
         style={{ y: useTransform(scrollYProgress, [0, 1], [0, dimension.height * 0.1]) }} 
-        className="absolute max-h-[500px] w-[70%] md:w-[50%] h-[50%] md:h-[70%] top-[-5%] md:top-[5%] left-[25%] md:left-[50%]">
+        className="absolute max-h-[500px] w-[70%] md:w-[50%] h-[50%] md:h-[70%] top-[-5%] md:top-[0%] left-[25%] md:left-[50%]">
         <Image src={images[1]} alt="Image 2" fill className="object-cover object-center"/>
       </motion.div>
       <motion.div 
@@ -100,7 +100,7 @@ const TextThreeImages: React.FC<ThreeImagesProps> = ({ documentId, images, image
           ease: [0, 0.71, 0.2, 1.01]
         }}
         style={{ y: useTransform(scrollYProgress, [0, 1], [0, -dimension.height * 0.2]) }} 
-        className="absolute max-h-[400px] w-[60%] md:w-[40%] h-[40%] md:h-[60%] lg:h-[70%] top-[100%] md:top-[60%] left-[12%] md:left-[32%]">
+        className="absolute max-h-[400px] w-[60%] md:w-[40%] h-[40%] md:h-[60%] lg:h-[70%] top-[100%] md:top-[70%] left-[12%] md:left-[32%]">
         <Image src={images[2]} alt="Image 3" fill className="object-cover object-center"/>
       </motion.div>
     </div>

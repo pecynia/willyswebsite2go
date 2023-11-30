@@ -29,12 +29,12 @@ function Page() {
             <Spacer />
 
             <div className='-mt-24 lg:mt-0 mb-28'>
-                <TextThreeImages documentId="cocktails" images={['/imgs/drank/cocktails.jpg', '/imgs/drank/willy.jpg', '/imgs/drank/wines.jpg']} imagesPosition='left' theme="dark" verticalPosition='below'/>
+                <TextThreeImages documentId="cocktails" images={['/imgs/drank/cocktails.jpg', '/imgs/drank/cocktails.jpg', '/imgs/drank/cocktail_small.jpg']} imagesPosition='left' theme="dark" verticalPosition='below'/>
             </div>
 
             <SpacerBig />
 
-            <TextPopup documentId="opruimen-naar-eigen-event" imgPath='/imgs/drank/cocktails.jpg' link='faciliteiten' buttonText='Overige Faciliteiten' />
+            <TextPopup documentId="opruimen-naar-eigen-event" imgPath='/imgs/drank/willy.jpg' link='faciliteiten' buttonText='Overige Faciliteiten' />
 
         </motion.div>
   )

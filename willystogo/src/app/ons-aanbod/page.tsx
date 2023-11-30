@@ -32,7 +32,7 @@ function Page() {
       <SpacerBig />
       
       <div className='-mt-24 lg:mt-0'>
-        <TextThreeImages documentId="satebar" images={[Willy, Bbq, Satebar]} imagesPosition='right' theme="dark"/>
+        <TextThreeImages documentId="satebar" images={[Willy, Satebar, Bbq]} imagesPosition='right' theme="dark"/>
       </div>
 
       <Spacer />

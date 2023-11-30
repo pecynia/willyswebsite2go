@@ -12,7 +12,7 @@ const Footer = () => {
                 {/* Logo & Description */}
                 <div className="flex flex-col items-center">
                     <Image src='/logo.png' alt='Logo' width={160} height={100} priority />
-                    <p className="text-center mt-4 mb-2">Indonesische Catering voor al uw gelegenheden</p>
+                    <p className="text-center mt-4 mb-2">Indonesische Catering voor al jouw gelegenheden</p>
                     <div className="flex space-x-2">
                         <Link href={socialMedia.instagram || "#"} target="_blank" className='hover:text-secondary-foreground'>
                             <Instagram className="cursor-pointer" />
