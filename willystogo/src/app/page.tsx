@@ -18,7 +18,7 @@ export default function Home() {
         <ParallaxScrollInfo />
       </div> */}
 
-      <TextTwoImages documentId="intro" images={['/imgs/home/sate.jpg', '/imgs/home/satebar.jpg']} imagesPosition='right' theme="dark" />
+      <TextTwoImages documentId="intro" images={['/imgs/home/sate.jpg', '/imgs/evenementen/vorkje/bakje-2.jpg']} imagesPosition='right' theme="dark" />
 
       
       <SpacerBig />
