@@ -87,7 +87,7 @@ const EditorComponent: React.FC<EditorComponentProps> = ({
         <motion.div  
             layout
             transition={{ type: "spring", ease: "easeInOut", duration: 0.1 }}
-            className='relative flex flex-col '
+            className='relative flex flex-col'
         >
             {editable ? <MenuBar editor={editor} /> : null}
             <motion.div layout >

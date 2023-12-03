@@ -54,7 +54,7 @@ const EditorWrapper = ({ documentId, link, buttonText }: EditorWrapperProps) => 
     }
 
     return (
-        <motion.div layout>
+        <motion.div layout className="w-full">
             <EditorComponent documentId={documentId} editable={!!session} initialContent={fetchedContent} />
             {link && buttonText && (
                 <div className="px-4 flex justify-center">
