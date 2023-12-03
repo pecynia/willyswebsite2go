@@ -31,7 +31,16 @@ function Page() {
 
 
       <div className=''>
-        <TextThreeImages documentId="heideweek-culinair" images={['/imgs/sates.jpg', '/imgs/willy.png', '/imgs/sates_2.jpg']} imagesPosition='left' theme="dark"/>
+        <TextThreeImages documentId="summer-beach" images={['/imgs/evenementen/summerbeach/groep.jpg', '/imgs/evenementen/summerbeach/satebar.jpg', '/imgs/evenementen/summerbeach/dames.png']} imagesPosition='left' theme="dark"/>
+      </div>
+
+      <SpacerBig />
+      <SpacerBig />
+      <Spacer />
+
+
+      <div className=''>
+        <TextThreeImages documentId="heideweek-culinair" images={['/imgs/evenementen/heideweek/duimpje.jpg', '/imgs/evenementen/heideweek/sate.jpg', '/imgs/evenementen/heideweek/yan.jpg']} imagesPosition='right' theme="dark"/>
       </div>
 
       <SpacerBig />
@@ -39,13 +48,13 @@ function Page() {
       <Spacer />
 
       <div className=''>
-        <TextThreeImages documentId="vorkje-prikken" images={['/imgs/sates.jpg', '/imgs/willy.png', '/imgs/sates_2.jpg']} imagesPosition='right' theme="dark"/>
+        <TextThreeImages documentId="vorkje-prikken" images={['/imgs/evenementen/vorkje/bakje-1.jpg', '/imgs/evenementen/vorkje/satebar.jpg', '/imgs/evenementen/vorkje/sate.jpg']} imagesPosition='left' theme="dark"/>
       </div>
 
       <SpacerBig />
       <SpacerBig />
 
-      <SmallTextPopup documentId="eigen-event" imgPath='/imgs/cocktails.jpg' link='contact' buttonText='Neem contact op' />
+      <SmallTextPopup documentId="eigen-event" imgPath='/imgs/evenementen/vorkje/bakje-1.jpg' link='contact' buttonText='Neem contact op' />
         
     </motion.div>
   )
