@@ -48,7 +48,7 @@ function Page() {
       <Spacer />
 
       <div className=''>
-        <TextThreeImages documentId="vorkje-prikken" images={['/imgs/evenementen/heideweek/duimpje.jpg', '/imgs/evenementen/vorkje/satebar.jpg', '/imgs/evenementen/vorkje/sate.jpg']} imagesPosition='left' theme="dark"/>
+        <TextThreeImages documentId="vorkje-prikken" images={['/imgs/evenementen/vorkje/bakje-1.jpg', '/imgs/evenementen/vorkje/satebar.jpg', '/imgs/evenementen/vorkje/sate.jpg']} imagesPosition='left' theme="dark"/>
       </div>
 
       <SpacerBig />

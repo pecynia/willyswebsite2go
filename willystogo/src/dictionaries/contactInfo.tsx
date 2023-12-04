@@ -30,8 +30,8 @@ export const contactInfo: ContactInfo = {
     name: "Willy's2Go",
     address: `${location.street} ${location.number}, ${location.zip} ${location.city}`,
     email: "willys2go@gmail.com",
-    phone: "06-1234567",
-    kvk: "12345678",
+    phone: "0612172255",
+    kvk: "64650669",
 }
 
 export const socialMedia: SocialMedia = {
