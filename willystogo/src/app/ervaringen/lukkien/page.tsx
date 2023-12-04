@@ -17,7 +17,7 @@ function Page() {
         <AnimatedHeader header="Het verhaal van Lukkien" className='text-4xl' />
       </div>
 
-      <Spacer />
+      {/* <Spacer /> */}
       
       <div className='px-10'>
         <TextOneVideo documentId="lukkien-eisen" videoId='8h8Vpfitn0g' imagePosition="right" theme="dark" verticalPosition='below'/>

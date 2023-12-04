@@ -66,7 +66,7 @@ const TextOneVideo: React.FC<TextVideoProps> = ({ documentId, videoId, imagePosi
   )
 
   const videoComp = (
-    <div className={twMerge("relative col-span-full lg:col-span-3 h-full border-2 border-black", imagePosition === 'right' ? 'lg:order-2' : '')}>
+    <div className={twMerge("relative col-span-full lg:col-span-3 h-full -mt-10", imagePosition === 'right' ? 'lg:order-2' : '')}>
       <motion.div layout
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
