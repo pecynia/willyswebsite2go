@@ -23,7 +23,7 @@ function page() {
 
       <SpacerBig />
 
-      <SmallTextPopup documentId='restaurant-naar-partner' imgPath='/imgs/over-ons/meiden.png' />
+      <SmallTextPopup documentId='restaurant-naar-partner' imgPath='/imgs/over-ons/over-ons.png' />
 
       <SpacerBig />
 

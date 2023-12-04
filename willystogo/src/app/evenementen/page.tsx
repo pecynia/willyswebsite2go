@@ -40,7 +40,7 @@ function Page() {
 
 
       <div className=''>
-        <TextThreeImages documentId="heideweek-culinair" images={['/imgs/evenementen/heideweek/duimpje.jpg', '/imgs/evenementen/heideweek/sate.jpg', '/imgs/evenementen/heideweek/yan.jpg']} imagesPosition='right' theme="dark"/>
+        <TextThreeImages documentId="heideweek-culinair" images={['/imgs/evenementen/heideweek/duimpje.jpg', '/imgs/evenementen/heideweek/willy_2.jpg', '/imgs/evenementen/heideweek/willy.jpg']} imagesPosition='right' theme="dark"/>
       </div>
 
       <SpacerBig />
