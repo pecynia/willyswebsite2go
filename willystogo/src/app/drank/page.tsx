@@ -15,7 +15,7 @@ function Page() {
         <motion.div layout
             transition={{ type: "spring", ease: "easeInOut", duration: 0.8 }}
         >
-            <LandingVideo videoPath='imgs/drank/4k-cocktail.mp4' />
+            <LandingVideo videoPath='imgs/drank/1080-cocktail.mp4' />
             
             {/* <div className='relative px-16 mt-10 lg:mt-24 mb-0 lg:-mb-20'>
                 <AnimatedHeader header="Drank" className='text-4xl' />
