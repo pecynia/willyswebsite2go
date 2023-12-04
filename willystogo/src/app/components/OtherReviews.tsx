@@ -6,7 +6,7 @@ import { reviews } from '@/dictionaries/reviews';
 
 function OtherReviews() {
   return (
-    <div className="p-16 overflow-hidden">
+    <div className="px-16 overflow-hidden ">
         {reviews.quotes.map((review, index) => (
           <motion.div 
             key={index}
@@ -14,7 +14,7 @@ function OtherReviews() {
             whileInView={{ opacity: 1, x: '0%' }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.2, ease: [0, 0.71, 0.2, 1.01] }}
-            className={`flex flex-col md:flex-row items-center max-w-5xl mx-auto my-16 bg-secondary-foreground ${index % 2 === 0 ? 'header-shadow-left md:ml-5' : 'header-shadow-right md:mr-5'}`}
+            className={`flex flex-col md:flex-row items-center max-w-5xl mx-auto my-16 bg-secondary-foreground ${index % 2 === 0 ? 'header-shadow-left md:ml-5 lg:ml-64' : 'header-shadow-right md:mr-10 lg:mr-64'}`}
           >
             <div className={`${index % 2 === 0 ? 'order-2' : ''} w-full md:w-1/4 relative`} style={{ aspectRatio: '1 / 1.5' }}>
               <Image

@@ -23,7 +23,10 @@ function ReviewsPage() {
       <SmallTextPopup documentId='lukkien-review' imgPath='/imgs/ervaringen/lukkien.png' link='/ervaringen/lukkien' buttonText='Lees meer' />
 
       {/* Different other reviews */}
-      <OtherReviews />
+      <div className=''>
+        <OtherReviews />
+      </div>
+
 
     </motion.div>
   )

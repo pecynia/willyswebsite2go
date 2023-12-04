@@ -31,7 +31,7 @@ function Page() {
 
 
       <div className=''>
-        <TextThreeImages documentId="summer-beach" images={['/imgs/evenementen/summerbeach/groep.jpg', '/imgs/evenementen/summerbeach/satebar.jpg', '/imgs/evenementen/summerbeach/dames.png']} imagesPosition='left' theme="dark"/>
+        <TextThreeImages documentId="summer-beach" images={['/imgs/evenementen/summerbeach/groep2.jpg', '/imgs/evenementen/summerbeach/satebar2.jpg', '/imgs/evenementen/summerbeach/dames2.png']} imagesPosition='left' theme="dark"/>
       </div>
 
       <SpacerBig />
