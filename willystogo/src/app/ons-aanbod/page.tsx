@@ -14,7 +14,10 @@ import TextSingleImageTall from '@/app/components/TextOneImageTall'
 import Willy from '../../../public/imgs/ons-aanbod/willy.jpg'
 import Bbq from '../../../public/imgs/ons-aanbod/bbq.jpg'
 import Satebar from '../../../public/imgs/ons-aanbod/satebar.jpg'
+
 import { Space } from 'lucide-react'
+import TextTwoImages from '@/app/components/TextTwoImages'
+import TextTwoImagesTall from '@/app/components/TextTwoImagesTall'
 
 function Page() {
   return (
@@ -29,15 +32,20 @@ function Page() {
       <Spacer />
       
       <TextSingleImageTall documentId="buffetten" image="/imgs/ons-aanbod/aanreik.jpg" imagePosition="left" theme="dark" verticalPosition="below" />
-      
+      {/* <TextTwoImagesTall documentId="buffetten" images={["/imgs/ons-aanbod/aanreik.jpg", "/imgs/ons-aanbod/bufet.jpg"]} imagesPosition='left' theme="dark"  /> */}
+
+
       <SpacerBig />
       <SpacerBig />
+      {/* <SpacerBig /> */}
+      {/* <Spacer /> */}
       
       <div className='-mt-24 lg:mt-0'>
         <TextThreeImages documentId="satebar" images={[Willy, Satebar, Bbq]} imagesPosition='right' theme="dark"/>
       </div>
 
-      <Spacer />
+      <SpacerBig />
+      <SpacerBig />
       
       <div>
         <TextOneImage documentId="eigen_event" image="/imgs/ons-aanbod/event.jpg" imagePosition="left" theme="dark" verticalPosition='below'/>

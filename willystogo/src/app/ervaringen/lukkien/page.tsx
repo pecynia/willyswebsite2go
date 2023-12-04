@@ -1,6 +1,8 @@
 "use client"
 
 import AnimatedHeader from '@/app/components/AnimatedHeader'
+import SpacerBig from '@/app/components/SpacerBig'
+import Spacer from '@/app/components/SpacerBig'
 import TextOneImage from '@/app/components/TextOneImage'
 import TextOneVideo from '@/app/components/TextOneVideo'
 import { motion } from 'framer-motion'
@@ -15,13 +17,17 @@ function Page() {
         <AnimatedHeader header="Het verhaal van Lukkien" className='text-4xl' />
       </div>
 
-      <div>
-        <TextOneVideo documentId="lukkien-eisen" videoId='a8b3EN0R-M4' imagePosition="right" theme="dark" verticalPosition='below'/>
+      <Spacer />
+      
+      <div className='px-10'>
+        <TextOneVideo documentId="lukkien-eisen" videoId='8h8Vpfitn0g' imagePosition="right" theme="dark" verticalPosition='below'/>
       </div>
 
-      <div>
-        <TextOneVideo documentId="lukkien-quote" videoId='a8b3EN0R-M4' imagePosition="left" theme="dark" verticalPosition='below'/>
+      <div className='px-10'>
+        <TextOneVideo documentId="lukkien-quote" videoId='OjM1pOAtT4c' imagePosition="left" theme="dark" verticalPosition='below'/>
       </div>
+
+      <SpacerBig />
 
 
     </motion.div>

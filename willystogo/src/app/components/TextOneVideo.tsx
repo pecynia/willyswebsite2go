@@ -60,13 +60,13 @@ const TextOneVideo: React.FC<TextVideoProps> = ({ documentId, videoId, imagePosi
   const textEditor = (
     <motion.div layout
       transition={{ duration: 0.7, delay: 0.3, ease: [0, 0.71, 0.2, 1.01] }}
-      className={twMerge(getShadowClass(), 'mb-20 col-span-full lg:col-span-2 bg-secondary-foreground pb-10 flex px-10 pt-4 min-w-[200px] max-w-full', imagePosition === 'left' ? 'lg:col-start-4 lg:order-2' : '')}>
+      className={twMerge(getShadowClass(), 'mb-20 col-span-full lg:col-span-2 bg-secondary-foreground pb-10 flex px-10 pt-4 min-w-[200px] max-w-full', imagePosition === 'left' ? 'lg:col-start-4  lg:order-2' : '')}>
       <EditorWrapper documentId={documentId} />
     </motion.div>
   )
 
   const videoComp = (
-    <div className={twMerge("pt-20 lg:pt-0 relative col-span-full lg:col-span-3 h-[500px] lg:h-full", imagePosition === 'right' ? 'lg:order-2' : '')}>
+    <div className={twMerge("relative col-span-full lg:col-span-3 h-full border-2 border-black", imagePosition === 'right' ? 'lg:order-2' : '')}>
       <motion.div layout
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -75,9 +75,7 @@ const TextOneVideo: React.FC<TextVideoProps> = ({ documentId, videoId, imagePosi
           delay: 0.3,
           ease: [0, 0.71, 0.2, 1.01]
         }}
-        ref={container}
-        style={{ y: useTransform(scrollYProgress, [0, 1], [0, -dimension.height * 0.2]) }} 
-        className={twMerge("w-full h-full lg:absolute top-[10%] left-0 flex-shrink-0", className)}
+        className=""
       >
         <YoutubeComp videoId={videoId} />
       </motion.div>

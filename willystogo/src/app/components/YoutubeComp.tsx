@@ -1,23 +1,24 @@
-import React from 'react'
+import React from 'react';
 import YouTube, { YouTubeProps } from 'react-youtube';
 
-
-function YoutubeComp({videoId}: {videoId: string}) {
+function YoutubeComp({ videoId }: { videoId: string }) {
     const onPlayerReady: YouTubeProps['onReady'] = (event) => {
-        // access to player in all event handlers via event.target
         event.target.pauseVideo();
-      }
-    
-      const youtubeOpts: YouTubeProps['opts'] = {
-        height: '390',
-        width: '640',
+    };
+
+    const youtubeOpts: YouTubeProps['opts'] = {
+        height: '480',
+        width: '100%',
         playerVars: {
-          autoplay: 1,
+            autoplay: 0,
         },
-      };
+    };
+
     return (
-        <div><YouTube videoId={videoId} opts={youtubeOpts} onReady={onPlayerReady} /></div>
-    )
+      <div className="w-full h-full">
+          <YouTube videoId={videoId} opts={youtubeOpts} onReady={onPlayerReady} />
+      </div>
+    );
 }
 
-export default YoutubeComp
+export default YoutubeComp;
