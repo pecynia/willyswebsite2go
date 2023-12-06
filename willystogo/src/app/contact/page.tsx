@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { Button } from '@/app/components/ui/button';
+import { contactInfo } from '@/dictionaries/contactInfo';
 
 function Page() {
   const [name, setName] = useState('');
@@ -26,64 +27,10 @@ function Page() {
           className='header-shadow-right min-w-[60%] min-h-[20%] max-w-[80%] bg-secondary mb-20 pb-10 flex px-10 pt-4 z-10'
         >
           
-          <form className='w-full pt-2'>
-            <div className='text-center'>
-              <h1 className='text-3xl font-youngSerif'>Contact</h1>
-            </div>
-            {/* Name Input */}
-            <motion.div 
-              initial={{ opacity: 0, y: '100%' }}
-              animate={{ opacity: 1, y: '0%' }}
-              transition={{ duration: 0.7, delay: 0.3, ease: [0, 0.71, 0.2, 1.01] }}
-            >
-              <input 
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                placeholder='Naam'
-                className='border-2 border-black rounded-lg p-2'
-              />
-            </motion.div>
-            {/* Email Input */}
-            <motion.div 
-              initial={{ opacity: 0, y: '100%' }}
-              animate={{ opacity: 1, y: '0%' }}
-              transition={{ duration: 0.7, delay: 0.3, ease: [0, 0.71, 0.2, 1.01] }}
-              className='mt-3'
-            >
-              <input 
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder='Email'
-                className='border-2 border-black rounded-lg p-2'
-              />
-            </motion.div>
-            {/* Message Input */}
-            <motion.div 
-              initial={{ opacity: 0, y: '100%' }}
-              animate={{ opacity: 1, y: '0%' }}
-              transition={{ duration: 0.5, delay: 0.32, ease: [0, 0.71, 0.2, 1.01] }}
-              className='mt-3'
-            >
-              <textarea 
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                placeholder='Bericht'
-                className='border-2 border-black rounded-lg h-40 p-2 w-full'
-              />
-            </motion.div>
-            {/* Submit Button */}
-            <motion.div 
-              initial={{ opacity: 0, y: '100%' }}
-              animate={{ opacity: 1, y: '0%' }}
-              transition={{ duration: 0.7, delay: 0.3, ease: [0, 0.71, 0.2, 1.01] }}
-            >
-              <Button 
-                className='border-2 border-black rounded-lg p-2'
-              >
-                Verstuur
-              </Button>
-            </motion.div>
-          </form>
+          <div className='w-full pt-2'>
+            <h1 className='text-center font-youngSerif text-3xl pt-4'>Bereik Ons</h1>
+            <p className='pt-4 text-center'>Momenteel kunt u ons bereiken op <span className='font-bold'>{contactInfo.email}</span></p>
+          </div>
         </motion.div>
       </div>
   )
