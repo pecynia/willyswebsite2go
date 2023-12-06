@@ -29,7 +29,7 @@ function Page() {
             <Spacer />
 
             <div className='-mt-24 lg:mt-0 mb-28'>
-                <TextThreeImages documentId="cocktails" images={['/imgs/drank/pop.gif', '/imgs/drank/cocktails.jpg', '/imgs/drank/cocktail_small.jpg']} imagesPosition='left' theme="dark" verticalPosition='below'/>
+                <TextThreeImages documentId="cocktails" images={['/imgs/drank/pop.gif', '/imgs/drank/cocktails.jpg', '/imgs/drank/staand.jpg']} imagesPosition='left' theme="dark" verticalPosition='below'/>
             </div>
 
             <SpacerBig />
