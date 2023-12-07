@@ -4,7 +4,8 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { Button } from '@/app/components/ui/button';
-import { contactInfo } from '@/dictionaries/contactInfo';
+import ContactForm from '@/app/components/ContactForm';
+
 
 function Page() {
   const [name, setName] = useState('');
@@ -24,12 +25,10 @@ function Page() {
           whileInView={{ opacity: 1, y: '0%' }} // Comes in to view
           transition={{ type: "spring", ease: "easeInOut", duration: 0.5 }}
           viewport={{ once: true }}
-          className='header-shadow-right min-w-[60%] min-h-[20%] max-w-[80%] bg-secondary mb-20 pb-10 flex px-10 pt-4 z-10'
+          className='header-shadow-right min-w-[80%] lg:min-w-[50%] min-h-[20%] max-w-[80%] bg-secondary mb-20 pb-10 flex px-10 pt-4 z-10'
         >
-          
           <div className='w-full pt-2'>
-            <h1 className='text-center font-youngSerif text-3xl pt-4'>Bereik Ons</h1>
-            <p className='pt-4 text-center'>Momenteel kunt u ons bereiken op <span className='font-bold'>{contactInfo.email}</span></p>
+            <ContactForm />
           </div>
         </motion.div>
       </div>
