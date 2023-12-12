@@ -1,8 +1,8 @@
 import TextTwoImages from '@/app/components/TextTwoImages'
 import ReviewSliderWrapper from '@/app/components/ReviewSliderWrapper'
 import LandingVideo from '@/app/components/LandingVideo'
-import SpacerBig from '@/app/components/SpacerBig'
-import Spacer from '@/app/components/Spacer'
+import SpacerBig from '@/app/components/spacers/SpacerBig'
+import Spacer from '@/app/components/spacers/Spacer'
 import SmallTextPopup from '@/app/components/fixedTextPopup'
 
 export default function Home() {

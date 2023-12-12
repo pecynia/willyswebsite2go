@@ -5,10 +5,11 @@ import { motion } from 'framer-motion'
 import AnimatedHeader from '@/app/components/AnimatedHeader'
 import TextOneImage from '@/app/components/TextOneImage'
 import TextThreeImages from '@/app/components/TextThreeImages'
-import Spacer from '@/app/components/Spacer'
-import SpacerBig from '@/app/components/SpacerBig'
+import Spacer from '@/app/components/spacers/Spacer'
+import SpacerBig from '@/app/components/spacers/SpacerBig'
 import TextPopup from '@/app/components/textPopup'
 import LandingVideo from '@/app/components/LandingVideo'
+import SpacerStart from '../components/spacers/SpacerStart'
 
 function Page() {
     return (
@@ -17,14 +18,11 @@ function Page() {
         >
             <LandingVideo videoPath='imgs/drank/1080-cocktail.mp4' />
             
-            {/* <div className='relative px-16 mt-10 lg:mt-24 mb-0 lg:-mb-20'>
-                <AnimatedHeader header="Drank" className='text-4xl' />
-            </div> */}
 
-            <SpacerBig />
+            <SpacerStart />
 
 
-            <TextOneImage documentId="dranken_arrangement" image="/imgs/drank/arrangement.png" imagePosition="right" theme="dark" verticalPosition="below" />
+            <TextOneImage documentId="dranken_arrangement" image="/imgs/drank/arrangement.jpg" imagePosition="right" theme="dark" verticalPosition="below" />
 
             <Spacer />
 
@@ -32,7 +30,7 @@ function Page() {
                 <TextThreeImages documentId="cocktails" images={['/imgs/drank/pop.gif', '/imgs/drank/cocktails.jpg', '/imgs/drank/staand.jpg']} imagesPosition='left' theme="dark" verticalPosition='below'/>
             </div>
 
-            <SpacerBig />
+            <SpacerStart />
 
             <TextPopup documentId="opruimen-naar-eigen-event" imgPath='/imgs/drank/willy.jpg' link='faciliteiten' buttonText='Overige Faciliteiten' />
 

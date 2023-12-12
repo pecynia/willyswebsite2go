@@ -66,7 +66,7 @@ const TextThreeImages: React.FC<ThreeImagesProps> = ({ documentId, images, image
   )
 
   const Images = (
-    <div className={twMerge("pt-0 relative col-span-full lg:col-span-4 h-[500px] lg:h-full", imagesPosition === 'right' && 'lg:order-2')}>
+    <div className={twMerge("pt-0 mb-32 md:mb-0 relative col-span-full lg:col-span-4 h-[500px] lg:h-full", imagesPosition === 'right' && 'lg:order-2')}>
       <motion.div 
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -77,7 +77,7 @@ const TextThreeImages: React.FC<ThreeImagesProps> = ({ documentId, images, image
         }}
         // style={{ y: useTransform(scrollYProgress, [0, 1], [0, -dimension.height * 0.1]) }} 
         className="absolute max-h-[600px] w-[80%] md:w-[50%] h-[60%] md:h-[90%] top-[30%] md:top-[-15%] left-[5%]">
-        <Image src={images[0]} priority alt="Image 1" fill className="object-cover object-center"/>
+        <Image src={images[0]} priority alt="Image 1" fill sizes={"100 100"} className="object-cover object-center"/>
       </motion.div>
       <motion.div 
         initial={{ opacity: 0, scale: 0.5 }}

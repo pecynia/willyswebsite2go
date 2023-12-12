@@ -5,8 +5,8 @@ import AnimatedHeader from '@/app/components/AnimatedHeader'
 import TextOneImage from '@/app/components/TextOneImage'
 import TextThreeImages from '@/app/components/TextThreeImages'
 import { motion } from 'framer-motion'
-import Spacer from '@/app/components/Spacer'
-import SpacerBig from '@/app/components/SpacerBig'
+import Spacer from '@/app/components/spacers/Spacer'
+import SpacerBig from '@/app/components/spacers/SpacerBig'
 import TextPopup from '@/app/components/textPopup'
 import SmallTextPopup from '@/app/components/fixedTextPopup'
 import TextSingleImageTall from '@/app/components/TextOneImageTall'
@@ -25,9 +25,6 @@ function Page() {
       transition={{ type: "spring", ease: "easeInOut", duration: 0.8 }}
       className='mt-24 sm:mt-0'
     >
-      {/* <div className='px-16 mt-10 lg:mt-24 mb-0 lg:-mb-20'>
-        <AnimatedHeader header="Ons Aanbod" className='text-4xl' />
-      </div> */}
 
       <Spacer />
       

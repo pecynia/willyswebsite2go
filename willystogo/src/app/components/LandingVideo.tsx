@@ -2,7 +2,6 @@
 
 import React, { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
-import AnimatedWord from '@/app/components/animatedText'
 
 function LandingVideo({ videoPath } : { videoPath: string }) {
   const [isVisible, setIsVisible] = useState(true);

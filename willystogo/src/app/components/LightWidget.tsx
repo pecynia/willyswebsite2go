@@ -25,7 +25,7 @@ function LightWidget() {
 
   return (
     <div>
-        <h1 className='text-4xl text-center font-youngSerif p-16 pt-24'>
+        <h1 className='text-4xl text-center font-youngSerif p-16'>
             Volg ons op Instagram
         </h1>
         <div className='max-w-7xl mx-auto pb-24 px-10'>

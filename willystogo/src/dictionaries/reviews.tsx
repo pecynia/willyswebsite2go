@@ -36,7 +36,7 @@ export const reviews: ReviewsHandler = {
                 path: "/imgs/reviews/basiliek.jpg",
                 alt: "Basiliek Veenendaal",
             },
-            logo: "https://www.basiliekveenendaal.nl/wp-content/uploads/2023/01/140502_Logo_Basiliek-01.svg",
+            logo: "",  //"https://www.basiliekveenendaal.nl/wp-content/uploads/2023/01/140502_Logo_Basiliek-01.svg",
             id: "basiliek-veenendaal",
             companyName: "Basiliek Veenendaal",
             author: "Gerard Koudijs",
@@ -81,7 +81,7 @@ export const reviews: ReviewsHandler = {
         },
         {
             img: {
-                path: "/logo.png",
+                path: "/imgs/reviews/kaap.jpg",
                 alt: "Kaapcommunications",
             },
             logo: "",

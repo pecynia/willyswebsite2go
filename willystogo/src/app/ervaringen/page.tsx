@@ -4,10 +4,11 @@ import React from 'react';
 import AnimatedHeader from '@/app/components/AnimatedHeader';
 import { motion } from 'framer-motion';
 
-import SpacerBig from '@/app/components/SpacerBig';
+import SpacerBig from '@/app/components/spacers/SpacerBig';
 import SmallTextPopup from '@/app/components/fixedTextPopup';
-import Spacer from '@/app/components/Spacer';
+import Spacer from '@/app/components/spacers/Spacer';
 import OtherReviews from '@/app/components/OtherReviews';
+import SpacerStart from '../components/spacers/SpacerStart';
 
 function ReviewsPage() {
   return (
@@ -18,7 +19,7 @@ function ReviewsPage() {
         <AnimatedHeader header="Ervaringen" className='text-4xl' />
       </div> */}
 
-      <SpacerBig />
+      <SpacerStart />
 
       <SmallTextPopup documentId='lukkien-review' imgPath='/imgs/ervaringen/lukkien.png' link='/ervaringen/lukkien' buttonText='Lees meer' />
 

@@ -6,9 +6,10 @@ import { motion } from 'framer-motion'
 import AnimatedHeader from '@/app/components/AnimatedHeader'
 import TextThreeImages from '@/app/components/TextThreeImages'
 import LetOp from '@/app/components/textPopup'
-import Spacer from '@/app/components/Spacer'
-import SpacerBig from '@/app/components/SpacerBig'
+import Spacer from '@/app/components/spacers/Spacer'
+import SpacerBig from '@/app/components/spacers/SpacerBig'
 import SmallTextPopup from '@/app/components/fixedTextPopup'
+import SpacerStart from '../components/spacers/SpacerStart'
 
 function Page() {
   return (
@@ -19,13 +20,13 @@ function Page() {
         <AnimatedHeader header="Evenementen" className='text-4xl' />
       </div> */}
 
-      <SpacerBig />
+      <SpacerStart />
 
       <div className=''>
         <TextThreeImages documentId="vlegeldag" images={['/imgs/evenementen/vlegeldag.jpg', '/imgs/evenementen/willyenyan.jpg', '/imgs/evenementen/sates.jpg']} imagesPosition='right' theme="dark"/>
       </div>
 
-      <SpacerBig />
+      <SpacerStart />
       <SpacerBig />
       <Spacer />
 
@@ -43,7 +44,7 @@ function Page() {
         <TextThreeImages documentId="heideweek-culinair" images={['/imgs/evenementen/heideweek/duimpje.jpg', '/imgs/evenementen/heideweek/willy_2.jpg', '/imgs/evenementen/heideweek/willy.jpg']} imagesPosition='right' theme="dark"/>
       </div>
 
-      <SpacerBig />
+      <SpacerStart />
       <SpacerBig />
       <Spacer />
 
@@ -51,7 +52,7 @@ function Page() {
         <TextThreeImages documentId="vorkje-prikken" images={['/imgs/evenementen/vorkje/bakje-1.jpg', '/imgs/evenementen/vorkje/satebar.jpg', '/imgs/evenementen/vorkje/sate.jpg']} imagesPosition='left' theme="dark"/>
       </div>
 
-      <SpacerBig />
+      <SpacerStart />
       <SpacerBig />
 
       <SmallTextPopup documentId="eigen-event" imgPath='/imgs/evenementen/vorkje/bakje-1.jpg' link='contact' buttonText='Neem contact op' />
