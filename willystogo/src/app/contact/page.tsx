@@ -1,17 +1,13 @@
 'use client'
 
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import Image from 'next/image';
-import { Button } from '@/app/components/ui/button';
-import ContactForm from '@/app/components/ContactForm';
+import React, { useState } from 'react'
+import { motion } from 'framer-motion'
+import Image from 'next/image'
+import { Button } from '@/app/components/ui/button'
+import ContactForm from '@/app/components/ContactForm'
 
 
 function Page() {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-
   return (
     <div className='flex flex-col items-center justify-center w-full py-36 relative'>
         <Image 
@@ -35,4 +31,4 @@ function Page() {
   )
 }
 
-export default Page;
+export default Page

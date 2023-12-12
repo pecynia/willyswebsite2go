@@ -25,7 +25,6 @@ export default function ContactForm() {
     const result = await sendEmail(data)
 
     if (result?.success) {
-      console.log({ data: result.data })
       toast.success('Email verzonden!')
       reset()
       return
@@ -68,7 +67,7 @@ export default function ContactForm() {
 
       {/* Submit Button */}
       <button disabled={isSubmitting} className='rounded-lg border border-black bg-black py-2.5 font-medium text-white transition-colors hover:bg-black/80 disabled:cursor-not-allowed disabled:opacity-50'>
-        {isSubmitting ? 'Submitting...' : 'Submit'}
+        {isSubmitting ? 'Verzenden...' : 'Verzend'}
       </button>
     </form>
   )
