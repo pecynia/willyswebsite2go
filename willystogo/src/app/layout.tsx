@@ -15,8 +15,8 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "Willy's To Go",
-  description: "Indonesische Catering in Ede en omstreken",
+  title: "Willy's 2 Go",
+  description: "Indonesische Catering in Ede en omstreken. Bekijk de mogelijkheden!",
 }
 
 export default function RootLayout({
