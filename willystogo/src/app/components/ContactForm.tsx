@@ -1,6 +1,7 @@
 'use client'
 
 import { useForm, SubmitHandler } from 'react-hook-form'
+import Link from 'next/link'
 
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
@@ -8,6 +9,7 @@ import { z } from 'zod'
 import { ContactFormSchema } from '@/lib/schema'
 import { sendEmail } from '@/app/_actions'
 import { toast } from 'sonner'
+import { contactInfo } from '@/dictionaries/contactInfo'
 
 export type ContactFormInputs = z.infer<typeof ContactFormSchema>
 
@@ -41,6 +43,24 @@ export default function ContactForm() {
       className='mx-auto flex flex-1 flex-col gap-4'
     >
       <h1 className='text-3xl text-center font-youngSerif py-2'>Bereik Ons</h1>
+
+      {/* Contact Info Section */}
+      <div className='flex flex-col md:flex-row justify-center items-center gap-2 md:gap-5'>
+        <div className='flex items-center gap-2'>
+          Email: 
+          <Link href={`mailto:${contactInfo.email}`} className='hover:text-gray-300 underline'>
+            {contactInfo.email}
+          </Link>
+        </div>
+        <div className='flex items-center gap-2'>
+          Bel ons:
+          <Link href={`tel:${contactInfo.phone}`} className='hover:text-gray-300 underline'>
+            {contactInfo.phone}
+          </Link>
+        </div>
+      </div>
+
+
       {/* Name Input */}
       <input {...register('name')} placeholder='Naam*' className='w-1/2 rounded-lg p-2' />
       {errors.name?.message && <p className='ml-1 mt-1 text-sm text-red-400'>{errors.name.message}</p>}
