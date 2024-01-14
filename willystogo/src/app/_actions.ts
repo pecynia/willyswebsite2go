@@ -3,6 +3,7 @@ import { z } from 'zod'
 import { Resend } from 'resend'
 import { ContactFormSchema } from '@/lib/schema'
 import ContactFormEmail from '@/emails/contact-form-email'
+import { getParagraphJson } from '@/app/utils/db'
 
 type ContactFormInputs = z.infer<typeof ContactFormSchema>
 const resend = new Resend(process.env.RESEND_API_KEY)
@@ -28,5 +29,22 @@ export async function sendEmail(data: ContactFormInputs) {
 
   if (result.error) {
     return { success: false, error: result.error.format() }
+  }
+}
+
+// ------------------ CONTENT ACTIONS ------------------
+
+// Server action
+export async function getParagraph(id: string) {
+  try {
+    const result = await getParagraphJson(id)
+    if (result) {
+      return { success: true, data: result }
+    } else {
+      return { success: false, error: "No data found" }
+    }
+  } catch (error) {
+    console.error("Error in getParagraph:", error)
+    return { success: false, error: "Server error" }
   }
 }
