@@ -28,14 +28,14 @@ const Footer = () => {
                 {/* Navigation */}
                 <div className=''>
                     <h1 className="font-youngSerif text-2xl text-secondary-foreground mb-4">Navigatie</h1>
-                    {routes.map(route => ( route.includeInHeader &&
+                    {routes.map(route => (route.includeInHeader &&
                         <Link key={route.href} href={route.href}>
                             <div className="mb-2 hover:underline cursor-pointer">{route.label}</div>
                         </Link>
                     ))}
                 </div>
 
-                
+
 
                 {/* Contact */}
                 <div className='space-y-2'>
@@ -60,7 +60,12 @@ const Footer = () => {
             <div className="mt-8 flex justify-center font-thin items-center space-x-4">
                 <p>kvk: {contactInfo.kvk}</p>
                 <p>&copy; Willys2Go {new Date().getFullYear()}</p>
-                <p>Website made by <span className="font-bold">Humainly</span></p>
+                <p>
+                    Website made by
+                    <Link href="https://boostmaestro.com" target="_blank" className='hover:text-gray-300'>
+                        <span className="font-bold font-raleway"> Boost Maestro</span>
+                    </Link>
+                </p>
             </div>
         </footer>
     );
