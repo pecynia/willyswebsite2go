@@ -16,7 +16,7 @@ function Page() {
         <motion.div layout
             transition={{ type: "spring", ease: "easeInOut", duration: 0.8 }}
         >
-            <LandingVideo videoPath='imgs/drank/1080-cocktail.mp4' />
+            <LandingVideo videoPath='imgs/drank/cocktail_downsampled.webm' posterURL='imgs/drank/utils_frame.png' />
             
 
             <SpacerStart />

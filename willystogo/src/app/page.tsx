@@ -8,7 +8,7 @@ import SmallTextPopup from '@/app/components/fixedTextPopup'
 export default function Home() {
   return (
     <div>
-      <LandingVideo videoPath="/imgs/home/verkort.mp4"/>
+      <LandingVideo videoPath="/imgs/home/verkort_downsampled.webm" posterURL='/imgs/home/utils_frame.png' />
 
       <Spacer />
 
