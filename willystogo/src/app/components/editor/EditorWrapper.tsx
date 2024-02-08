@@ -1,72 +1,59 @@
-"use client"
+import { getParagraphJson } from '@/app/utils/db'
 
-// Import statements remain the same
-import { useEffect, useState } from "react"
-import Link from "next/link"
-import { motion } from "framer-motion"
-import { useSession } from 'next-auth/react'
-import { generateHTML } from '@tiptap/html'
-import { ReloadIcon } from "@radix-ui/react-icons"
+import React from 'react'
+import EditorContent from '@/app/components/editor/EditorContent'
+import OpenEditorButton from '@/app/components/editor/OpenEditorButton'
+import { JSONContent } from '@tiptap/react'
 
-import EditorComponent from "@/app/components/editor/EditorComponent"
-import StarterKit from '@tiptap/starter-kit'
-import Color from '@tiptap/extension-color'
-import TextStyle from '@tiptap/extension-text-style'
-import { Button } from "@/app/components/ui/button"
-import { getParagraph } from "@/app/_actions" // Add this import
+type Reponse = {
+    _id: string
+    paragraphJson: JSONContent
+} | null
 
-interface EditorWrapperProps {
-    documentId: string;
-    link?: string;
-    buttonText?: string;
+
+async function fetchParagraph(documentId: string) {
+    try {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/content`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Document-ID': documentId,
+                'api-key': process.env.ADMIN_PASSWORD!
+            },
+            next: {
+                tags: [`fetch-paragraph-${documentId}`]
+            },
+            cache: 'no-cache'
+        })
+
+        if (!response.ok) {
+            throw new Error('Failed to fetch data')
+        }
+
+        return response.json()
+    }
+    catch (error) {
+        console.error("Error in fetchParagraph:", error)
+        return null
+    }
 }
 
-const EditorWrapper = ({ documentId, link, buttonText }: EditorWrapperProps) => {
-    const { status, data: session } = useSession();
-    const [fetchedContent, setFetchedContent] = useState('');
+async function EditorServer({ documentId, className }: { documentId: string, className?: string }) {
 
-    useEffect(() => {
-        const fetchData = async () => {
-            const response = await getParagraph(documentId);
-            if (response && response.success) {
-                const contentAsHtml = generateHTML(response.data?.paragraphJson, [
-                    StarterKit,
-                    TextStyle,
-                    Color,
-                ]);
-                setFetchedContent(contentAsHtml);
-            } else {
-                console.error('Error fetching content:', response?.error);
-            }
-        };
+    const result = await getParagraphJson(documentId) as Reponse
+    // const result = await fetchParagraph(documentId, initialLocale) as Reponse
 
-        fetchData();
-    }, [documentId]); // Adding documentId as a dependency
-
-    if (status === "loading") {
-        return <div className="flex justify-center items-center mt-5 w-full h-full">
-            <ReloadIcon className="w-4 h-4 animate-spin" />
-        </div>
+    // Check if result is null and handle it
+    if (!result) {
+        console.error(`No data found for documentId: ${documentId})`)
     }
 
     return (
-        <motion.div layout className="w-full">
-            <EditorComponent
-                documentId={documentId}
-                editable={!!session}
-                initialContent={fetchedContent}
-            />
-            {link && buttonText && (
-                <div className="px-4 flex justify-center">
-                    <Button className="rounded-none mt-4">
-                        <Link href={link}>
-                            <p>{buttonText}</p>
-                        </Link>
-                    </Button>
-                </div>
-            )}
-        </motion.div>
-    );
-};
+        <div className="relative group">
+            <EditorContent result={result} className={className} />
+            <OpenEditorButton documentId={documentId} />
+        </div>
+    )
+}
 
-export default EditorWrapper;
+export default EditorServer

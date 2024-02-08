@@ -8,7 +8,7 @@ import EditorWrapper from "@/app/components/editor/EditorWrapper"
 import { twMerge } from "tailwind-merge"
 
 interface TwoImagesProps {
-  documentId: string;
+  children: React.ReactNode;
   images: [string, string];
   imagesPosition: "left" | "right";
   theme: "light" | "dark";
@@ -16,7 +16,7 @@ interface TwoImagesProps {
   className?: string;
 }
 
-const TextTwoImages: React.FC<TwoImagesProps> = ({ documentId, images, imagesPosition, theme, verticalPosition = "above", className }) => {
+const TextTwoImages: React.FC<TwoImagesProps> = ({ children, images, imagesPosition, theme, verticalPosition = "above", className }) => {
   const container = useRef<HTMLDivElement | null>(null)
   const [dimension, setDimension] = useState({ width: 0, height: 0 })
   const { scrollYProgress } = useScroll({
@@ -61,7 +61,7 @@ const TextTwoImages: React.FC<TwoImagesProps> = ({ documentId, images, imagesPos
     <motion.div layout
       transition={{ duration: 0.7, delay: 0.3, ease: [0, 0.71, 0.2, 1.01] }}
       className={twMerge(getShadowClass(), "col-span-full lg:col-span-2 bg-secondary-foreground flex px-10 pt-4 pb-10 min-w-[200px] max-w-full", imagesPosition === 'left' && 'lg:order-2')}>
-      <EditorWrapper documentId={documentId} />
+      {children}
     </motion.div>
   )
 

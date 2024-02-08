@@ -12,6 +12,7 @@ import SmallTextPopup from '@/app/components/fixedTextPopup'
 import FixedTextPopup from '@/app/components/fixedTextPopup'
 import LightWidget from '@/app/components/LightWidget'
 import SpacerStart from '../components/spacers/SpacerStart'
+import EditorWrapper from '../components/editor/EditorClient'
 
 function page() {
   return (
@@ -24,12 +25,16 @@ function page() {
 
       <SpacerStart />
 
-      <SmallTextPopup documentId='restaurant-naar-partner' imgPath='/imgs/over-ons/over-ons.png' />
+      <SmallTextPopup imgPath='/imgs/over-ons/over-ons.png'>
+        <EditorWrapper documentId='restaurant-naar-partner' />
+      </SmallTextPopup>
 
       <SpacerBig />
 
       <div>
-        <TextOneImage documentId="het-team" image="/imgs/over-ons/team.jpg" imagePosition="right" theme="dark" verticalPosition='below'/>
+        <TextOneImage image="/imgs/over-ons/team.jpg" imagePosition="right" theme="dark" verticalPosition='below'>
+          <EditorWrapper documentId="het-team" />
+        </TextOneImage>
       </div>
 
       <SpacerBig />
@@ -38,7 +43,9 @@ function page() {
 
       <Spacer />
 
-      <FixedTextPopup documentId='goed-om-te-weten' imgPath='/imgs/over-ons/pupop-pic.jpg' />
+      <FixedTextPopup imgPath='/imgs/over-ons/pupop-pic.jpg'>
+        <EditorWrapper documentId='goed-om-te-weten' />
+      </FixedTextPopup>
 
         
     </motion.div>

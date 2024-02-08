@@ -8,6 +8,7 @@ import Spacer from '@/app/components/spacers/Spacer'
 import SpacerBig from '@/app/components/spacers/SpacerBig'
 import SmallTextPopup from '@/app/components/fixedTextPopup'
 import SpacerStart from '../components/spacers/SpacerStart'
+import EditorWrapper from '../components/editor/EditorClient'
 
 function Page() {
   return (
@@ -18,19 +19,26 @@ function Page() {
       <SpacerStart />
       
       <div>
-        <TextOneImage documentId="mogelijk_interessant" image="/imgs/faciliteiten/team.jpg" imagePosition="right" theme="dark" verticalPosition='below'/>
+        <TextOneImage image="/imgs/faciliteiten/team.jpg" imagePosition="right" theme="dark" verticalPosition='below'>
+          <EditorWrapper documentId="mogelijk_interessant" />
+        </TextOneImage>
       </div>
 
       <SpacerBig />
 
       <div className=''>
-        <TextThreeImages documentId="zoals_beloofd" images={['/imgs/faciliteiten/toeschouwers.jpg', '/imgs/faciliteiten/kind.jpg', '/imgs/faciliteiten/chili.jpg']} imagesPosition='right' theme="dark"/>
+        <TextThreeImages images={['/imgs/faciliteiten/toeschouwers.jpg', '/imgs/faciliteiten/kind.jpg', '/imgs/faciliteiten/chili.jpg']} imagesPosition='right' theme="dark">
+          <EditorWrapper documentId="zoals_beloofd" />
+        </TextThreeImages>
       </div>
 
       <SpacerStart />
       <Spacer />
 
-      <SmallTextPopup documentId="faciliteiten_ps" imgPath='/imgs/faciliteiten/willy.jpg' link='' buttonText='' />
+      <SmallTextPopup imgPath='/imgs/faciliteiten/willy.jpg' link='' buttonText='' >
+        <EditorWrapper documentId='faciliteiten_ps' />
+      </SmallTextPopup>
+
         
       
     </motion.div>

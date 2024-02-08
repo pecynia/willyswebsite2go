@@ -4,11 +4,10 @@ import { useEffect, useRef, useState } from "react"
 import { useTransform, useScroll, motion } from "framer-motion"
 import Image from "next/image"
 import Lenis from "@studio-freight/lenis"
-import EditorWrapper from "@/app/components/editor/EditorWrapper"
 import { twMerge } from "tailwind-merge"
 
 interface SingleImageProps {
-  documentId: string
+  children: React.ReactNode
   image: string
   imagePosition?: "left" | "right"
   theme?: "light" | "dark"
@@ -16,7 +15,7 @@ interface SingleImageProps {
   className?: string
 }
 
-const TextSingleImage: React.FC<SingleImageProps> = ({ documentId, image, imagePosition = "left", theme = "dark", verticalPosition= "above", className }) => {
+const TextSingleImage: React.FC<SingleImageProps> = ({ children, image, imagePosition = "left", theme = "dark", verticalPosition= "above", className }) => {
   const container = useRef<HTMLDivElement | null>(null)
   const [dimension, setDimension] = useState({ width: 0, height: 0 })
   const { scrollYProgress } = useScroll({
@@ -61,7 +60,7 @@ const TextSingleImage: React.FC<SingleImageProps> = ({ documentId, image, imageP
     <motion.div layout
       transition={{ duration: 0.7, delay: 0.3, ease: [0, 0.71, 0.2, 1.01] }}
       className={twMerge(getShadowClass(), "mb-20 mr-10 col-span-full lg:col-span-2 bg-secondary-foreground pb-10 flex px-10 pt-4 min-w-[200px] max-w-full", imagePosition === 'left' && 'lg:order-2')}>
-        <EditorWrapper documentId={documentId} />
+        {children}
     </motion.div>
   )
 

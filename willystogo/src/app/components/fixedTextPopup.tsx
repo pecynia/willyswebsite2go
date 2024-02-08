@@ -1,20 +1,22 @@
 "use client"
 
-import React from 'react'
+import React, { Children } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 
 import EditorWrapper from '@/app/components/editor/EditorWrapper'
+import { Button } from './ui/button'
+import Link from 'next/link'
 
 
 interface Props {
-  documentId: string
+  children: React.ReactNode
   imgPath: string
   link?: string;
   buttonText?: string;
 }
 
-function SmallTextPopup({ documentId, imgPath, link, buttonText }: Props) {
+function SmallTextPopup({ children, imgPath, link, buttonText }: Props) {
   return (
     <motion.div layout className='flex flex-col items-center justify-center w-full py-20 relative'>
         <Image 
@@ -31,7 +33,16 @@ function SmallTextPopup({ documentId, imgPath, link, buttonText }: Props) {
           viewport={{ once: true }}
           className='header-shadow-right min-w-[50%] min-h-[20%] max-w-[93%] md:max-w-[70%] bg-secondary pb-10 pt-4 flex px-10 z-10'
         >
-            <EditorWrapper documentId={documentId} link={link} buttonText={buttonText} />
+            {children}
+            {link && buttonText && (
+              <div className="px-4 flex justify-center">
+                      <Button className="rounded-none mt-4">
+                          <Link href={link}>
+                              <p>{buttonText}</p>
+                          </Link>
+                      </Button>
+                  </div>
+            )}
         </motion.div>
       </motion.div>
   )

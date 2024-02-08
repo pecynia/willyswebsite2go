@@ -5,16 +5,18 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 
 import EditorWrapper from '@/app/components/editor/EditorWrapper'
+import { Button } from '@/app/components/ui/button'
+import Link from 'next/link'
 
 
 interface Props {
-  documentId: string
+  children: React.ReactNode
   imgPath: string
   link?: string;
   buttonText?: string;
 }
 
-function TextPopup({ documentId, imgPath, link, buttonText }: Props) {
+function TextPopup({ children, imgPath, link, buttonText }: Props) {
   return (
     <div className='flex flex-col items-center justify-center w-full py-32 relative'>
         <Image 
@@ -30,7 +32,16 @@ function TextPopup({ documentId, imgPath, link, buttonText }: Props) {
           viewport={{ once: true }}
           className='header-shadow-right min-w-[50%] min-h-[20%] max-w-[70%] bg-secondary mb-20 pb-10 flex px-10 pt-4 z-10'
         >
-            <EditorWrapper documentId={documentId} link={link} buttonText={buttonText} />
+            {children}
+            {link && buttonText && (
+              <div className="px-4 flex justify-center">
+                      <Button className="rounded-none mt-4">
+                          <Link href={link}>
+                              <p>{buttonText}</p>
+                          </Link>
+                      </Button>
+                  </div>
+            )}
         </motion.div>
       </div>
   )

@@ -16,8 +16,9 @@ import Bbq from '../../../public/imgs/ons-aanbod/bbq.jpg'
 import Satebar from '../../../public/imgs/ons-aanbod/satebar.jpg'
 
 import { Space } from 'lucide-react'
-import TextTwoImages from '@/app/components/TextTwoImages'
 import TextTwoImagesTall from '@/app/components/TextTwoImagesTall'
+
+import EditorWrapper from '../components/editor/EditorClient'
 
 function Page() {
   return (
@@ -28,7 +29,9 @@ function Page() {
 
       <Spacer />
       
-      <TextSingleImageTall documentId="buffetten" image="/imgs/ons-aanbod/aanreik.jpg" imagePosition="left" theme="dark" verticalPosition="below" />
+      <TextSingleImageTall image="/imgs/ons-aanbod/aanreik.jpg" imagePosition="left" theme="dark" verticalPosition="below" >
+        <EditorWrapper documentId="buffetten" />
+      </TextSingleImageTall>
       {/* <TextTwoImagesTall documentId="buffetten" images={["/imgs/ons-aanbod/aanreik.jpg", "/imgs/ons-aanbod/bufet.jpg"]} imagesPosition='left' theme="dark"  /> */}
 
 
@@ -38,21 +41,27 @@ function Page() {
       {/* <Spacer /> */}
       
       <div className='-mt-24 lg:mt-0'>
-        <TextThreeImages documentId="satebar" images={[Willy, Satebar, Bbq]} imagesPosition='right' theme="dark"/>
+        <TextThreeImages images={[Willy, Satebar, Bbq]} imagesPosition='right' theme="dark">
+          <EditorWrapper documentId="satebar" />
+        </TextThreeImages>
       </div>
 
       <SpacerBig />
       <SpacerBig />
       
       <div>
-        <TextOneImage documentId="eigen_event" image="/imgs/ons-aanbod/event.jpg" imagePosition="left" theme="dark" verticalPosition='below'/>
+        <TextOneImage image="/imgs/ons-aanbod/event.jpg" imagePosition="left" theme="dark" verticalPosition='below'>
+          <EditorWrapper documentId="eigen-event" />
+        </TextOneImage>
       </div>
       
       <SpacerBig />
 
 
       {/* Let op */}
-      <SmallTextPopup documentId='let_op' imgPath='/imgs/ons-aanbod/popup-2.jpg' />
+      <SmallTextPopup imgPath='/imgs/ons-aanbod/popup-2.jpg' >
+        <EditorWrapper documentId='let_op' />
+      </SmallTextPopup>
     </motion.div>
   )
 }

@@ -4,6 +4,7 @@ import LandingVideo from '@/app/components/LandingVideo'
 import SpacerBig from '@/app/components/spacers/SpacerBig'
 import Spacer from '@/app/components/spacers/Spacer'
 import SmallTextPopup from '@/app/components/fixedTextPopup'
+import EditorWrapper from './components/editor/EditorClient'
 
 export default function Home() {
   return (
@@ -18,12 +19,16 @@ export default function Home() {
         <ParallaxScrollInfo />
       </div> */}
 
-      <TextTwoImages documentId="intro" images={['/imgs/home/sate.jpg', '/imgs/evenementen/vorkje/bakje-2.jpg']} imagesPosition='right' theme="dark" />
+      <TextTwoImages images={['/imgs/home/sate.jpg', '/imgs/evenementen/vorkje/bakje-2.jpg']} imagesPosition='right' theme="dark" >
+        <EditorWrapper documentId='intro' />
+      </TextTwoImages>
 
       
       <SpacerBig />
 
-      <SmallTextPopup documentId='test' imgPath='/imgs/home/popup.jpg' />
+      <SmallTextPopup imgPath='/imgs/home/popup.jpg'>
+        <EditorWrapper documentId='test' />
+      </SmallTextPopup>
 
       <Spacer />
       

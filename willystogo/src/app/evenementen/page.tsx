@@ -10,6 +10,7 @@ import Spacer from '@/app/components/spacers/Spacer'
 import SpacerBig from '@/app/components/spacers/SpacerBig'
 import SmallTextPopup from '@/app/components/fixedTextPopup'
 import SpacerStart from '../components/spacers/SpacerStart'
+import EditorWrapper from '../components/editor/EditorWrapper'
 
 function Page() {
   return (
@@ -23,7 +24,9 @@ function Page() {
       <SpacerStart />
 
       <div className=''>
-        <TextThreeImages documentId="vlegeldag" images={['/imgs/evenementen/vlegeldag.jpg', '/imgs/evenementen/willyenyan.jpg', '/imgs/evenementen/sates.jpg']} imagesPosition='right' theme="dark"/>
+        <TextThreeImages images={['/imgs/evenementen/vlegeldag.jpg', '/imgs/evenementen/willyenyan.jpg', '/imgs/evenementen/sates.jpg']} imagesPosition='right' theme="dark">
+          <EditorWrapper documentId="vlegeldag" />
+        </TextThreeImages>
       </div>
 
       <SpacerStart />
@@ -32,7 +35,9 @@ function Page() {
 
 
       <div className=''>
-        <TextThreeImages documentId="summer-beach" images={['/imgs/evenementen/summerbeach/groep2.jpg', '/imgs/evenementen/summerbeach/satebar2.jpg', '/imgs/evenementen/summerbeach/dames2.png']} imagesPosition='left' theme="dark"/>
+        <TextThreeImages images={['/imgs/evenementen/summerbeach/groep2.jpg', '/imgs/evenementen/summerbeach/satebar2.jpg', '/imgs/evenementen/summerbeach/dames2.png']} imagesPosition='left' theme="dark">
+          <EditorWrapper documentId="summer-beach" />
+        </TextThreeImages>
       </div>
 
       <SpacerBig />
@@ -41,7 +46,9 @@ function Page() {
 
 
       <div className=''>
-        <TextThreeImages documentId="heideweek-culinair" images={['/imgs/evenementen/heideweek/duimpje.jpg', '/imgs/evenementen/heideweek/willy_2.jpg', '/imgs/evenementen/heideweek/willy.jpg']} imagesPosition='right' theme="dark"/>
+        <TextThreeImages images={['/imgs/evenementen/heideweek/duimpje.jpg', '/imgs/evenementen/heideweek/willy_2.jpg', '/imgs/evenementen/heideweek/willy.jpg']} imagesPosition='right' theme="dark">
+          <EditorWrapper documentId="heideweek-culinair" />
+        </TextThreeImages>
       </div>
 
       <SpacerStart />
@@ -49,13 +56,17 @@ function Page() {
       <Spacer />
 
       <div className=''>
-        <TextThreeImages documentId="vorkje-prikken" images={['/imgs/evenementen/vorkje/bakje-1.jpg', '/imgs/evenementen/vorkje/satebar.jpg', '/imgs/evenementen/vorkje/sate.jpg']} imagesPosition='left' theme="dark"/>
+        <TextThreeImages images={['/imgs/evenementen/vorkje/bakje-1.jpg', '/imgs/evenementen/vorkje/satebar.jpg', '/imgs/evenementen/vorkje/sate.jpg']} imagesPosition='left' theme="dark">
+          <EditorWrapper documentId="vorkje-prikken" />
+        </TextThreeImages>
       </div>
 
       <SpacerStart />
       <SpacerBig />
 
-      <SmallTextPopup documentId="eigen-event" imgPath='/imgs/evenementen/vorkje/bakje-1.jpg' link='contact' buttonText='Neem contact op' />
+      <SmallTextPopup imgPath='/imgs/evenementen/vorkje/bakje-1.jpg' link='contact' buttonText='Neem contact op' >
+        <EditorWrapper documentId='eigen-event' />
+      </SmallTextPopup>
         
     </motion.div>
   )

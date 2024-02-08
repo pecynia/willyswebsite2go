@@ -9,6 +9,7 @@ import SmallTextPopup from '@/app/components/fixedTextPopup';
 import Spacer from '@/app/components/spacers/Spacer';
 import OtherReviews from '@/app/components/OtherReviews';
 import SpacerStart from '../components/spacers/SpacerStart';
+import EditorWrapper from '../components/editor/EditorClient';
 
 function ReviewsPage() {
   return (
@@ -21,7 +22,9 @@ function ReviewsPage() {
 
       <SpacerStart />
 
-      <SmallTextPopup documentId='lukkien-review' imgPath='/imgs/ervaringen/lukkien.png' link='/ervaringen/lukkien' buttonText='Lees meer' />
+      <SmallTextPopup imgPath='/imgs/ervaringen/lukkien.png' link='/ervaringen/lukkien' buttonText='Lees meer'>
+        <EditorWrapper documentId='lukkien-review' />
+      </SmallTextPopup>
 
       {/* Different other reviews */}
       <div className=''>
