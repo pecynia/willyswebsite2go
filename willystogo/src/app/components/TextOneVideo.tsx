@@ -8,7 +8,7 @@ import YoutubeComp from './YoutubeComp'
 import Lenis from '@studio-freight/lenis'
 
 interface TextVideoProps {
-  documentId: string
+  children: React.ReactNode
   videoId: string
   imagePosition?: 'left' | 'right'
   theme?: 'light' | 'dark'
@@ -16,7 +16,7 @@ interface TextVideoProps {
   className?: string
 }
 
-const TextOneVideo: React.FC<TextVideoProps> = ({ documentId, videoId, imagePosition = 'left', theme = 'dark', verticalPosition = 'above', className }) => {
+const TextOneVideo: React.FC<TextVideoProps> = ({ children, videoId, imagePosition = 'left', theme = 'dark', verticalPosition = 'above', className }) => {
   const container = useRef<HTMLDivElement | null>(null)
   const [dimension, setDimension] = useState({ width: 0, height: 0 })
   const { scrollYProgress } = useScroll({
@@ -61,7 +61,7 @@ const TextOneVideo: React.FC<TextVideoProps> = ({ documentId, videoId, imagePosi
     <motion.div layout
       transition={{ duration: 0.7, delay: 0.3, ease: [0, 0.71, 0.2, 1.01] }}
       className={twMerge(getShadowClass(), 'mb-20 col-span-full lg:col-span-2 bg-secondary-foreground pb-10 flex px-10 pt-4 min-w-[200px] max-w-full', imagePosition === 'left' ? 'lg:col-start-4  lg:order-2' : '')}>
-      <EditorWrapper documentId={documentId} />
+      {children}
     </motion.div>
   )
 

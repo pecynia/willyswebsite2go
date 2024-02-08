@@ -4,11 +4,10 @@ import { useEffect, useRef, useState } from "react"
 import { useTransform, useScroll, motion } from "framer-motion"
 import Image, { StaticImageData } from "next/image"
 import Lenis from "@studio-freight/lenis"
-import EditorWrapper from "@/app/components/editor/EditorWrapper"
 import { twMerge } from "tailwind-merge"
 
 interface ThreeImagesProps {
-  documentId: string;
+  children: React.ReactNode;
   images: [string | StaticImageData, string | StaticImageData, string | StaticImageData];
   imagesPosition: "left" | "right";
   theme: "light" | "dark";
@@ -16,7 +15,7 @@ interface ThreeImagesProps {
   className?: string;
 }
 
-const TextThreeImages: React.FC<ThreeImagesProps> = ({ documentId, images, imagesPosition, theme, verticalPosition = "above", className }) => {
+const TextThreeImages: React.FC<ThreeImagesProps> = ({ children, images, imagesPosition, theme, verticalPosition = "above", className }) => {
   const container = useRef<HTMLDivElement | null>(null)
   const [dimension, setDimension] = useState({ width: 0, height: 0 })
   const { scrollYProgress } = useScroll({
@@ -61,7 +60,7 @@ const TextThreeImages: React.FC<ThreeImagesProps> = ({ documentId, images, image
     <motion.div layout
       transition={{ duration: 0.7, delay: 0.3, ease: [0, 0.71, 0.2, 1.01] }}
       className={twMerge(getShadowClass(), "col-span-full lg:col-span-2 bg-secondary-foreground  flex px-10 pt-4 pb-10 min-w-[200px] max-w-full", imagesPosition === 'left' && 'lg:order-2')}>
-      <EditorWrapper documentId={documentId} />
+      {children}
     </motion.div>
   )
 

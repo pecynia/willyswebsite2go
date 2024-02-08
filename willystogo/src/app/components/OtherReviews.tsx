@@ -1,8 +1,10 @@
-import React from 'react'
-import Image from 'next/image';
-import { motion } from 'framer-motion';
+"use client"
 
-import { reviews } from '@/dictionaries/reviews';
+import React from 'react'
+import Image from 'next/image'
+import { motion } from 'framer-motion'
+
+import { reviews } from '@/dictionaries/reviews'
 
 function OtherReviews() {
   return (

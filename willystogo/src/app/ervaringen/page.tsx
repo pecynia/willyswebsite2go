@@ -1,27 +1,19 @@
-"use client"
+import React from 'react'
+import SmallTextPopup from '@/app/components/fixedTextPopup'
+import OtherReviews from '@/app/components/OtherReviews'
+import SpacerStart from '@/app/components/spacers/SpacerStart'
+import EditorServer from '@/app/components/editor/EditorServer'
 
-import React from 'react';
-import AnimatedHeader from '@/app/components/AnimatedHeader';
-import { motion } from 'framer-motion';
+export const revalidate = 360
 
-import SpacerBig from '@/app/components/spacers/SpacerBig';
-import SmallTextPopup from '@/app/components/fixedTextPopup';
-import Spacer from '@/app/components/spacers/Spacer';
-import OtherReviews from '@/app/components/OtherReviews';
-import SpacerStart from '../components/spacers/SpacerStart';
-
-function ReviewsPage() {
-  return (
-    <motion.div layout
-      transition={{ type: "spring", ease: "easeInOut", duration: 0.8 }}
-    >
-      {/* <div className='px-16 mt-10 lg:mt-24 mb-0 lg:-mb-20'>
-        <AnimatedHeader header="Ervaringen" className='text-4xl' />
-      </div> */}
-
+function Page() {
+    return (
+    <div>
       <SpacerStart />
 
-      <SmallTextPopup documentId='lukkien-review' imgPath='/imgs/ervaringen/lukkien.png' link='/ervaringen/lukkien' buttonText='Lees meer' />
+      <SmallTextPopup imgPath='/imgs/ervaringen/lukkien.png' link='/ervaringen/lukkien' buttonText='Lees meer'>
+        <EditorServer documentId="lukkien-review" />
+      </SmallTextPopup>
 
       {/* Different other reviews */}
       <div className=''>
@@ -29,8 +21,8 @@ function ReviewsPage() {
       </div>
 
 
-    </motion.div>
+    </div>
   )
 }
 
-export default ReviewsPage;
+export default Page

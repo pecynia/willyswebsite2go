@@ -4,6 +4,9 @@ import LandingVideo from '@/app/components/LandingVideo'
 import SpacerBig from '@/app/components/spacers/SpacerBig'
 import Spacer from '@/app/components/spacers/Spacer'
 import SmallTextPopup from '@/app/components/fixedTextPopup'
+import EditorServer from '@/app/components/editor/EditorServer'
+
+export const revalidate = 360
 
 export default function Home() {
   return (
@@ -12,18 +15,16 @@ export default function Home() {
 
       <Spacer />
 
-      {/* <SmallEditor documentId="intro" />
-
-      <div className='mt-10'>
-        <ParallaxScrollInfo />
-      </div> */}
-
-      <TextTwoImages documentId="intro" images={['/imgs/home/sate.jpg', '/imgs/evenementen/vorkje/bakje-2.jpg']} imagesPosition='right' theme="dark" />
+      <TextTwoImages images={['/imgs/home/sate.jpg', '/imgs/evenementen/vorkje/bakje-2.jpg']} imagesPosition='right' theme="dark">
+        <EditorServer documentId="intro" />
+      </TextTwoImages>
 
       
       <SpacerBig />
 
-      <SmallTextPopup documentId='test' imgPath='/imgs/home/popup.jpg' />
+      <SmallTextPopup imgPath='/imgs/home/popup.jpg' >
+        <EditorServer documentId="test" />
+      </SmallTextPopup>
 
       <Spacer />
       
