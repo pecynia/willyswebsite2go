@@ -24,7 +24,7 @@
 
 import React, { useRef, useEffect } from "react"
 
-export default function LandingVideo({ videoPath, posterURL }: { videoPath: string, posterURL: string }) {
+export default function LandingVideo({ videoPathWebm, videoPathMP4, posterURL }: { videoPathWebm: string, videoPathMP4: string, posterURL: string }) {
   const videoRef = useRef<HTMLVideoElement>(null)
   useEffect(() => {
     videoRef.current!.defaultMuted = true
@@ -37,8 +37,10 @@ export default function LandingVideo({ videoPath, posterURL }: { videoPath: stri
       autoPlay
       muted
       poster={posterURL}
-      playsInline>
-      <source src={videoPath} type="video/webm" />
+      playsInline
+    >
+      <source src={videoPathWebm} type="video/webm" />
+      <source src={videoPathMP4} type="video/mp4" />
     </video>
   )
 }

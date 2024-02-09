@@ -12,7 +12,7 @@ export const revalidate = 360
 function Page() {
     return (
         <div>
-            <LandingVideo videoPath='imgs/drank/cocktail_downsampled.webm' posterURL='imgs/drank/utils_frame.png' />
+            <LandingVideo videoPathWebm='imgs/drank/cocktail_downsampled.webm' videoPathMP4='imgs/drank/1080-cocktail.mp4' posterURL='imgs/drank/utils_frame.png' />
 
             <Spacer />
 

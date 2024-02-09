@@ -11,7 +11,7 @@ export const revalidate = 360
 export default function Home() {
   return (
     <div>
-      <LandingVideo videoPath="/imgs/home/verkort_downsampled.webm" posterURL='/imgs/home/utils_frame.png' />
+      <LandingVideo videoPathWebm="/imgs/home/verkort_downsampled.webm" videoPathMP4='/imgs/home/verkort.mp4' posterURL='/imgs/home/utils_frame.png' />
 
       <Spacer />
 
