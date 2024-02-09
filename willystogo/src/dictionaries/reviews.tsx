@@ -70,7 +70,7 @@ export const reviews: ReviewsHandler = {
         {
             img: {
                 path: "/imgs/reviews/jillis.jpg",
-                alt: "Jillis Baggerman Makerlaardij",
+                alt: "Jillis Baggerman Makelaardij",
             },
             logo: "", // logo: "https://jillisbaggerman.nl/wp-content/uploads/2021/04/logo-website-1.png",
             id: "jillis-baggerman-makelaardij",
