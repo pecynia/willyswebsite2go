@@ -11,7 +11,7 @@ function LandingVideo({ videoPath, posterURL } : { videoPath: string, posterURL:
           poster={posterURL}
           className="absolute top-0 left-0 w-full h-full object-cover 0"
       >
-        <source src={videoPath} type="video/mp4" />
+        <source src={videoPath} type="video/webm" />
         Your browser does not support the video tag.
       </video>
     </div>
