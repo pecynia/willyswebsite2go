@@ -14,7 +14,7 @@ function Page() {
         <div>
             <LandingVideo videoPath='imgs/drank/cocktail_downsampled.webm' posterURL='imgs/drank/utils_frame.png' />
 
-            <SpacerStart />
+            <Spacer />
 
             <TextOneImage image="/imgs/drank/arrangement.jpg" imagePosition="right" theme="dark" verticalPosition="below">
                 <EditorServer documentId="dranken_arrangement" />
