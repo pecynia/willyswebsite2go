@@ -74,7 +74,7 @@ export const reviews: ReviewsHandler = {
             },
             logo: "", // logo: "https://jillisbaggerman.nl/wp-content/uploads/2021/04/logo-website-1.png",
             id: "jillis-baggerman-makelaardij",
-            companyName: "Jillis Baggerman Makerlaardij",
+            companyName: "Jillis Baggerman Makelaardij",
             author: "Jillis Baggerman",
             quote: "Ik heb zeer goede ervaringen met Willy's 2 Go. Zowel zakelijk als privé diverse keren Willy's 2 Go ingeschakeld. De gerechten zijn authentiek Indisch en van goede kwaliteit. De BBQ met o.a. de bekende saté en spareribs (de specialiteit van Yannick) is ook een aanrader. Willy en Yannick brengen naast een goed product ook veel sfeer en gezelligheid. Ook fijn dat er voor bestek en servies wordt gezorgd en dat dit na afloop ook weer wordt meegenomen, zodat er geen afwas is. Je wordt compleet ontzorgd. Ik kijk nu al uit naar een volgende keer.",
             date: "22 september 2022",
