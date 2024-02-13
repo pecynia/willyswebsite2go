@@ -8,7 +8,7 @@ import LightWidget from '@/app/components/LightWidget'
 import SpacerStart from '../components/spacers/SpacerStart'
 import EditorServer from '@/app/components/editor/EditorServer'
 
-export const revalidate = 360
+export const revalidate = 86400
 
 function page() {
   return (

@@ -4,7 +4,7 @@ import TextOneVideo from '@/app/components/TextOneVideo'
 import React from 'react'
 import EditorServer from '@/app/components/editor/EditorServer'
 
-export const revalidate = 360
+export const revalidate = 86400
 
 function Page() {
   return (

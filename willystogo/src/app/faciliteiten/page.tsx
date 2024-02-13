@@ -7,7 +7,7 @@ import SmallTextPopup from '@/app/components/fixedTextPopup'
 import SpacerStart from '@/app/components/spacers/SpacerStart'
 import EditorServer from '@/app/components/editor/EditorServer'
 
-export const revalidate = 360
+export const revalidate = 86400
 
 function Page() {
   return (
