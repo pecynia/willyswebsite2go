@@ -59,6 +59,7 @@ export async function saveParagraph(documentId: string, paragraphJson: string, p
     const result = await saveParagraphJson(documentId, paragraph)
 
     if (result.acknowledged) {
+      console.log("Path: ", path)
       revalidatePath(path)
     }
 
