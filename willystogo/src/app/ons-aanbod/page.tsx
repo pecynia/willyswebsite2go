@@ -12,7 +12,6 @@ import Satebar from '../../../public/imgs/ons-aanbod/satebar.jpg'
 
 import EditorServer from '@/app/components/editor/EditorServer'
 
-export const revalidate = 86400
 
 function Page() {
   return (

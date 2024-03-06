@@ -6,7 +6,6 @@ import Spacer from '@/app/components/spacers/Spacer'
 import SmallTextPopup from '@/app/components/fixedTextPopup'
 import EditorServer from '@/app/components/editor/EditorServer'
 
-// export const revalidate = 360
 
 export default function Home() {
   return (

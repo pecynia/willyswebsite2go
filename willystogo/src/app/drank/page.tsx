@@ -7,7 +7,6 @@ import LandingVideo from '@/app/components/LandingVideo'
 import SpacerStart from '@/app/components/spacers/SpacerStart'
 import EditorServer from '@/app/components/editor/EditorServer'
 
-export const revalidate = 86400
 
 function Page() {
     return (

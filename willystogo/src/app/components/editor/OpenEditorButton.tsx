@@ -25,13 +25,10 @@ function OpenEditorButton({ documentId }: {  documentId: string }) {
                     </span>
                 </div>
             </DialogTrigger>
-            <DialogContent>
-                <DialogHeader>
-                    <DialogTitle>Edit Content</DialogTitle>
-                </DialogHeader>
-                    <EditorWrapper
-                        documentId={documentId}
-                    />
+            <DialogContent className='w-full h-full sm:h-fit sm:max-h-[70vh] max-w-5xl p-4 bg-white rounded-none sm:rounded-lg shadow-none sm:shadow-lg overflow-auto'>
+                <EditorWrapper
+                    documentId={documentId}
+                />
             </DialogContent>
         </Dialog>
     );

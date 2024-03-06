@@ -15,19 +15,21 @@ import { generateJSON } from '@tiptap/html'
 
 import MenuBar from '@/app/components/editor/MenuBar'
 import { Button } from '@/app/components/ui/button'
-import { motion } from 'framer-motion'
+import { usePathname } from 'next/navigation'
+import { saveParagraph } from '@/app/_actions'
+import { toast } from 'sonner'
 
 interface EditorComponentProps {
     initialContent?: string,
     editable?: boolean,
-    documentId: string 
+    documentId: string
 }
 
-const EditorComponent: React.FC<EditorComponentProps> = ({ 
-    initialContent = '', 
-    editable = false, 
-    documentId 
-}) => {    
+const EditorComponent: React.FC<EditorComponentProps> = ({
+    initialContent = '',
+    editable = false,
+    documentId
+}) => {
     const [editorContent, setEditorContent] = useState({})
     const [isSaving, setIsSaving] = useState(false)
     const [hasChanges, setHasChanges] = useState(false)
@@ -61,19 +63,19 @@ const EditorComponent: React.FC<EditorComponentProps> = ({
         }
     }, [initialContent, editor])
 
+    // Pathname
+    const pathName = usePathname()
+
     // Make a post fetch request to secure API endpoint
     const handleSave = async () => {
         setIsSaving(true)
         try {
-            const res = await fetch('/api/save', {
-                method: 'POST',
-                body: JSON.stringify(editorContent),
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Document-ID': documentId  // using the documentId prop
-                },
-            })
-            // check for res.ok or other conditions here
+            const res = await saveParagraph(documentId, JSON.stringify(editorContent), pathName)
+            if (res.success) {
+                toast.success('Saved successfully!')
+            } else {
+                toast.error('Oops, something went wrong. Please try again later.')
+            }
             setHasChanges(false)
         } catch (error) {
             console.error('Failed to save:', error)
@@ -81,33 +83,26 @@ const EditorComponent: React.FC<EditorComponentProps> = ({
             setIsSaving(false)
         }
     }
-    
-      
+
+
     return (
-        <motion.div  
-            layout
-            transition={{ type: "spring", ease: "easeInOut", duration: 0.1 }}
-            className='relative flex flex-col'
-        >
-            {editable ? <MenuBar editor={editor} /> : null}
-            <motion.div layout >
-                <EditorContent editor={editor} />
-            </motion.div>
-    
-            <div className="absolute flex justify-end bottom-0 right-0 -mb-14">
+        <div className='relative flex flex-col'>
+            {editable && <MenuBar editor={editor} />}
+            <EditorContent editor={editor} />
+            <div className="flex pt-2 justify-end bottom-0 right-0">
                 {editable && hasChanges && (
-                    isSaving ? 
-                    <Button disabled size="lg">
-                        <ReloadIcon className="mr-2 h-4 w-4 animate-spin" />
-                        Opslaan
-                    </Button> : 
-                    <Button size="lg" onClick={handleSave}>
-                        <Save className="mr-2 h-4 w-4" />
-                        Opslaan
-                    </Button>
+                    isSaving ?
+                        <Button disabled size="lg">
+                            <ReloadIcon className="mr-2 h-4 w-4 animate-spin" />
+                            Opslaan
+                        </Button> :
+                        <Button size="lg" onClick={handleSave}>
+                            <Save className="mr-2 h-4 w-4" />
+                            Opslaan
+                        </Button>
                 )}
             </div>
-        </motion.div>
+        </div>
     )
 }
 
