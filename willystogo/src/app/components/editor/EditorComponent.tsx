@@ -70,6 +70,10 @@ const EditorComponent: React.FC<EditorComponentProps> = ({
     const handleSave = async () => {
         setIsSaving(true)
         try {
+            if (!pathName) {
+                toast.error('Oops, something went wrong. Please try again later.')
+                return
+            }
             const res = await saveParagraph(documentId, JSON.stringify(editorContent), pathName)
             if (res.success) {
                 toast.success('Saved successfully!')
