@@ -217,6 +217,11 @@ button:hover .textWithAnimatedUnderline::before {
   background-color: currentColor;
 }
 
+.hyperlink {
+  @apply underline text-primary cursor-pointer font-bold;
+}
+
+
 .text-primary {
   color: hsl(var(--primary));
 }

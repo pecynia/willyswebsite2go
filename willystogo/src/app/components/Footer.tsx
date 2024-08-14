@@ -25,6 +25,7 @@ const Footer = () => {
                         </Link>
                     </div>
                 </div>
+
                 {/* Navigation */}
                 <div className=''>
                     <h1 className="font-youngSerif text-2xl text-secondary-foreground mb-4">Navigatie</h1>
@@ -54,6 +55,16 @@ const Footer = () => {
                         </Link>
                     </div>
                 </div>
+            </div>
+
+            {/* Terms, Privacy policy and cookie policy */}
+            <div className="mt-8 -mb-4 flex justify-center items-center space-x-4">
+                <Link href={`/privacy-beleid`}>
+                    <p className="hover:underline cursor-pointer">Privacy Beleid</p>
+                </Link>
+                    <Link href={`/cookie-beleid`}>
+                    <p className="hover:underline cursor-pointer">Cookie Beleid</p>
+                </Link>
             </div>
 
             {/* Bottom */}

@@ -1,4 +1,4 @@
-import '../styles/globals.css'
+import '@/styles/globals.css'
 import { Analytics } from '@vercel/analytics/react';
 import type { Metadata } from 'next'
 
@@ -7,10 +7,11 @@ import { Inter } from 'next/font/google'
 
 import Header from "@/app/components/Header"
 import Footer from "@/app/components/Footer"
-import GoogleAnalytics from '@/app/GoogleAnalytics'
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import GoogleAnalyticsProvider from '@/app/GoogleAnalyticsProvider';
+import EditorServer from '@/app/components/editor/EditorServer';
 
-const inter = Inter({ 
+const inter = Inter({
   subsets: ['latin']
 })
 
@@ -31,11 +32,14 @@ export default function RootLayout({
     >
       <body className='flex min-h-full flex-col font-raleway'>
         <NextAuthProvider>
-          <GoogleAnalytics />
-          <SpeedInsights />
-          <Header />
-          <main className='flex-grow'>{children}</main>
-          <Footer />
+          <GoogleAnalyticsProvider
+            description={<EditorServer documentId='consent-banner' />}
+          >
+            <SpeedInsights />
+            <Header />
+            <main className='flex-grow'>{children}</main>
+            <Footer />
+          </GoogleAnalyticsProvider>
         </NextAuthProvider>
         <Analytics />
       </body>

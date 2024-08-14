@@ -11,6 +11,7 @@ import Placeholder from '@tiptap/extension-placeholder'
 import TextStyle from '@tiptap/extension-text-style'
 import CustomBulletList from '@/app/components/editor/checklistBullet'
 
+import Link from '@tiptap/extension-link'
 import { generateJSON } from '@tiptap/html'
 
 import MenuBar from '@/app/components/editor/MenuBar'
@@ -42,6 +43,15 @@ const EditorComponent: React.FC<EditorComponentProps> = ({
             TextStyle,
             Color,
             CustomBulletList,
+            Link.configure({
+                openOnClick: true,
+                autolink: true,
+                HTMLAttributes: {
+                    target: '_blank',
+                    rel: 'noopener noreferrer',
+                    class: 'hyperlink',
+                },
+            }),
         ],
         content: '',
         editorProps: {
@@ -51,7 +61,7 @@ const EditorComponent: React.FC<EditorComponentProps> = ({
         },
         editable: editable,
         onUpdate: ({ editor }) => {
-            const contentJson = generateJSON(editor.getHTML(), [StarterKit, TextStyle, Color])
+            const contentJson = generateJSON(editor.getHTML(), [StarterKit, TextStyle, Color, Link, CustomBulletList])
             setEditorContent(contentJson)
             setHasChanges(true)
         },
