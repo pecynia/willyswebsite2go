@@ -103,7 +103,6 @@ const ReviewSlider: React.FC = () => {
                         </div>
                         
                         <p className="overflow-auto">{review.quote}</p>
-                        <p className="italic font-light">{review.date}</p>
                         {review.companyName && <p className="font-bold pt-3">{review.author}</p>}
                     </div>
                 ))}
